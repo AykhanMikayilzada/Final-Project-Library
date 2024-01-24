@@ -219,37 +219,179 @@ span:first-child {
 }
 #right .form-first .settings .description {
   box-sizing: border-box;
-  height: 89px;
-  border-radius: 10px;
-  border: 1px solid #e2e6ee;
+  height: 5.5625rem;
+  border-radius: 0.625rem;
+  border: 0.0625rem solid #e2e6ee;
   background: #fff;
-  box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
-  padding: 8px 12px;
+  box-shadow: 0rem 0.25rem 1.125rem 0rem rgba(158, 168, 189, 0.31);
+  padding: 0.5rem 0.75rem;
+  color: #030102;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  white-space: pre-wrap;
+  resize: none;
+}
+#right .form-first button {
+  display: flex;
+  height: 2.5rem;
+  padding: 0.75rem 1.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  align-self: stretch;
+  border-radius: 0.625rem;
+  background: #ff8b00;
+  border: none;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+#right .about-store {
+  color: #333;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 196.187%;
+  margin-top: 11.875rem;
+  margin-left: 2.0625rem;
+}
+#right .form-second {
+  max-width: 950px;
+  width: 100%;
+  margin-left: 3.9375rem;
+  margin-top: 2.125rem;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+#right .form-second .settings {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#right .form-second .settings h3 {
   color: #030102;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  white-space: pre-wrap; 
-  resize: none; 
 }
-#right .form-first button {
+#right .form-second .settings input {
+  box-sizing: border-box;
+  height: 2.5rem;
+  border-radius: 0.625rem;
+  border: 0.0625rem solid #e2e6ee;
+  background: #fff;
+  box-shadow: 0rem 0.25rem 1.125rem 0rem rgba(158, 168, 189, 0.31);
+  padding: 0.5rem 0.75rem;
+  color: #030102;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+#right .form-second .settings .description {
+  box-sizing: border-box;
+  height: 5.5625rem;
+  border-radius: 0.625rem;
+  border: 0.0625rem solid #e2e6ee;
+  background: #fff;
+  box-shadow: 0rem 0.25rem 1.125rem 0rem rgba(158, 168, 189, 0.31);
+  padding: 0.5rem 0.75rem;
+  color: #030102;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  white-space: pre-wrap;
+  resize: none;
+}
+#right .form-second button {
   display: flex;
-  height: 40px;
-  padding: 12px 24px;
+  height: 2.5rem;
+  padding: 0.75rem 1.5rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
   align-self: stretch;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   background: #ff8b00;
   border: none;
   color: #fff;
   font-family: "Roboto", sans-serif;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+#right .join-us {
+  color: #333;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 196.187%;
+  margin-left: 4.375rem;
+  margin-top: 10.4375rem;
+}
+#right .first-table {
+  margin-left: 4.3125rem;
+  margin-top: 0.3125rem;
+  max-width: 32rem;
+}
+#right table th {
+  font-family: "Montserrat", sans-serif;
+  background-color: #720418;
+  color: #fff;
+  height: 3rem;
+}
+#right table td {
+  color: #05111a;
+  font-family: "Montserrat", sans-serif;
+  height: 3rem;
+  min-width: 54px;
+  border-bottom: 2px solid #e6e7e9;
+}
+#right .second-table {
+  margin-left: 4.3125rem;
+  margin-top: 0.3125rem;
+  max-width: 70.5rem;
+}
+#right .third-table {
+  margin-left: 4.3125rem;
+  margin-top: 0.3125rem;
+  margin-bottom: 27.375rem;
+  max-width: 67.875rem;
+}
+#right .books {
+  color: #333;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 196.187%;
+  margin-left: 4.6875rem;
+  margin-top: 8.5rem;
+}
+#right .contact-us {
+  color: #333;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 196.187%;
+  margin-left: 4.6875rem;
+  margin-top: 18.625rem;
 }
