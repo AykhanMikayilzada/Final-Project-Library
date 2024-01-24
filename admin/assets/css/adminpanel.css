@@ -395,3 +395,11 @@ span:first-child {
   margin-left: 4.6875rem;
   margin-top: 18.625rem;
 }
+@media screen and (max-width: 965px) {
+  input {
+    width: 100%;
+  }
+  table {
+    width: 100%;
+  }
+}
