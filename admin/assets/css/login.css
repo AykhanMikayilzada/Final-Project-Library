@@ -110,3 +110,87 @@ main .container .login-box button {
   font-weight: 700;
   line-height: normal;
 }
+@media screen and (max-width: 755px) {
+  header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  img {
+    width: 35.882px;
+    height: 54px;
+    flex-shrink: 0;
+  }
+  .logo-box {
+    max-width: 151.217px;
+    height: 54px;
+  }
+  .logo-writing {
+    max-width: 108.5px;
+  }
+  .logo-writing .line {
+    width: 108.5px;
+    height: 1px;
+  }
+  .logo-writing span {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+    margin: 0px;
+  }
+  .logo-writing span:first-child {
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+  }
+  .logo-writing span:last-child {
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 196.187%; /* 25.504px */
+  }
+  main .container {
+    width: 322px;
+    display: flex;
+    margin: auto;
+    margin-top: 95px;
+  }
+  .login-box {
+    margin: auto;
+    margin-bottom: 50px;
+  }
+  .inputs {
+    margin-top: 4.0625rem;
+  }
+  .inputs input {
+    max-width: 12.038rem;
+    height: 2.5524rem;
+  }
+  .welcome-text {
+    max-width: 152px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .login-box {
+    display: inline;
+  }
+  .login-box h1 {
+    color: #000;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  button {
+    max-width: 193.491px;
+    height: 37.697px;
+  }
+}
