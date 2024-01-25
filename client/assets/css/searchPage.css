@@ -1,0 +1,238 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logoBox {
+  display: flex;
+  margin-top: 31px;
+  margin-left: 215px;
+}
+header .logoWriting {
+  display: flex;
+  flex-direction: column;
+}
+header .logoWriting span:first-child {
+  color: #720418;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-left: 5px;
+}
+header .logoWriting .line {
+  width: 127px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.59);
+  margin-left: 6px;
+}
+header .logoWriting span:last-child {
+  margin-left: 8px;
+}
+header .menu {
+  display: flex;
+  gap: 21px;
+  margin-top: 42px;
+}
+header .menu a {
+  color: #241400;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 196.187%;
+}
+header .menu .orange {
+  color: #e16a00;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 196.187%;
+  text-decoration-line: underline;
+}
+header .joinUs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 35px;
+}
+header .joinUs span {
+  color: #241400;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 65px;
+}
+#sectionFirst {
+  display: flex;
+  justify-content: center;
+  gap: 94px;
+}
+#sectionFirst .leftSide {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  justify-content: flex-start;
+  max-width: 433px;
+}
+#sectionFirst .leftSide h2 {
+  color: #241400;
+  font-family: "Montserrat", sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 196.187%;
+  margin-top: 134px;
+}
+#sectionFirst .leftSide input {
+  width: 433px;
+  height: 69.524px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  padding-top: 19px;
+  padding-left: 27px;
+  padding-bottom: 27.52px;
+  color: #241400;
+  font-family: "Crimson Text", serif;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+#sectionFirst .leftSide button {
+  width: 433px;
+  height: 65px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: #e16a00;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-family: "Crimson Text", serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+#sectionSecond {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 148px;
+  margin-top: 338px;
+  margin-bottom: 75px;
+}
+#sectionSecond span {
+  color: #241400;
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 196.187%;
+}
+#sectionSecond .icons {
+  display: flex;
+  gap: 54px;
+}
+.footerpage {
+  background-color: #391f00;
+  display: flex;
+  flex-direction: column;
+  /* display: flex;
+justify-content: space-between;
+width: 100%;
+height: 200px;
+flex-shrink: 0;
+background-color: #391F00;
+box-sizing: border-box;
+padding-left: 192px;
+padding-right: 186px; */
+}
+
+.footerlibtext {
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.footerbookstr {
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+.footerlibbor {
+  width: 150px;
+  height: 1px;
+  background-color: #ffffff;
+}
+
+.popularTag {
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footerTag {
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footertagbox {
+  display: flex;
+  gap: 91px;
+  margin-top: 56px;
+}
+
+.footerallbox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tagbox {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footerlibblock {
+  display: flex;
+  gap: 7px;
+  margin-top: 100px;
+}
+
+.footerMain {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 200px;
+  flex-shrink: 0;
+  background-color: #391f00;
+  box-sizing: border-box;
+  padding-left: 192px;
+  padding-right: 186px;
+}
+
+.textend {
+  text-align: center;
+  color: #ffffff;
+  margin-top: 77px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 196.187%;
+  font-family: "Montserrat",  sans-serif;
+}
