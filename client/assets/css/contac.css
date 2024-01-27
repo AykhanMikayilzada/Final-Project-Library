@@ -11,6 +11,7 @@ header {
   header .logoWriting {
     display: flex;
     flex-direction: column;
+
   }
   header .logoWriting span:first-child {
     color: #720418;
@@ -29,11 +30,19 @@ header {
   }
   header .logoWriting span:last-child {
     margin-left: 8px;
+    color:  #241400;
+  /* Текст в параграфах */
+  font-family: Montserrat;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  
   }
   header .menu {
     display: flex;
     gap: 21px;
     margin-top: 42px;
+    
   }
   header .menu a {
     color: #241400;
@@ -42,6 +51,7 @@ header {
     font-style: normal;
     font-weight: 400;
     line-height: 196.187%;
+    text-decoration: none;
   }
   header .menu .orange {
     color: #e16a00;
@@ -69,85 +79,138 @@ header {
     margin-right: 65px;
   }
 
-  
-  .main_section h1{
-    color: #333;
-    font-family: Montserrat;
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 196.187%; /* 70.627px */
-  text-align: start;
-  }
-  .contact_area{
-   display: flex;
-   flex-direction: column;
-   gap: 24px;
-   margin-top: 16px;
-   max-width: 1257px;
-   justify-content: center;
-
-
-  }
-  .main_section{
+  .main_section {
+    padding-top: 140px;
+    margin-bottom: 85px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: auto;
-    margin-top: 112px;
-    width: 100%;
-
-
   }
- main{
- display: flex;
- justify-content: center;
- flex-direction: column;
- width: 100%;
-margin: auto;
-
-
- 
-}
-.area1, .area2{
+  
+  .form-area1 {
     display: flex;
     gap: 36px;
-}
-.contact_area input{
-border: 1px solid #CECECE;
-background: #FFF;
-height: 75px;
-flex-shrink: 0;
-max-width: 610.459px;
-width: 100%;
-}
-textarea{
-border: 1px solid #CECECE;
-background: #FFF;
-width: 100%;
-height: 153px;
-flex-shrink: 0;
-resize: none;
-
-}
-
- main button{
-    background: #E16A00;
+    margin-bottom: 33px;
+  }
+  
+  .form-area1 input {
+    width: 50%;
+    height: 70px;
+    border: 1px solid #cecece;
+    background: #fff;
+    padding: 26px 0px 24px 38px;
+    color: #797667;
+  }
+  
+  .form-area1 ::placeholder {
+    color: #797667;
+    font-family: "Crimson Text", serif;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .form-area2 {
+    display: flex;
+    gap: 36px;
+  }
+  
+  .form-area2 input {
+    width: 50%;
+    height: 75px;
+    border: 1px solid #cecece;
+    background: #fff;
+    padding: 26px 0px 24px 38px;
+    color: #797667;
+  }
+  
+  .form-area2 ::placeholder {
+    color: #797667;
+    font-family: "Crimson Text", serif;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .form-area3 {
+    margin-top: 33px;
+  }
+  
+  .form-area3 textarea {
     width: 100%;
-  height: 75px;
-  max-width: 610px;
-  flex-shrink: 0;
-  border: none;
-  color: #FFF;
-  text-align: center;
-  font-family: "Crimson Text";
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin: auto;
-  margin-top: 76px;
-}
+    height: 153px;
+    border: 1px solid #cecece;
+    background: #fff;
+    padding: 26px 0px 24px 38px;
+    font-size: 22px;
+    font-weight: 500;
+    color: #797667;
+  }
+  
+  .form-area3 ::placeholder {
+    color: #797667;
+    font-family: "Crimson Text", serif;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .container .p-div {
+    color: #333333;
+    font-family: var(--fontMons);
+    font-size: 36px;
+    font-weight: 900;
+    padding-left: 8px;
+  }
+  
+  .button-div {
+    width: 100%;
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+  }
+  
+   button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e16a00;
+    width: 50%;
+    height: 75px;
+    border: none;
+    color: #FFF;
+    text-align: center;
+    font-family: "Crimson Text";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    
+  }
+  
+ 
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+    gap: 28px;
+    width: 100%;
+  }
+  
+  button:hover {
+    transition: all .3s;
+    transform: scale(1.1);
+  }
+  
+
+
+  
   
 #sectionThree {
     display: flex;
@@ -218,6 +281,7 @@ resize: none;
   .footerTag {
     color: #ffffff;
     font-family: "Montserrat", sans-serif;
+    text-decoration: none;
   }
   
   .footertagbox {
@@ -243,7 +307,9 @@ resize: none;
     gap: 7px;
     margin-top: 100px;
   }
-  
+  .popularTag{
+    text-decoration: none;
+  }
   .footerMain {
     display: flex;
     justify-content: space-between;
@@ -254,6 +320,7 @@ resize: none;
     box-sizing: border-box;
     padding-left: 192px;
     padding-right: 186px;
+    text-decoration: none;
   }
   
   .textend {
