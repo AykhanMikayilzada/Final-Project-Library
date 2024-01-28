@@ -327,6 +327,11 @@ button:hover {
   line-height: 196.187%;
   font-family: "Montserrat",  sans-serif;
 }
+
+footer .footerMobileBox{
+  display: none;
+}
+
 @media screen and (max-width: 911px) {
   header {
     display: flex;
@@ -591,6 +596,8 @@ line-height: normal;
  	opacity: 0;
   }
 }
+
+
 
 
 /* ----- Home Page Responsive */
