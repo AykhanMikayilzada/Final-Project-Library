@@ -517,18 +517,6 @@ body .overlay{
   line-height: normal;
 }
 
-.dark-mode {
-  background-color: #000000; /* Karanlık mod arka plan rengi */
-  color: #000000; /* Karanlık mod metin rengi */
-  /* Diğer stiller... */
-}
-
-
-.darkbtn{
-  margin-top: 24.5px;
-  border: none;
-}
-
 .joininputname{
   border: 1px solid #CECECE;
 background: #FFF;
