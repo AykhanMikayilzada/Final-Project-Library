@@ -602,6 +602,9 @@ footer .footerMobileBox{
   display: none;
 }
 
+.joinrespons{
+  display: none;
+}
 
 /* ----- Home Page Responsive */
 
@@ -629,7 +632,9 @@ footer .footerMobileBox{
     display: block;
   }
 
-
+  .joinrespons{
+    display: block;
+  }
 footer {
   display: flex;
   justify-content: center;
