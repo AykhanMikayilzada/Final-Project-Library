@@ -279,17 +279,7 @@ footer .textend p:last-child {
     width: 90%;
     margin: auto;
   }
-  #sectionSecond {
-    margin:  auto;
-    max-width: 252px;
-    margin-top: 82px;
-    gap: 26px;
-    margin-bottom: 75px;
-  }
-  #sectionSecond span {
-    width: 100%;
-    text-align: center;
-  }
+ 
   footer {
     display: flex;
     justify-content: center;

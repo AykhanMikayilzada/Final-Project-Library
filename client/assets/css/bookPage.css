@@ -177,6 +177,9 @@ header .hamburger {
   line-height: 196.187%;
   text-transform: uppercase;
 }
+#sectionOne .book_responsive {
+ display: none;
+}
 #sectionTwo {
   display: flex;
   flex-direction: column;
@@ -539,13 +542,6 @@ line-height: normal;
     margin: auto;
    
  }
-  #sectionOne .right-side img{
-  display: flex;
-  max-width: 273.642px; 
-  max-height: 388px;
-  margin: auto;
-  }
-
  #sectionOne .paragraph{
   margin: auto;
   margin-left: 15px;
@@ -560,8 +556,22 @@ line-height: normal;
  #sectionOne .year{
   margin-left: 23px; 
  }
-
- #sectionTwo{
+ #sectionOne .right-side{
+ display: none;
+ }
+ #sectionOne .book_responsive{
+  display: flex;
+    margin: auto;
+  margin-top: 67.51px;
+  flex-shrink: 0;
+  width: 273.642px;
+  height: 388px;
+  }
+  #sectionOne .left-side .title {
+    margin-top: 44px;
+   }
+ 
+    #sectionTwo{
   display: none;
  }
 
