@@ -82,6 +82,10 @@ header {
     background-color: rgb(255,250,245);
 }
 
+.responsmenutext a{
+  display: none;
+}
+
 .libborder{
     width: 150px;
     height: 1px;
@@ -598,6 +602,9 @@ footer .footerMobileBox{
 
 
 @media screen and (max-width: 911px) {
+  body {
+    overflow-x: hidden;
+  }
 header {
     display: flex;
     flex-wrap: wrap;
@@ -621,26 +628,70 @@ header {
     display: block;
   }
 
+  /* responsive overlay and menu page */
+
+
+  .respons img{
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-right: 15px;
+    margin-top: 18px;
+  }
+
+ body .overlayresponsive{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(36, 20, 0, 0.90);
+    z-index: 1;
+    display: none;
+  }
+
+.responsmenutext a{
+display: flex;
+flex-direction: column;
+margin-top: 70px;
+color: #F2F2F2;
+
+margin-right: 15px;
+text-align: right;
+font-family: Montserrat;
+font-size: 17px;
+font-style: normal;
+font-weight: 400;
+line-height: 196.187%;
+  }
+  
+
+  /* ------ */
+
   .joinrespons{
     display: block;
   }
 
   .sectionpage {
     display: flex;
-  flex-wrap: wrap;
+    flex-direction: column;
+  /* flex-wrap: wrap; */
   /* width: 100%; */
   width: 100vh;
-margin: 0;
-}
-body {
-  overflow-x: hidden; /* Yatay kaydırma çubuğunu gizle */
+  margin: 0;
 }
 
+
 .secpag{
-  margin-left: 5px;
+  margin-left: 7px;
   display: flex;
+  margin-top: -70px;
   
   flex-wrap: wrap;
+}
+
+.secpag p{
+  margin-left: 6px;
 }
 .cardmom img{
 width: 77%;
@@ -649,11 +700,16 @@ flex-direction: column;
 justify-content: center;
 flex-wrap: wrap;
 margin: auto;
+margin-top: -120px;
 }
 
-.textp{
-  
-  width: px;
+.secabout{
+ margin-top: px;
+}
+.cardmom{
+  display: flex;
+margin-bottom: -350px;
+flex-shrink: 0;
 }
 
 .sectionbtn{
@@ -691,6 +747,7 @@ max-width: 290px;
   footer {
     display: flex;
     justify-content: center;
+
   }
 
   footer .footerMain {
