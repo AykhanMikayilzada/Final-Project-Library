@@ -467,43 +467,27 @@ body .overlay {
     flex-direction: column;
   }
 
-  #sectionFirst .button-prev{
+  .button-prev{
     display: none;
   }
-  #sectionFirst .button-next{
+ .button-next{
     display: none;
   }
-  #sectionFirst {
-    display: flex;
-    flex-direction: column;
+
+
+   /* responsive overlay and menu page */
+
+
+   .respons img{
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-right: 15px;
+    margin-top: 22px;
+    display: none;
   }
+
   
-  #sectionFirst .book_card{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  #sectionFirst .leftSide{
-    display: flex;
-   flex-direction: column;
-     justify-content: center;
-     text-align: center;
- }
-
- /* responsive overlay and menu page */
-
-
- .respons img{
-  position: fixed;
-  top: 0;
-  right: 0;
-  margin-right: 15px;
-  margin-top: 22px;
-  display: none;
-}
-
-
 
 .respons .navatag {
 display: flex;
@@ -524,22 +508,22 @@ line-height: 196.187%;
 display: none;
 }
 
-.navatag a{
-  display: flex;
-  flex-direction: column;
-  color: #F2F2F2;
-  margin-top: 30px;
-}
+  .navatag a{
+    display: flex;
+    flex-direction: column;
+    color: #F2F2F2;
+    margin-top: 30px;
+  }
 
-body .overlayresponsive{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(36, 20, 0, 0.90);
-  display: none;
-}
+ body .overlayresponsive{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(36, 20, 0, 0.90);
+    display: none;
+  }
 
 /* .responsmenutext a{
 display: flex;
@@ -554,10 +538,85 @@ font-style: normal;
 font-weight: 400;
 line-height: 196.187%;
 } */
-
+  
 
 /* ---------- */
+
+
+  #sectionFirst {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    margin-top: 52.61px;
+ 
+    /* border: 5px solid rgb(138, 255, 71); */
+  }
+  #sectionFirst .book_card img{
+   width: 100%;
+    margin: auto;
+  }
+  #sectionFirst .book_card{
+    /* border: 5px solid tomato; */
+    margin-top: 0px;
+  }
+
+
+  #sectionFirst .leftSide{
   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    width: 273px;
+   
+    margin-bottom: 0px;
+    /* border: 5px solid teal; */
+ }
+ #sectionFirst .leftSide input{
+ margin: auto;
+ width: 100%;
+  height: 39.017px;  
+  font-size: 16px;                                                            
+ }
+ #sectionFirst  .leftSide button{
+width: 100%;
+margin: auto;
+  height: 39.017px;
+font-size: 20px;
+ }
+
+ #sectionFirst  .leftSide h2{
+    text-align: center;
+    
+  }
+
+  #sectionFirst  .about_book p{
+    margin: auto;
+    margin-left: 17px;
+    margin-right: 13px;
+    line-height: 196.187%;
+    font-size: 12px;
+  }
+  #sectionFirst  .about_book{
+    /* border: 8px solid yellow; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .book_card{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+  }
+  #sectionFirst .book_name{
+    text-align: center;
+  }
+
+
+
   
   footer {
     display: flex;

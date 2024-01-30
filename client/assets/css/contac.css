@@ -396,6 +396,14 @@ button:hover {
   line-height: 196.187%;
   font-family: "Montserrat",  sans-serif;
 }
+.footerTag{
+  
+  text-decoration: none;
+}
+.popularTag{
+  
+  text-decoration: none;
+}
 
 footer .footerMobileBox{
   display: none;
@@ -472,6 +480,10 @@ footer .footerMobileBox{
     display: flex;
     justify-content: center;
   }
+  .footerMobileBox a{
+    text-decoration: none;
+  }
+
 
   footer .footerMain {
     display: flex;
