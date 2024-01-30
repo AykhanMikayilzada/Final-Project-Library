@@ -398,7 +398,49 @@ span:first-child {
   margin-left: 4.6875rem;
   margin-top: 18.625rem;
 }
+select {
+  color: #030102;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+select option {
+  color: #030102;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
 @media screen and (max-width: 858px) {
+  select {
+    color: #030102;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  select option {
+    color: #030102;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  #right .contact-us {
+    color: #333;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 196.187%;
+    margin-left: 0.8125rem;
+    margin-top: 18.625rem;
+  }
   #right {
     padding: 0px;
     margin: 0px;
@@ -525,7 +567,6 @@ span:first-child {
   #right .first-table {
     margin-left: 0;
     margin: auto;
-    width: 318px;
     overflow-x: auto;
   }
   #right .second-table {
@@ -534,15 +575,9 @@ span:first-child {
   #right .third-table {
     margin-left: 0;
     margin: auto;
-    width: 318px;
     overflow-x: auto;
   }
-  #right .first-table,
-  #right .second-table,
-  #right .third-table {
-    margin-left: 0;
-    margin: auto;
-    width: 318px;
-    overflow-x: auto;
+  #right {
+    overflow-x: hidden;
   }
 }
