@@ -3,7 +3,14 @@ main {
   justify-content: space-between;
   height: 100vh;
 }
+body {
+  position: relative;
+  overflow: hidden;
+}
 header {
+  display: none;
+}
+.menuBar {
   display: none;
 }
 #left {
@@ -415,6 +422,87 @@ select option {
   line-height: normal;
 }
 @media screen and (max-width: 858px) {
+  .menuBar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 247px;
+    height: 100vh;
+    background-color: #720418;
+    display: flex;
+    flex-direction: column;
+    display: none;
+  }
+  .menuBar .logoWriting {
+    margin-top: 23.01px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .menuBar .closeBtn {
+    position: absolute;
+    left: 15px;
+    top: 28px;
+  }
+  .menuBar .logo {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+  .menuBar .logo img {
+    margin-right: 11.51px;
+    margin-top: 15px;
+  }
+  .menuBar .logo .logoWriting span:first-child {
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-align: end;
+    margin-right: 5px;
+  }
+  .menuBar .logo .logoWriting .line {
+    width: 110px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.59);
+    margin-right: 6px;
+  }
+  .menuBar .logo .logoWriting span:last-child {
+    color: #fff;
+    margin-right: 8px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 196.187%;
+    text-align: end;
+  }
+  .menuBar .menu {
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+    margin-top: 67.38px;
+    gap: 30.67px;
+    margin-right: 35px;
+  }
+  .menuBar .menu .settings {
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+  }
+  .menuBar .menu .settings a {
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 196.187%;
+  }
+  .menuBar .menu .settings img {
+    width: 35px;
+  }
   select {
     color: #030102;
     font-family: "Roboto", sans-serif;
@@ -579,5 +667,22 @@ select option {
   }
   #right {
     overflow-x: hidden;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+     opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+     opacity: 0;
+    }
   }
 }

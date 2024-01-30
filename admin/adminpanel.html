@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Panel</title>
     <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./assets/css/main.css" />
     <link rel="stylesheet" href="./assets/css/adminpanel.css" />
   </head>
@@ -19,8 +24,52 @@
           <span>Book store</span>
         </div>
       </div>
-      <img class="hamburger" src="./assets/img/hamburger.svg">
+      <img class="hamburger" src="./assets/img/hamburger.svg" onclick="openMenu()"/>
     </header>
+    <!-- Menu Started -->
+
+    <div class="menuBar">
+      <img
+        class="closeBtn"
+        src="./assets/img/close.svg"
+        width="25px"
+        height="25px"
+        onclick="closeMenu()"
+      />
+      <div class="logo">
+        <div class="logoWriting">
+          <span>LIBRARY</span>
+          <div class="line"></div>
+          <span>Admin Panel</span>
+        </div>
+        <img src="./assets/img/menuLogo.svg" />
+      </div>
+
+      <div class="menu">
+        <div class="settings">
+          <a href="">Home</a>
+          <img src="./assets/img/menuLogo.svg">
+        </div>
+        <div class="settings">
+          <a href="">Catalog</a>
+          <img src="./assets/img/menuLogo.svg">
+        </div>
+        <div class="settings">
+          <a href="">About</a>
+          <img src="./assets/img/menuLogo.svg">
+        </div>
+        <div class="settings">
+          <a href="">Contact</a>
+          <img src="./assets/img/menuLogo.svg">
+        </div>
+        <div class="settings">
+          <a href="">Search</a>
+          <img src="./assets/img/menuLogo.svg">
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu Ended -->
     <main>
       <div id="left">
         <a href="#"
@@ -69,7 +118,9 @@
         <h3 class="search-book">Search book</h3>
         <div class="search-box">
           <input type="text" placeholder="Dan Brown" />
-          <button class="search"><img src="./assets/img/search_icon.svg" alt="icon" /></button>
+          <button class="search">
+            <img src="./assets/img/search_icon.svg" alt="icon" />
+          </button>
         </div>
         <div class="search-area">
           <div class="settings">
@@ -288,5 +339,7 @@
         </table>
       </div>
     </main>
+    <script src="./assets/js/menu.js"></script>
+    <script src="./assets/js/adminpanel.js"></script>
   </body>
 </html>
