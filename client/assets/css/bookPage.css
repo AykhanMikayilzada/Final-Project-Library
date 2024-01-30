@@ -72,10 +72,9 @@ header .hamburger {
   display: none;
 }
 
- /* responsive overlay and menu page */
+/* responsive overlay and menu page */
 
-
- .respons img{
+.respons img {
   position: fixed;
   top: 0;
   right: 0;
@@ -84,41 +83,39 @@ header .hamburger {
   display: none;
 }
 
-
-
 .respons .navatag {
-display: flex;
-flex-direction: column;
-position: fixed;
-top: 0;
-right: 0;
-margin-right: 15px;
-margin-top: 18px;
-margin-top: 120px;
-margin-right: 15px;
-text-align: right;
-font-family: Montserrat;
-font-size: 17px;
-font-style: normal;
-font-weight: 400;
-line-height: 196.187%;
-display: none;
-}
-
-.navatag a{
   display: flex;
   flex-direction: column;
-  color: #F2F2F2;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-right: 15px;
+  margin-top: 18px;
+  margin-top: 120px;
+  margin-right: 15px;
+  text-align: right;
+  font-family: Montserrat;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 196.187%;
+  display: none;
+}
+
+.navatag a {
+  display: flex;
+  flex-direction: column;
+  color: #f2f2f2;
   margin-top: 30px;
 }
 
-body .overlayresponsive{
+body .overlayresponsive {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(36, 20, 0, 0.90);
+  background: rgba(36, 20, 0, 0.9);
   display: none;
 }
 
@@ -136,7 +133,6 @@ font-weight: 400;
 line-height: 196.187%;
 } */
 
-
 /* ---------- */
 
 #sectionOne {
@@ -144,12 +140,11 @@ line-height: 196.187%;
   justify-content: flex-start;
   align-items: center;
   gap: 141px;
-  margin:auto;
+  margin: auto;
 }
 #sectionOne .left-side {
   margin-left: 212px;
   margin-top: 173px;
-
 }
 #sectionOne .left-side .back {
   width: 100px;
@@ -245,7 +240,7 @@ line-height: 196.187%;
   text-transform: uppercase;
 }
 #sectionOne .book_responsive {
- display: none;
+  display: none;
 }
 #sectionTwo {
   display: flex;
@@ -446,36 +441,35 @@ padding-right: 186px; */
   font-family: "Montserrat",  sans-serif;
 }
 
-body .overlay{
+body .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.50);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
   display: none;
   /* transition: opacity 0.3s ease; */
 }
 
-
-
-.overlay:hover, .overlay:focus{
+.overlay:hover,
+.overlay:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
 }
 
-.joinopenmodel{
+.joinopenmodel {
   background-color: #ddd;
 }
 
-.joincontent{
+.joincontent {
   position: absolute;
   top: 95%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   width: 630px;
   height: 500px;
   flex-shrink: 0;
@@ -486,85 +480,87 @@ body .overlay{
   display: none;
 }
 
-.jointitle{
+.jointitle {
   text-align: center;
   font-size: large;
   margin-top: 45px;
   color: #000;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-align: center;
- 
+
   font-size: 38px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
 
-.joininputname{
-  border: 1px solid #CECECE;
-background: #FFF;
-width: 550px;
-height: 70px;
-flex-shrink: 0;
-color: #797667;
+.joininputname {
+  border: 1px solid #cecece;
+  background: #fff;
+  width: 550px;
+  height: 70px;
+  flex-shrink: 0;
+  color: #797667;
 
-font-family: 'Crimson Text', serif;
-font-size: 19px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-box-sizing: border-box;
-padding-left: 38px;
-padding-bottom: 10px;
-
+  font-family: "Crimson Text", serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  box-sizing: border-box;
+  padding-left: 38px;
+  padding-bottom: 10px;
 }
 
-.joinboxing{
+.joinboxing {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
 }
 
-.joinbtn{
+.joinbtn {
   width: 550px;
   height: 70px;
   flex-shrink: 0;
   border-radius: 5px;
-border: 1px solid #CECECE;
-background: #E16A00;
-color: #FFF;
+  border: 1px solid #cecece;
+  background: #e16a00;
+  color: #fff;
 
-text-align: center;
-font-family: 'Crimson Text', serif;
-font-size: 19px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
+  text-align: center;
+  font-family: "Crimson Text", serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
-.joinopenmodel{
+.joinopenmodel {
   background-color: transparent;
 }
 
 @keyframes fadeIn {
   from {
-  	opacity: 0;
+    opacity: 0;
   }
   to {
- 	opacity: 1;
+    opacity: 1;
   }
 }
 
 @keyframes fadeOut {
   from {
-  	opacity: 1;
+    opacity: 1;
   }
   to {
- 	opacity: 0;
+    opacity: 0;
   }
 }
 
+.footerMobileBox {
+  display: none;
+}
 
 /* ----- Home Page Responsive */
 
@@ -594,53 +590,50 @@ line-height: normal;
     display: flex;
     flex-direction: column;
   }
- 
-  #sectionOne{
+
+  #sectionOne {
     display: flex;
     flex-direction: column;
-  
-
   }
-   #sectionOne .left-side{
-  display: flex;
+  #sectionOne .left-side {
+    display: flex;
     flex-direction: column;
     width: 100%;
     text-align: center;
     margin: auto;
-   
- }
- #sectionOne .paragraph{
-  margin: auto;
-  margin-left: 15px;
-  margin-right: 15px;
-  line-height: 196.187%;
-  font-size: 12px;
- }
- #sectionOne .back{
- margin-top: 51px;
-  margin-left: 15px;
- }
- #sectionOne .year{
-  margin-left: 23px; 
- }
- #sectionOne .right-side{
- display: none;
- }
- #sectionOne .book_responsive{
-  display: flex;
+  }
+  #sectionOne .paragraph {
     margin: auto;
-  margin-top: 67.51px;
-  flex-shrink: 0;
-  width: 273.642px;
-  height: 388px;
+    margin-left: 15px;
+    margin-right: 15px;
+    line-height: 196.187%;
+    font-size: 12px;
+  }
+  #sectionOne .back {
+    margin-top: 51px;
+    margin-left: 15px;
+  }
+  #sectionOne .year {
+    margin-left: 23px;
+  }
+  #sectionOne .right-side {
+    display: none;
+  }
+  #sectionOne .book_responsive {
+    display: flex;
+    margin: auto;
+    margin-top: 67.51px;
+    flex-shrink: 0;
+    width: 273.642px;
+    height: 388px;
   }
   #sectionOne .left-side .title {
     margin-top: 44px;
-   }
- 
-    #sectionTwo{
-  display: none;
- }
+  }
+
+  #sectionTwo {
+    display: none;
+  }
 
   footer {
     display: flex;
@@ -719,7 +712,3 @@ line-height: normal;
     margin-top: 32px;
   }
 }
-
-
-
-
