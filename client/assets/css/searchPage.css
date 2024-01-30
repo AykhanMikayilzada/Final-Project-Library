@@ -433,6 +433,10 @@ body .overlay {
     opacity: 0;
   }
 }
+
+.respons{
+  display: none;
+}
  
 
 
@@ -486,6 +490,73 @@ body .overlay {
      justify-content: center;
      text-align: center;
  }
+
+ /* responsive overlay and menu page */
+
+
+ .respons img{
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-right: 15px;
+  margin-top: 22px;
+  display: none;
+}
+
+
+
+.respons .navatag {
+display: flex;
+flex-direction: column;
+position: fixed;
+top: 0;
+right: 0;
+margin-right: 15px;
+margin-top: 18px;
+margin-top: 120px;
+margin-right: 15px;
+text-align: right;
+font-family: Montserrat;
+font-size: 17px;
+font-style: normal;
+font-weight: 400;
+line-height: 196.187%;
+display: none;
+}
+
+.navatag a{
+  display: flex;
+  flex-direction: column;
+  color: #F2F2F2;
+  margin-top: 30px;
+}
+
+body .overlayresponsive{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(36, 20, 0, 0.90);
+  display: none;
+}
+
+/* .responsmenutext a{
+display: flex;
+flex-direction: column;
+margin-top: 70px;
+margin-right: 15px;
+color: #F2F2F2;
+text-align: right;
+font-family: Montserrat;
+font-size: 17px;
+font-style: normal;
+font-weight: 400;
+line-height: 196.187%;
+} */
+
+
+/* ---------- */
   
   
   footer {

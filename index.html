@@ -33,12 +33,23 @@
 
           <!-- hamburger icon onclick button x -->
 
-          <div class="overlayresponsive">
-            <div class="respons">
-              <a href=""><img src="./client/assets/img/xbutton.svg" alt=""></a>
+          <div id="overlayrespons" class="overlayresponsive"></div>
+
+            <div id="responss" class="respons">
+
+              <img id="xbtn" class="responsxbtn" src="./client/assets/img/xbutton.svg" alt="">
+
+              <div id="responstag" class="navatag">
+                <a href="./index.html">Home</a>
+                <a href="./client/catalog.html">Catalog</a>
+                <a href="./client/aboutPage.html">About Store</a>
+                <a href="./client/contact.html">Contact Us</a>
+                <a href="./client/searchPage.html">Search</a>
+              </div>
+
             </div>
 
-            <br>
+            <!-- <br>
             <br>
             <div class="responsmenutext">
               <a href="">Movements</a>
@@ -46,9 +57,10 @@
               <a href="">Catalog</a>
               <a href="">Delivery</a>
               <a href="">Blog</a>
-            </div>
+            </div> -->
+            
 
-           </div>
+           
 
            <!-- ------ -->
 
@@ -57,7 +69,7 @@
           <a class="joinopenmodel" href="#" id="joinclick"><span>Join us</span></a>
         </div>
         <!-- <img class="joinrespons" src="./client/assets/img/joinUs.svg" alt=""> -->
-        <img src="./client/assets/img/hamburger.svg" class="hamburger">
+        <img id="hamburgerbtn" src="./client/assets/img/hamburger.svg" class="hamburger">
       </header>
 
 
@@ -250,6 +262,7 @@
     <!-- join us Modal -->
 
     <div class="overlay" id="overlaymodal"></div>
+
     <div class="joincontent" id="joinustext">
         <div>
             <h1 class="jointitle">Join Us</h1>
