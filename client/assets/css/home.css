@@ -701,6 +701,37 @@ line-height: 196.187%;
 
 
 
+
+
+
+/* ----- Join Us page */
+
+.joincontent{
+ width: 350px;
+}
+
+.joininputname{
+  width: 300px;
+}
+
+.joinbtn{
+  width: 300px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------- */
+
+
   .joinrespons{
     display: block;
   }
