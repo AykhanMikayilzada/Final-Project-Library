@@ -82,6 +82,10 @@ header {
     background-color: rgb(255,250,245);
 }
 
+.responsivejoinUs{
+  display: none;
+}
+
 .responsmenutext a{
   display: none;
 }
@@ -718,8 +722,22 @@ line-height: 196.187%;
   width: 300px;
 }
 
+.responsivejoinUs{
+  display: block;
+}
 
 
+.joincontent{
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FFFFFF;
+  flex-shrink: 0;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+}
 
 
 
