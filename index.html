@@ -59,21 +59,6 @@
             <!-- ----- -->
 
 
-
-            
-            <!-- <br>
-            <br>
-            <div class="responsmenutext">
-              <a href="">Movements</a>
-              <a href="">Store</a>
-              <a href="">Catalog</a>
-              <a href="">Delivery</a>
-              <a href="">Blog</a>
-            </div> -->
-    
-           <!-- ------ -->
-
-
            <div class="responsxbtnjoin">
             <img id="xbtnres" src="./client/assets/img/xbutton.svg" alt="">
           </div>
@@ -291,10 +276,24 @@
       <br>
       <br>
 
+      <!-- join alert message -->
+
+      <div id="alertmessage" class="alert alert-danger" role="alert">
+        Xahiş olunur daxil olmaq üçün məlumatları daxil edin!
+      </div>
+
+      <div id="invalidalertmessage" class="alert alert-warning" role="alert">
+        Yalnış melumatı daxil etmisiniz xahiş düzgün melumatı daxil edin.
+      </div>
+      
+      <!-- ---- -->
+
   <div class="joinboxingres">
-      <input class="joininputnameres" type="text" name="" id="" placeholder="Email">
-      <input class="joininputnameres" type="text" name="" id="" placeholder="Password">
-      <button class="joinbtnres">Join</button>
+      <input class="joininputnameres" type="email" name="" id="inputfaildmail" placeholder="Email">
+      <input class="joininputnameres" type="password" name="" id="inputfaild" placeholder="Password">
+      <button id="joinbtnres" class="joinbtnres">Join</button>
+      <button class=" btn btn-success" id="showpasswordbtn">Şifrəni Göstər</button>
+      <button class="btnhide btn btn-secondary" id="hidepasswordbtn">Şifrəni Gizlə</button>
   </div>
 
   </div>
