@@ -12,6 +12,7 @@
   integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 <!-- SLIDER CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<link rel="stylesheet" href="./assets/css/swiper.css">
 <link rel="stylesheet" href="./assets/css/main.css" />
 <link rel="stylesheet" href="./assets/css/catalog.css" />
 
@@ -45,6 +46,9 @@
 
     </div>
 
+    <!-- --------- -->
+
+
     <div class="menu">
       <a href="../index.html">Home</a>
       <a class="orange" href="#">Catalog</a>
@@ -52,12 +56,54 @@
       <a href="./contact.html">Contact Us</a>
       <a href="./searchPage.html">Search</a>
     </div>
+
+
+        <!------ join us icon responsive -->
+        <div>
+          <img class="responsivejoinUs" id="joinclickres" src="./assets/img/joinUs.svg"/>
+        </div>
+        <!-- ----- -->
+
+<!-- respons xbtn -->
+    <div class="responsxbtnjoin">
+      <img id="xbtnres" src="./assets/img/xbutton.svg" alt="">
+    </div>
+
+<!-- ----- -->
+
     <div class="joinUs">
       <img src="./assets/img/joinUs.svg" />
       <a class="joinopenmodel" href="#" id="joinclick"><span>Join us</span></a>
     </div>
+
+
     <img id="hamburgerbtn" src="./assets/img/hamburger.svg" class="hamburger">
+
+
+     <!-- join us Modal -->
+
+ <div class="overlay" id="overlaymodal"></div>
+
+ <div class="joincontent" id="joinustext">
+     <div>
+         <h1 class="jointitle">Join Us</h1>
+     </div>
+
+     <br>
+     <br>
+     <br>
+
+ <div class="joinboxing">
+     <input class="joininputname" type="text" name="" id="" placeholder="Email">
+     <input class="joininputname" type="text" name="" id="" placeholder="Password">
+     <button class="joinbtn">Join</button>
+ </div>
+ </div>
+
+ <!-- ------------- -->
+    
   </header>
+
   <!-- Main-->
   <main class="w-100 mainSection">
 
@@ -73,39 +119,359 @@
       </div>
    
       <div class="slider_main_card">
-        <img class="button-prev" src="../client/assets/img/prevArrow.svg" alt="" />
-        <div class="slider-card1">
-          <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
-          <p class="book_title">Order in Chaos</p>
-          <p class="book_subtitle">Konstantin Koptelov</p>
-          <button>Read more</button>
+
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+
+              <div class="slidermom">
+
+              <div class="slider-card1">
+                <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                <p class="book_title">Order in Chaos</p>
+                <p class="book_subtitle">Konstantin Koptelov</p>
+                <button>Read more</button>
+              </div>
+
+              <div class="slider-card2">
+                <img class="book-img" src="../client/assets/img/book2.svg" alt="book2" />
+                <p class="book_title">Order in Chaos</p>
+                <p class="book_subtitle">Konstantin Koptelov</p>
+                <button>Read more</button>
+              </div>
+
+              <div class="slider-card3">
+                <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                <p class="book_title">Order in Chaos</p>
+                <p class="book_subtitle">Konstantin Koptelov</p>
+                <button>Read more</button>
+              </div>
+
+              <div class="slider-card4">
+                <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                <p class="book_title">Order in Chaos</p>
+                <p class="book_subtitle">Konstantin Koptelov</p>
+                <button>Read more</button>
+              </div>
+
+              <div class="slider-card5">
+                <img class="book-img" src="../client/assets/img/book5.svg" alt="book5" />
+                <p class="book_title">Order in Chaos</p>
+                <p class="book_subtitle">Konstantin Koptelov</p>
+                <button>Read more</button>
+              </div>
+
+              <div class="slider-card1">
+                <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                <p class="book_title">Order in Chaos</p>
+                <p class="book_subtitle">Konstantin Koptelov</p>
+                <button>Read more</button>
+              </div>
+
+            </div>
+              
+            </div>
+            <div class="swiper-slide">
+
+              <div class="slidermom">
+
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card2">
+                  <img class="book-img" src="../client/assets/img/book2.svg" alt="book2" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card3">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card4">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card5">
+                  <img class="book-img" src="../client/assets/img/book5.svg" alt="book5" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+              </div>
+
+            </div>
+            <div class="swiper-slide">
+
+
+              <div class="slidermom">
+
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card2">
+                  <img class="book-img" src="../client/assets/img/book2.svg" alt="book2" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card3">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card4">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card5">
+                  <img class="book-img" src="../client/assets/img/book5.svg" alt="book5" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+              </div>
+
+            </div>
+            <div class="swiper-slide">
+
+              <div class="slidermom">
+
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card2">
+                  <img class="book-img" src="../client/assets/img/book2.svg" alt="book2" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card3">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card4">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card5">
+                  <img class="book-img" src="../client/assets/img/book5.svg" alt="book5" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+              </div>
+
+            </div>
+            <div class="swiper-slide">
+
+              <div class="slidermom">
+
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card2">
+                  <img class="book-img" src="../client/assets/img/book2.svg" alt="book2" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card3">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card4">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card5">
+                  <img class="book-img" src="../client/assets/img/book5.svg" alt="book5" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+              </div>
+
+            </div>
+            <div class="swiper-slide">
+
+              <div class="slidermom">
+
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card2">
+                  <img class="book-img" src="../client/assets/img/book2.svg" alt="book2" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card3">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card4">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card5">
+                  <img class="book-img" src="../client/assets/img/book5.svg" alt="book5" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+              </div>
+
+            </div>
+            <div class="swiper-slide">
+
+              <div class="slidermom">
+
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card2">
+                  <img class="book-img" src="../client/assets/img/book2.svg" alt="book2" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card3">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card4">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card5">
+                  <img class="book-img" src="../client/assets/img/book5.svg" alt="book5" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+              </div>
+
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
         </div>
-        <div class="slider-card2">
-          <img class="book-img" src="../client/assets/img/book2.svg" alt="book2" />
-          <p class="book_title">Order in Chaos</p>
-          <p class="book_subtitle">Konstantin Koptelov</p>
-          <button>Read more</button>
-        </div>
-        <div class="slider-card3">
-          <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
-          <p class="book_title">Order in Chaos</p>
-          <p class="book_subtitle">Konstantin Koptelov</p>
-          <button>Read more</button>
-        </div>
-        <div class="slider-card4">
-          <img class="book-img" src="../client/assets/img/book4.svg" alt="book4" />
-          <p class="book_title">Order in Chaos</p>
-          <p class="book_subtitle">Konstantin Koptelov</p>
-          <button>Read more</button>
-        </div>
-        <div class="slider-card5">
-          <img class="book-img" src="../client/assets/img/book5.svg" alt="book5" />
-          <p class="book_title">Order in Chaos</p>
-          <p class="book_subtitle">Konstantin Koptelov</p>
-          <button>Read more</button>
-        </div>
-        <img class="button-next" src="../client/assets/img/nextArrow.svg" alt="" />
-      </div>
+
     </section>
 
     <section class=" section-2 w-100">
@@ -115,43 +481,357 @@
 
       <div class="slider_main_card">
 
-        <img class="button-prev" src="../client/assets/img/prevArrow.svg" alt="" />
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
 
-        <div class="slider-card1">
-          <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
-          <p class="book_title">Order in Chaos</p>
-          <p class="book_subtitle">Konstantin Koptelov</p>
-          <button>Read more</button>
-        </div>
-        <div class="slider-card2">
-          <img class="book-img" src="../client/assets/img/book2.svg" alt="book2" />
-          <p class="book_title">Order in Chaos</p>
-          <p class="book_subtitle">Konstantin Koptelov</p>
-          <button>Read more</button>
-        </div>
-        <div class="slider-card3">
-          <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
-          <p class="book_title">Order in Chaos</p>
-          <p class="book_subtitle">Konstantin Koptelov</p>
-          <button>Read more</button>
-        </div>
-        <div class="slider-card4">
-          <img class="book-img" src="../client/assets/img/book4.svg" alt="book4" />
-          <p class="book_title">Order in Chaos</p>
-          <p class="book_subtitle">Konstantin Koptelov</p>
-          <button>Read more</button>
-        </div>
-        <div class="slider-card5">
-          <img class="book-img" src="../client/assets/img/book5.svg" alt="book5" />
-          <p class="book_title">Order in Chaos</p>
-          <p class="book_subtitle">Konstantin Koptelov</p>
-          <button>Read more</button>
-        </div>
+              <div class="slidermom">
 
-        <img class="button-next" src="../client/assets/img/nextArrow.svg" alt="" />
+              <div class="slider-card1">
+                <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                <p class="book_title">Order in Chaos</p>
+                <p class="book_subtitle">Konstantin Koptelov</p>
+                <button>Read more</button>
+              </div>
 
-      </div>
+              <div class="slider-card2">
+                <img class="book-img" src="../client/assets/img/book2.svg" alt="book2" />
+                <p class="book_title">Order in Chaos</p>
+                <p class="book_subtitle">Konstantin Koptelov</p>
+                <button>Read more</button>
+              </div>
 
+              <div class="slider-card3">
+                <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                <p class="book_title">Order in Chaos</p>
+                <p class="book_subtitle">Konstantin Koptelov</p>
+                <button>Read more</button>
+              </div>
+
+              <div class="slider-card4">
+                <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                <p class="book_title">Order in Chaos</p>
+                <p class="book_subtitle">Konstantin Koptelov</p>
+                <button>Read more</button>
+              </div>
+
+              <div class="slider-card5">
+                <img class="book-img" src="../client/assets/img/book5.svg" alt="book5" />
+                <p class="book_title">Order in Chaos</p>
+                <p class="book_subtitle">Konstantin Koptelov</p>
+                <button>Read more</button>
+              </div>
+
+              <div class="slider-card1">
+                <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                <p class="book_title">Order in Chaos</p>
+                <p class="book_subtitle">Konstantin Koptelov</p>
+                <button>Read more</button>
+              </div>
+
+            </div>
+              
+            </div>
+            <div class="swiper-slide">
+
+              <div class="slidermom">
+
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card2">
+                  <img class="book-img" src="../client/assets/img/book2.svg" alt="book2" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card3">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card4">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card5">
+                  <img class="book-img" src="../client/assets/img/book5.svg" alt="book5" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+              </div>
+
+            </div>
+            <div class="swiper-slide">
+
+
+              <div class="slidermom">
+
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card2">
+                  <img class="book-img" src="../client/assets/img/book2.svg" alt="book2" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card3">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card4">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card5">
+                  <img class="book-img" src="../client/assets/img/book5.svg" alt="book5" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+              </div>
+
+            </div>
+            <div class="swiper-slide">
+
+              <div class="slidermom">
+
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card2">
+                  <img class="book-img" src="../client/assets/img/book2.svg" alt="book2" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card3">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card4">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card5">
+                  <img class="book-img" src="../client/assets/img/book5.svg" alt="book5" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+              </div>
+
+            </div>
+            <div class="swiper-slide">
+
+              <div class="slidermom">
+
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card2">
+                  <img class="book-img" src="../client/assets/img/book2.svg" alt="book2" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card3">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card4">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card5">
+                  <img class="book-img" src="../client/assets/img/book5.svg" alt="book5" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+              </div>
+
+            </div>
+            <div class="swiper-slide">
+
+              <div class="slidermom">
+
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card2">
+                  <img class="book-img" src="../client/assets/img/book2.svg" alt="book2" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card3">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card4">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card5">
+                  <img class="book-img" src="../client/assets/img/book5.svg" alt="book5" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+              </div>
+
+            </div>
+            <div class="swiper-slide">
+
+              <div class="slidermom">
+
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card2">
+                  <img class="book-img" src="../client/assets/img/book2.svg" alt="book2" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card3">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card4">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card5">
+                  <img class="book-img" src="../client/assets/img/book5.svg" alt="book5" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+              </div>
+
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
 
     </section>
 
@@ -161,41 +841,358 @@
       </div>
 
       <div class="slider_main_card">
-        <img class="button-prev" src="../client/assets/img/prevArrow.svg" alt="" />
+       
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
 
-        <div class="slider-card1">
-          <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
-          <p class="book_title">Order in Chaos</p>
-          <p class="book_subtitle">Konstantin Koptelov</p>
-          <button>Read more</button>
-        </div>
-        <div class="slider-card2">
-          <img class="book-img" src="../client/assets/img/book2.svg" alt="book2" />
-          <p class="book_title">Order in Chaos</p>
-          <p class="book_subtitle">Konstantin Koptelov</p>
-          <button>Read more</button>
-        </div>
-        <div class="slider-card3">
-          <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
-          <p class="book_title">Order in Chaos</p>
-          <p class="book_subtitle">Konstantin Koptelov</p>
-          <button>Read more</button>
-        </div>
-        <div class="slider-card4">
-          <img class="book-img" src="../client/assets/img/book4.svg" alt="book4" />
-          <p class="book_title">Order in Chaos</p>
-          <p class="book_subtitle">Konstantin Koptelov</p>
-          <button>Read more</button>
-        </div>
-        <div class="slider-card5">
-          <img class="book-img" src="../client/assets/img/book5.svg" alt="book5" />
-          <p class="book_title">Order in Chaos</p>
-          <p class="book_subtitle">Konstantin Koptelov</p>
-          <button>Read more</button>
-        </div>
-        <img class="button-next" src="../client/assets/img/nextArrow.svg" alt="" />
+              <div class="slidermom">
 
-      </div>
+              <div class="slider-card1">
+                <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                <p class="book_title">Order in Chaos</p>
+                <p class="book_subtitle">Konstantin Koptelov</p>
+                <button>Read more</button>
+              </div>
+
+              <div class="slider-card2">
+                <img class="book-img" src="../client/assets/img/book2.svg" alt="book2" />
+                <p class="book_title">Order in Chaos</p>
+                <p class="book_subtitle">Konstantin Koptelov</p>
+                <button>Read more</button>
+              </div>
+
+              <div class="slider-card3">
+                <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                <p class="book_title">Order in Chaos</p>
+                <p class="book_subtitle">Konstantin Koptelov</p>
+                <button>Read more</button>
+              </div>
+
+              <div class="slider-card4">
+                <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                <p class="book_title">Order in Chaos</p>
+                <p class="book_subtitle">Konstantin Koptelov</p>
+                <button>Read more</button>
+              </div>
+
+              <div class="slider-card5">
+                <img class="book-img" src="../client/assets/img/book5.svg" alt="book5" />
+                <p class="book_title">Order in Chaos</p>
+                <p class="book_subtitle">Konstantin Koptelov</p>
+                <button>Read more</button>
+              </div>
+
+              <div class="slider-card1">
+                <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                <p class="book_title">Order in Chaos</p>
+                <p class="book_subtitle">Konstantin Koptelov</p>
+                <button>Read more</button>
+              </div>
+
+            </div>
+              
+            </div>
+            <div class="swiper-slide">
+
+              <div class="slidermom">
+
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card2">
+                  <img class="book-img" src="../client/assets/img/book2.svg" alt="book2" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card3">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card4">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card5">
+                  <img class="book-img" src="../client/assets/img/book5.svg" alt="book5" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+              </div>
+
+            </div>
+            <div class="swiper-slide">
+
+
+              <div class="slidermom">
+
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card2">
+                  <img class="book-img" src="../client/assets/img/book2.svg" alt="book2" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card3">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card4">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card5">
+                  <img class="book-img" src="../client/assets/img/book5.svg" alt="book5" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+              </div>
+
+            </div>
+            <div class="swiper-slide">
+
+              <div class="slidermom">
+
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card2">
+                  <img class="book-img" src="../client/assets/img/book2.svg" alt="book2" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card3">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card4">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card5">
+                  <img class="book-img" src="../client/assets/img/book5.svg" alt="book5" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+              </div>
+
+            </div>
+            <div class="swiper-slide">
+
+              <div class="slidermom">
+
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card2">
+                  <img class="book-img" src="../client/assets/img/book2.svg" alt="book2" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card3">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card4">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card5">
+                  <img class="book-img" src="../client/assets/img/book5.svg" alt="book5" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+              </div>
+
+            </div>
+            <div class="swiper-slide">
+
+              <div class="slidermom">
+
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card2">
+                  <img class="book-img" src="../client/assets/img/book2.svg" alt="book2" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card3">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card4">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card5">
+                  <img class="book-img" src="../client/assets/img/book5.svg" alt="book5" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+              </div>
+
+            </div>
+            <div class="swiper-slide">
+
+              <div class="slidermom">
+
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card2">
+                  <img class="book-img" src="../client/assets/img/book2.svg" alt="book2" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card3">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card4">
+                  <img class="book-img" src="../client/assets/img/book3.svg" alt="book3" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card5">
+                  <img class="book-img" src="../client/assets/img/book5.svg" alt="book5" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+                <div class="slider-card1">
+                  <img class="book-img" src="../client/assets/img/book1.svg" alt="book1" />
+                  <p class="book_title">Order in Chaos</p>
+                  <p class="book_subtitle">Konstantin Koptelov</p>
+                  <button>Read more</button>
+                </div>
+  
+              </div>
+
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
 
       </div>
 
@@ -209,7 +1206,6 @@
       </div>
     </section>
   </main>
-
 
 
   <!-- FOOTER-->
@@ -265,7 +1261,43 @@
     </div>
   </footer>
 
+  
+    <!-- -------respinsive join us modal -->
 
+    <div class="joincontentresponsive" id="joinustextres">
+      <div>
+          <h1 class="jointitle">Join Us</h1>
+      </div>
+
+      <br>
+      <br>
+      <br>
+
+      <!-- join alert message -->
+
+      <div id="alertmessage" class="alert alert-danger" role="alert">
+        Xahiş olunur daxil olmaq üçün məlumatları daxil edin!
+      </div>
+
+      <div id="invalidalertmessage" class="alert alert-warning" role="alert">
+        Yalnış melumatı daxil etmisiniz xahiş düzgün melumatı daxil edin.
+      </div>
+      
+      <!-- ---- -->
+
+  <div class="joinboxingres">
+      <input class="joininputnameres" type="email" name="" id="inputfaildmail" placeholder="Email">
+      <input class="joininputnameres" type="password" name="" id="inputfaild" placeholder="Password">
+      <button id="joinbtnres" class="joinbtnres">Join</button>
+      <button class=" btn btn-success" id="showpasswordbtn">Şifrəni Göstər</button>
+      <button class="btnhide btn btn-secondary" id="hidepasswordbtn">Şifrəni Gizlə</button>
+  </div>
+
+  </div>
+<!-- --------- -->
+
+ <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+ <script src="./assets/js/swiper.js"></script>
 
   <script src="./assets/js/index.js"></script>
   <script src="./assets/js/responsive.js"></script>

@@ -78,6 +78,11 @@ header .joinUs span {
   margin-right: 65px;
 }
 
+
+.joinfamilymom{
+  display: none;
+}
+
  /* responsive overlay and menu page */
 
 
@@ -302,6 +307,10 @@ footer .footerMobileBox {
 footer .textend p:last-child {
   display: none;
 }
+
+.responsivejoinUs{
+  display: none;
+  } 
 
 @media screen and (max-width: 930px) {
   header {
@@ -549,4 +558,238 @@ line-height: normal;
 
 /* ----- Home Page Responsive */
 
+
+/* responsive overlay and menu page */
+
+
+.respons img{
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-right: 15px;
+  margin-top: 22px;
+  display: none;
+}
+
+
+.responsxbtnjoin img{
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-right: 15px;
+  margin-top: 22px;
+}
+
+
+.respons .navatag {
+display: flex;
+flex-direction: column;
+position: fixed;
+top: 0;
+right: 0;
+margin-right: 15px;
+margin-top: 18px;
+margin-top: 120px;
+margin-right: 15px;
+text-align: right;
+font-family: Montserrat;
+font-size: 17px;
+font-style: normal;
+font-weight: 400;
+line-height: 196.187%;
+display: none;
+}
+
+.navatag a{
+  display: flex;
+  flex-direction: column;
+  color: #F2F2F2;
+  margin-top: 30px;
+}
+
+body .overlayresponsive{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(36, 20, 0, 0.90);
+  display: none;
+}
+
+
+
+
+
+
+
+/* ----- Join Us page */
+
+
+
+.responsivejoinUs{
+margin-top: 2px;
+display: block;
+padding-left: 50px;
+} 
+
+.joincontentresponsive{
+width: 350px;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: #FFFFFF;
+flex-shrink: 0;
+
+text-align: center;
+padding: 20px;
+position: fixed;
+flex-shrink: 0;
+text-align: center;
+padding: 20px;
+box-sizing: border-box;
+display: none;
+}
+
+.responsxbtnjoin img{
+display: none;
+}
+
+.joinboxingres{
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 30px;
+}
+
+.joininputnameres{
+width: 300px;
+border: 1px solid #CECECE;
+background: #FFF;
+
+height: 50px;
+flex-shrink: 0;
+color: #797667;
+
+font-family: 'Crimson Text', serif;
+font-size: 19px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+box-sizing: border-box;
+padding-left: 22px;
+padding-bottom: 10px;
+}
+
+.joinbtnres{
+width: 300px;
+height: 50px;
+flex-shrink: 0;
+border-radius: 5px;
+border: 1px solid #CECECE;
+background: #E16A00;
+color: #FFF;
+
+text-align: center;
+font-family: 'Crimson Text', serif;
+font-size: 19px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+
+
+/* --------- */
+
+
+.joinrespons{
+  display: block;
+}
+
+.sectionpage {
+  display: flex;
+  flex-direction: column;
+/* flex-wrap: wrap; */
+/* width: 100%; */
+width: 70%;
+
+}
+
+
+.secpag{
+margin-left: 7px;
+display: flex;
+margin-top: -70px;
+
+flex-wrap: wrap;
+}
+
+.secpag p{
+margin-left: 6px;
+}
+.cardmom img{
+/* width: 380px; */
+display: flex;
+/* flex-direction: column; */
+/* justify-content: center; */
+/* flex-wrap: wrap; */
+/* margin: auto;
+margin-top: -120px;
+margin-left: -125px; */
+display: none;
+}
+
+.cardmomres img{
+width: 390px;
+display: flex;
+/* flex-direction: column; */
+/* justify-content: center; */
+/* flex-wrap: wrap; */
+margin: auto;
+margin-top: -130px;
+margin-left: -10px;
+}
+
+.cardmomres{
+
+display: flex;
+margin-bottom: -100px;
+flex-shrink: 0;
+}
+
+.secabout{
+margin-top: px;
+}
+.cardmom{
+/* width: 50%;
+display: flex;
+margin-bottom: -350px;
+flex-shrink: 0; */
+display: none;
+}
+
+.sectionbtn{
+width: 370px;
+height: 50px;
+}
+
+
+
+.catalogboxmom{
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.aboutboxmom{
+display: flex;
+flex-direction: column;
+align-items: start;
+justify-content: center;
+gap: 50px;
+
+width: 330px;
+
+}
 

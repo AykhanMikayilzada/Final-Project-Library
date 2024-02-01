@@ -21,6 +21,7 @@
         <span>book store</span>
       </div>
     </div>
+    
     <!-- hamburger icon onclick button x -->
 
     <div id="overlayrespons" class="overlayresponsive"></div>
@@ -46,11 +47,27 @@
       <a href="./contact.html">Contact Us</a>
       <a class="orange" href="./searchPage.html">Search</a>
     </div>
+
     <div class="joinUs">
       <img src="./assets/img/joinUs.svg" />
-      <a class="joinopenmodel" href="#" id="joinclick"><span>Join us</span></a>
+      <a class="joinopenmodel" href="" id="joinclick"><span>Join us</span></a>
     </div>
+
+    
+    <div class="responsxbtnjoin">
+      <img id="xbtnres" src="./assets/img/xbutton.svg" alt="">
+    </div>
+
+
+      <!------ join us icon responsive -->
+      <div class="responsivejoinUs">
+        <img id="joinclickres" src="./assets/img/joinUs.svg"/>
+      </div>
+
+      <!-- ----- -->
+
     <img id="hamburgerbtn" src="./assets/img/hamburger.svg" class="hamburger">
+
   </header>
   <section id="sectionFirst">
     <div class="leftSide">
@@ -157,6 +174,41 @@
       <button class="joinbtn">Join</button>
     </div>
   </div>
+
+     <!-- -------respinsive join us modal -->
+
+     <div class="joincontentresponsive" id="joinustextres">
+      <div>
+          <h1 class="jointitle">Join Us</h1>
+      </div>
+
+      <br>
+      <br>
+      <br>
+
+      <!-- join alert message -->
+
+      <div id="alertmessage" class="alert alert-danger" role="alert">
+        Xahiş olunur daxil olmaq üçün məlumatları daxil edin!
+      </div>
+
+      <div id="invalidalertmessage" class="alert alert-warning" role="alert">
+        Yalnış melumatı daxil etmisiniz xahiş düzgün melumatı daxil edin.
+      </div>
+      
+      <!-- ---- -->
+
+  <div class="joinboxingres">
+      <input class="joininputnameres" type="email" name="" id="inputfaildmail" placeholder="Email">
+      <input class="joininputnameres" type="password" name="" id="inputfaild" placeholder="Password">
+      <button id="joinbtnres" class="joinbtnres">Join</button>
+      <button class=" btn btn-success" id="showpasswordbtn">Şifrəni Göstər</button>
+      <button class="btnhide btn btn-secondary" id="hidepasswordbtn">Şifrəni Gizlə</button>
+  </div>
+
+  </div>
+<!-- --------- -->
+
 
 
   <script src="./assets/js/index.js"></script>
