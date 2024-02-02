@@ -3,6 +3,16 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+header .joinUs {
+  display: block;
+  background-color: #241400;
+}
+header .responsivejoinUs {
+  display: none;
+}
+header .hamburger {
+  display: none;
+}
 header .logoBox {
   display: flex;
   margin-top: 31px;
@@ -48,7 +58,6 @@ header .menu a {
   font-style: normal;
   font-weight: 400;
   line-height: 196.187%;
-  text-decoration: none;
 }
 header .menu .orange {
   color: #e16a00;
@@ -59,8 +68,21 @@ header .menu .orange {
   line-height: 196.187%;
   text-decoration-line: underline;
 }
-header .hamburger {
-  display: none;
+header .joinUs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 35px;
+}
+header .joinUs span {
+  color: #241400;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 65px;
 }
 
 .joinUs {

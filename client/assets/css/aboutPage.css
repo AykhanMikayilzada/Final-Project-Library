@@ -3,6 +3,9 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+header .responsivejoinUs {
+  display: none;
+}
 header .hamburger {
   display: none;
 }
