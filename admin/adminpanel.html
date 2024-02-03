@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/adminpanel.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo_box">
+        <img class="logo" src="./assets/img/logoRedMobile.svg" />
+        <div class="logoWriting">
+          <p>LIBRARY</p>
+          <div class="line"></div>
+          <span>Book store</span>
+        </div>
+      </div>
+      <img class="hamburger" src="./assets/img/hamburger.svg" onclick="openMenu()"/>
+    </header>
+    <!-- Menu Started -->
+
+    <div class="menuBar">
+      <img
+        class="closeBtn"
+        src="./assets/img/close.svg"
+        width="25px"
+        height="25px"
+        onclick="closeMenu()"
+      />
+      <div class="logo">
+        <div class="logoWriting">
+          <span>LIBRARY</span>
+          <div class="line"></div>
+          <span>Admin Panel</span>
+        </div>
+        <img src="./assets/img/menuLogo.svg" />
+      </div>
+
+      <div class="menu">
+        <div class="settings">
+          <a href="">Home</a>
+          <img src="./assets/img/menuLogo.svg">
+        </div>
+        <div class="settings">
+          <a href="">Catalog</a>
+          <img src="./assets/img/menuLogo.svg">
+        </div>
+        <div class="settings">
+          <a href="">About</a>
+          <img src="./assets/img/menuLogo.svg">
+        </div>
+        <div class="settings">
+          <a href="">Contact</a>
+          <img src="./assets/img/menuLogo.svg">
+        </div>
+        <div class="settings">
+          <a href="">Search</a>
+          <img src="./assets/img/menuLogo.svg">
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu Ended -->
+    <main>
+      <div id="left">
+        <a href="#"
+          ><div class="logo-box">
+            <img src="./assets/img/long_logo.svg" alt="logo" />
+            <div class="logo-writing">
+              <span>LIBRARY</span>
+              <div class="line"></div>
+              <span>Admin Panel</span>
+            </div>
+          </div></a
+        >
+        <div class="menu">
+          <div class="settings">
+            <img src="./assets/img/little_logo.svg" alt="logo" />
+            <a href="#">Home</a>
+          </div>
+          <div class="settings">
+            <img src="./assets/img/little_logo.svg" alt="logo" />
+            <a href="#">Books </a>
+          </div>
+          <div class="settings">
+            <img src="./assets/img/little_logo.svg" alt="logo" />
+            <a href="#">About </a>
+          </div>
+          <div class="settings">
+            <img src="./assets/img/little_logo.svg" alt="logo" />
+            <a href="#">Join Us </a>
+          </div>
+          <div class="settings">
+            <img src="./assets/img/little_logo.svg" alt="logo" />
+            <a href="#">Contact </a>
+          </div>
+          <div class="settings">
+            <img src="./assets/img/little_logo.svg" alt="logo" />
+            <a href="#">Logout </a>
+          </div>
+        </div>
+      </div>
+      <div id="right">
+        <div class="header">
+          <a href="#"><img src="./assets/img/admin_icon.svg" alt="icon" /></a>
+          <span>Admin</span>
+        </div>
+        <h2 class="add-book">Add book</h2>
+        <h3 class="search-book">Search book</h3>
+        <div class="search-box">
+          <input type="text" placeholder="Dan Brown" />
+          <button class="search">
+            <img src="./assets/img/search_icon.svg" alt="icon" />
+          </button>
+        </div>
+        <div class="search-area">
+          <div class="settings">
+            <img src="./assets/img/clock_icon.svg" />
+            <span>Dan Brown Davinc</span>
+          </div>
+          <div class="settings">
+            <img src="./assets/img/clock_icon.svg" />
+            <span>Dan Brown Davinc</span>
+          </div>
+        </div>
+        <h2 class="book-form">Book form</h2>
+        <div class="form-first">
+          <div class="settings">
+            <h3>Book Name</h3>
+            <input type="text" placeholder="Angels" />
+          </div>
+          <div class="settings">
+            <h3>Author Name</h3>
+            <input type="text" placeholder="Dan Brown" />
+          </div>
+          <div class="settings">
+            <h3>Book Image Url</h3>
+            <input type="text" placeholder="Alex Smith" />
+          </div>
+          <div class="settings">
+            <h3>Description</h3>
+            <textarea
+              class="description"
+              type="text"
+              placeholder="We work without holidays and weekends! Resident...We work without holidays and weekends! Resident...We work without holidays and weekends! Resident..."
+            ></textarea>
+          </div>
+          <div class="settings">
+            <h3>Book Type <img src="./assets/img/plus.svg" width="20px" /></h3>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Fantastic</option>
+              <option value="1">Horror</option>
+              <option value="2">Tail</option>
+              <option value="3">Sience</option>
+            </select>
+          </div>
+          <button>Add</button>
+        </div>
+        <h2 class="about-store">About Store</h2>
+        <div class="form-second">
+          <div class="settings">
+            <h3>Book Name</h3>
+            <input type="text" placeholder="About Store" />
+          </div>
+          <div class="settings">
+            <h3>Author Name</h3>
+            <input type="text" placeholder="https://image:url/" />
+          </div>
+          <div class="settings">
+            <h3>Description</h3>
+            <textarea
+              class="description"
+              type="text"
+              placeholder=" We work without holidays and weekends! Resident...We work without holidays and weekends! Resident...We work without holidays and weekends! Resident..."
+            ></textarea>
+          </div>
+          <button>About info add</button>
+        </div>
+        <h2 class="join-us">Join Us</h2>
+        <table class="first-table">
+          <thead>
+            <tr>
+              <th
+                scope="col"
+                class="d-flex justify-content-center align-items-center"
+              >
+                #
+              </th>
+              <th scope="col">Full Name</th>
+              <th scope="col">Email Address</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td
+                scope="row"
+                class="d-flex justify-content-center align-items-center"
+              >
+                1
+              </td>
+              <td>Audrey Mckinney</td>
+              <td>lisa.watson@example.com</td>
+            </tr>
+            <tr>
+              <td
+                scope="row"
+                class="d-flex justify-content-center align-items-center"
+              >
+                2
+              </td>
+              <td>Savannah Howard</td>
+              <td>jeff.brown@example.com</td>
+            </tr>
+            <tr>
+              <td
+                scope="row"
+                class="d-flex justify-content-center align-items-center"
+              >
+                3
+              </td>
+              <td>Morris Cooper</td>
+              <td>terra.hamilton@example.com</td>
+            </tr>
+            <tr>
+              <td scope="row" class="d-flex justify-content-center">4</td>
+              <td>Victoria Lane</td>
+              <td>deanna.curtis@example.com</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 class="books">Books</h2>
+        <table class="second-table">
+          <thead>
+            <tr>
+              <th
+                scope="col"
+                class="d-flex justify-content-center align-items-center"
+              >
+                #
+              </th>
+              <th scope="col">Title</th>
+              <th scope="col">Description</th>
+              <th scope="col">Category</th>
+              <th scope="col">Author</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td
+                scope="row"
+                class="d-flex justify-content-center align-items-center"
+              >
+                1
+              </td>
+              <td>
+                <img src="./assets/img/littleBook1.svg" class="p-2" /> Angels
+              </td>
+              <td>Lorem ipsum test...</td>
+              <td>Dedectiv</td>
+              <td>Dan Brown</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 class="contact-us">Contact Us</h2>
+        <table class="third-table">
+          <thead>
+            <tr>
+              <th
+                scope="col"
+                class="d-flex justify-content-center align-items-center"
+              >
+                #
+              </th>
+              <th scope="col">Full Name</th>
+              <th scope="col">Address</th>
+              <th scope="col">Email Address</th>
+              <th scope="col">Phone Number</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td
+                scope="row"
+                class="d-flex justify-content-center align-items-center"
+              >
+                1
+              </td>
+              <td>Audrey Mckinney</td>
+              <td>1473 Ranchview Dr undefined San Jose</td>
+              <td>lisa.watson@example.com</td>
+              <td>(209) 555-0104</td>
+            </tr>
+            <tr>
+              <td
+                scope="row"
+                class="d-flex justify-content-center align-items-center"
+              >
+                2
+              </td>
+              <td>Savannah Howard</td>
+              <td>8445 Railroad St undefined Tampa</td>
+              <td>jeff.brown@example.com</td>
+              <td>(209) 555-0104</td>
+            </tr>
+            <tr>
+              <td
+                scope="row"
+                class="d-flex justify-content-center align-items-center"
+              >
+                3
+              </td>
+              <td>Morris Cooper</td>
+              <td>8584 W Sherman Dr undefined Desoto</td>
+              <td>terra.hamilton@example.com</td>
+              <td>(209) 555-0104</td>
+            </tr>
+            <tr>
+              <td
+                scope="row"
+                class="d-flex justify-content-center align-items-center"
+              >
+                4
+              </td>
+              <td>Victoria Lane</td>
+              <td>1921 Ranchview Dr undefined San Francisco</td>
+              <td>deanna.curtis@example.com</td>
+              <td>(209) 555-0104</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <script src="./assets/js/menu.js"></script>
+    <script src="./assets/js/adminpanel.js"></script>
+  </body>
+</html>
