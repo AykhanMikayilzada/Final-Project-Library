@@ -4,10 +4,15 @@ body {
   height: 100vh;
 }
 header {
+  width: 100%;
+  position: fixed;
+  top: 0;
   padding-left: 2.1875rem;
-  padding-top: 4.685rem;
+  padding-top: 1.685rem;
+  background-color: #720418;
 }
 header .logo-box {
+  position: fixed;
   display: flex;
   gap: 0.4988rem;
   justify-content: flex-start;
@@ -111,11 +116,23 @@ main .container .login-box button {
   font-weight: 700;
   line-height: normal;
 }
+main .container .login-box .password {
+  position: relative;
+}
+main .container .login-box .password img {
+  cursor: pointer;
+  position: absolute;
+  top: 25px;
+  right: 14px;
+  background-color: white;
+}
 @media screen and (max-width: 755px) {
   header {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    width: 100%;
+    background-color: #720418;
   }
   img {
     width: 35.882px;
@@ -160,6 +177,14 @@ main .container .login-box button {
     display: flex;
     margin: auto;
     margin-top: 95px;
+  }
+  main .container .login-box .password img {
+    cursor: pointer;
+    position: absolute;
+    top: 26px;
+    right: 8px;
+    width: 22px;
+    height: auto;
   }
   .login-box {
     margin: auto;
