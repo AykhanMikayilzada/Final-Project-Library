@@ -1,5 +1,5 @@
-const show = document.querySelector(".show");
-const hide = document.querySelector(".hide");
+const show = document.querySelector("#show");
+const hide = document.querySelector("#hide");
 const joinBtn = document.querySelector(".joinBtn");
 const userInpt = document.querySelector(".userInpt");
 const passwordInpt = document.querySelector(".passwordInpt");
@@ -12,9 +12,8 @@ joinBtn.addEventListener("click", () => {
           You didn't fill in all the boxes!
           </div>
           `;
-  }
-  else {
-    alerts.innerHTML = ""
+  } else {
+    alerts.innerHTML = "";
     return;
   }
 });
@@ -24,8 +23,12 @@ function showPassword() {
   hide.style.display = "block";
   passwordInpt.type = "text";
 }
+
 function hidePassword() {
   hide.style.display = "none";
   show.style.display = "block";
   passwordInpt.type = "password";
 }
+
+show.addEventListener("click", showPassword);
+hide.addEventListener("click", hidePassword);

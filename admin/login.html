@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
     <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico" />
     <link rel="stylesheet" href="./assets/css/main.css" />
     <link rel="stylesheet" href="./assets/css/login.css" />
@@ -37,15 +42,29 @@
             </div>
             <input class="userInpt" type="text" placeholder="Username" />
             <div class="password">
-              <input class="passwordInpt" type="password" placeholder="Password" />
-              <img onclick="showPassword()" class="show" src="./assets/img/show.png" width="25px" />
-              <img onclick="hidePassword()" class="hide" src="./assets/img/hide.png" width="25px" />
+              <input
+                class="passwordInpt"
+                type="password"
+                placeholder="Password"
+              />
+              <img
+                id="show"
+                class="show"
+                src="./assets/img/show.png"
+                width="25px"
+              />
+              <img
+                id="hide"
+                class="hide"
+                src="./assets/img/hide.png"
+                width="25px"
+              />
             </div>
           </div>
           <button class="joinBtn">Join</button>
         </div>
       </div>
     </main>
-    <script src="./assets/js/login.js"></script>
+    <script type="module" src="./assets/js/login.js"></script>
   </body>
 </html>
