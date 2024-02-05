@@ -126,6 +126,9 @@ main .container .login-box .password img {
   right: 14px;
   background-color: white;
 }
+main .container .login-box .password .hide {
+  display: none;
+}
 @media screen and (max-width: 755px) {
   header {
     display: flex;
@@ -197,6 +200,11 @@ main .container .login-box .password img {
     max-width: 12.038rem;
     height: 2.5524rem;
   }
+  main .container .login-box .inputs input {
+    padding-top: 18px;
+    padding-left: 18px;
+    padding-bottom: 18px;
+}
   .welcome-text {
     max-width: 152px;
     display: flex;
