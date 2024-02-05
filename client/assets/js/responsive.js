@@ -68,10 +68,12 @@ xbtnres.onclick = function(){
     joinustextres.style.animation = "fadeOut 0.3s"
     xbtnres.style.animation = "fadeOut 0.3s"
     hamburgerbtn.style.display = "block";
+    
     xbtnres.style.display = "none"
     xbtnres.style.display = "none"
     document.getElementById("alertmessage").style.display = "none";
     document.getElementById("invalidalertmessage").style.display = "none";
+    
     setTimeout(function(){
     overlayrespons.style.display = "none";
     joinustextres.style.display = "none";
