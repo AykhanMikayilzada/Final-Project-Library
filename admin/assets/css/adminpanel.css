@@ -10,6 +10,7 @@ body {
 header {
   display: none;
 }
+
 .menuBar {
   display: none;
 }
@@ -60,6 +61,7 @@ span:first-child {
 }
 #left .menu .settings {
   display: flex;
+
   gap: 0.6875rem;
   align-items: center;
 }
@@ -72,6 +74,22 @@ span:first-child {
   line-height: 196.187%; /* 35.314px */
   margin-top: -0.625rem;
 }
+.results {
+  display: flex;
+  gap: 15px;
+}
+.resultImg {
+  width: 20px;
+  height: 20px;
+}
+
+.settingsa{
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 #right {
   overflow: auto;
   box-sizing: border-box;
@@ -153,25 +171,27 @@ span:first-child {
   border: none;
 }
 #right .search-area {
+  display: none;
   box-sizing: border-box;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   justify-content: center;
   gap: 0.8125rem;
   padding-left: 2.25rem;
   margin-left: 2.0625rem;
-  width: 24.25rem;
-  height: 5.3125rem;
+  width: 450px;
   border-radius: 2.1875rem;
   background: #f1f0f0;
   margin-top: 0.375rem;
   padding-top: 1.25rem;
   padding-bottom: 1.125rem;
+  
 }
-#right .search-area .settings {
+#right .search-area .settingsa {
   display: flex;
   gap: 1.5rem;
 }
+
 #right .search-area .settings span {
   color: #bcbcbc;
   font-family: "Preahvihear", sans-serif;
@@ -198,6 +218,7 @@ span:first-child {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  z-index: -1;
 }
 #right .form-first .settings {
   display: flex;
