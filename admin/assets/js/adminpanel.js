@@ -9,7 +9,6 @@ async function searchBooks(bookTitle) {
         const response = await fetch(apiUrl);
         const data = await response.json();
 
-        // Kitapların isimlerini içeren bir dizi oluştur
         const bookTitles = data.items.map(item => item.volumeInfo.title);
         
         return bookTitles;
@@ -19,10 +18,9 @@ async function searchBooks(bookTitle) {
     }
 }
 
-// Örnek kullanım
 
 searchbtn.addEventListener("click", ()=>{
-    const bookTitleInput = bookssearch.value; // Aranacak kitap ismi
+    const bookTitleInput = bookssearch.value;
 searchBooks(bookTitleInput)
     .then(bookTitles => {
         console.log("Aranan kitapların isimleri:", bookTitles);
