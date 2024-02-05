@@ -1,16 +1,16 @@
 const menuBar = document.querySelector(".menuBar");
 const hamburger = document.querySelector(".hamburger");
 function openMenu() {
-    menuBar.style.animation = "fadeIn 0.5s"
+    menuBar.style.animation = "fadeIn 0.2s"
   setTimeout(function () {
     menuBar.style.display = "block";
-  }, 300);
+  }, 200);
 }
 function closeMenu() {
-    menuBar.style.animation = "fadeOut 0.5s"
+    menuBar.style.animation = "fadeOut 0.2s"
   setTimeout(function () {
     menuBar.style.display = "none";
-  }, 300);
+  }, 200);
 //   .fade-out {
 //     animation: fadeOut 2s;
 //       opacity: 0;
