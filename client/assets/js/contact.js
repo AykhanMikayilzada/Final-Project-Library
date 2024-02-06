@@ -19,7 +19,7 @@ function letterCounter() {
 }
 
 contactSendBtn.addEventListener("click", function () {
-  const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
 
   if (
     contactName.value.trim() === "" ||
@@ -27,7 +27,7 @@ contactSendBtn.addEventListener("click", function () {
     contactAdress.value.trim() === "" ||
     contactPhone.value.trim() === "" ||
     contactTextarea.value.trim() === "" ||
-    !emailPattern.test(contactEmail.value)
+    contactEmail.value.trim() === ""
   ) {
     contactErrorMessage.style.display = "block";
     setTimeout(() => {
@@ -43,7 +43,7 @@ contactSendBtn.addEventListener("click", function () {
     contactPhone: contactPhone.value,
     contactTextarea: contactTextarea.value,
   };
-  // push(contacts, contactInfo) for firebase
+  // push firebase
 
   contactSuccessMessage.style.display = "block";
 
