@@ -226,7 +226,33 @@ line-height: 196.187%;
   font-weight: 400;
   line-height: normal;
 }
+#contactErrorMessage {
+  display: none;
+  font-size: 20px;
+  color: #fff;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 400;
+  background: #ff0000;
+  text-align: center;
+  width: 50%;
+  margin: 0px auto;
+  padding: 4px;
+  border-radius: 5px;
+}
 
+#contactSuccessMessage {  
+  display: none;
+  font-size: 20px;
+  color: #fff;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 400;
+  background: #00cd15;
+  text-align: center;
+  width: 50%;
+  margin: 0px auto;
+  padding: 4px;
+  border-radius: 5px;
+}
 
   
 
@@ -666,6 +692,12 @@ body .overlay {
 
 .joinopenmodel {
   background-color: transparent;
+}
+#contactSuccessMessage{
+  width: 100%;
+}
+#contactErrorMessage{
+  width: 100%;
 }
 
 @keyframes fadeIn {
