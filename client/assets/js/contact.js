@@ -19,7 +19,7 @@ function letterCounter() {
 }
 
 contactSendBtn.addEventListener("click", function () {
-
+  event.preventDefault();
 
   if (
     contactName.value.trim() === "" ||
@@ -54,5 +54,6 @@ contactSendBtn.addEventListener("click", function () {
     contactAdress.value = "";
     contactPhone.value = "";
     contactTextarea.value = "";
+    window.location.reload();
   }, 1500);
 });
