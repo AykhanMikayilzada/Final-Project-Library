@@ -71,15 +71,22 @@
           </div>
           <div class="form-area2">
             <input id="contactAddress" type="text" placeholder="Address" />
-            <input id="contactPhone" type="text" placeholder="phone" />
+            <input id="contactPhone" type="number" placeholder="phone" />
           </div>
           <div>
             <div class="form-area3">
-              <textarea id="contactTextarea" placeholder="Note"></textarea>
+              <textarea
+              id="contactTextarea"
+              placeholder="Note"
+              oninput="letterCounter()"
+            ></textarea>
+            <p class="textlength"><span id="textLength">0</span>/100</p>
+          <p class="d-none" id="contactErrorMessage">Fill in the fields correctly!</p>
+          <p class="d-none" id="contactSuccessMessage">Successfully!</p>
             </div>
           </div>
           <div class="button-div">
-            <button>Send</button>
+            <button id="contactSendBtn">Send</button>
           </div>
           </div>
         </form>
@@ -171,7 +178,7 @@
 
   <script src="./assets/js/index.js"></script>
   <script src="./assets/js/responsive.js"></script>
-
+  <script src="./assets/js/contact.js"></script>
 </body>
 
 </html>

@@ -227,6 +227,10 @@ line-height: 196.187%;
   line-height: normal;
 }
 
+
+  
+
+
 .container .p-div {
   color: #333333;
   font-family: var(--fontMons);
@@ -468,6 +472,9 @@ footer .footerMobileBox {
     padding: 11px 0px 15px 7px;
   }
   .form-area3 textarea {
+    display: none;
+  }
+  .textlength{
     display: none;
   }
   .button-div button {
