@@ -11,6 +11,11 @@ header {
   display: none;
 }
 
+.clickable {
+  cursor: pointer;
+}
+
+
 .menuBar {
   display: none;
 }

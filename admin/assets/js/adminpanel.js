@@ -30,6 +30,7 @@ async function searchBooksAndUpdateInputs(bookTitle) {
         books.forEach((book) => {
             const resultDiv = document.createElement("div");
             resultDiv.classList.add("results");
+            resultDiv.classList.add("clickable"); // Tıklanabilir bir stil ekleyin
 
             const resultImg = document.createElement("img");
             resultImg.classList.add("resultImg");
@@ -41,17 +42,40 @@ async function searchBooksAndUpdateInputs(bookTitle) {
             const resultAuthors = document.createElement("p");
             resultAuthors.textContent = book.volumeInfo.authors ? book.volumeInfo.authors.join(", ") : "Unknown Author";
 
+            // Her bir sonuç elemanına tıklama olayı ekle
+            resultDiv.addEventListener("click", () => {
+                const bookNameInput = document.getElementById("bookname");
+                const authorNameInput = document.getElementById("authorname");
+                const bookUrlInput = document.getElementById("bookurl");
+
+                bookNameInput.value = book.volumeInfo.title || "";
+                authorNameInput.value = book.volumeInfo.authors ? book.volumeInfo.authors.join(", ") : "Unknown Author";
+                bookUrlInput.value = book.volumeInfo.imageLinks?.thumbnail || "";
+            });
+
             resultDiv.appendChild(resultImg);
             resultDiv.appendChild(resultTitle);
             resultDiv.appendChild(resultAuthors);
             resultContainer.appendChild(resultDiv);
         });
-
     } catch (error) {
         console.error("Hata oluştu:", error);
         resultContainer.innerHTML = "Arama sırasında bir hata oluştu.";
     }
 }
+
+bookssearch.addEventListener("keypress", async (e) => {
+    if (e.key === "Enter") {
+        const bookTitleInput = bookssearch.value.trim();
+        if (bookTitleInput === "") {
+            resultContainer.innerHTML = "";
+            searchinput.style.display = "none"
+            return;
+        }
+        await searchBooksAndUpdateInputs(bookTitleInput);
+    }
+});
+
 
 searchbtn.addEventListener("click", async () => {
     const bookTitleInput = bookssearch.value;
