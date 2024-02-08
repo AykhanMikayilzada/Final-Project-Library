@@ -140,6 +140,7 @@ span:first-child {
   display: flex;
   gap: 0.4375rem;
   margin-top: 0.375rem;
+  position: sticky;
 }
 #right .search-box input {
   width: 24.6875rem;
@@ -174,8 +175,8 @@ span:first-child {
   display: none;
   box-sizing: border-box;
   /* display: flex; */
-  flex-direction: column;
-  justify-content: center;
+  /* flex-direction: column; */
+  /* justify-content: center; */
   gap: 0.8125rem;
   padding-left: 2.25rem;
   margin-left: 2.0625rem;
@@ -185,6 +186,8 @@ span:first-child {
   margin-top: 0.375rem;
   padding-top: 1.25rem;
   padding-bottom: 1.125rem;
+  position: sticky;
+  z-index: 1;
   
 }
 #right .search-area .settingsa {
@@ -218,7 +221,7 @@ span:first-child {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  z-index: -1;
+  /* z-index: -1; */
 }
 #right .form-first .settings {
   display: flex;
