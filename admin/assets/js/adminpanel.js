@@ -76,6 +76,17 @@ bookssearch.addEventListener("keypress", async (e) => {
     }
 });
 
+searchbtn.addEventListener("click", async () => {
+    const bookTitleInput = bookssearch.value.trim();
+    if (bookTitleInput === "") {
+        resultContainer.innerHTML = "";
+        searchinput.style.display = "none"
+        return;
+    }
+    await searchBooksAndUpdateInputs(bookTitleInput);
+});
+
+
 
 searchbtn.addEventListener("click", async () => {
     const bookTitleInput = bookssearch.value;
