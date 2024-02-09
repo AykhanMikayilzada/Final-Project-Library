@@ -63,6 +63,20 @@ import { getDatabase, ref, push, set, get, update, remove } from "https://www.gs
     const newRef = push(ref(database, path), data);
     return newRef.key;
   };
+
+  function convertData(d){
+    const newData = Object.entries(d);
+
+    const myNewData = newData.map((kicikArr) => {
+      const newObj = {
+        id: kicikArr[0],
+        ...kicikArr[1],
+      };
+      return newObj;
+    });
+
+    return myNewData;
+  }
   
   const readData = (path) => {
     const dataRef = ref(database, path);
@@ -82,8 +96,19 @@ import { getDatabase, ref, push, set, get, update, remove } from "https://www.gs
   const bookurl = document.getElementById("bookurl");
   const forumlibBtn = document.getElementById("forumlibBtn");
   const bookdesc = document.getElementById("bookdesc");
+
+  const homePage = window.location.pathname.includes("catalog.html")
+
+  console.log(homePage);
+
+  if(homePage){
+    readData("/books")
+    .then((data) => console.log("Read data:", convertData(data)))
+    .catch((error) => console.log("Error reading data", error))
+  }
+
   
-  forumlibBtn.addEventListener("click", function(e){
+  forumlibBtn?.addEventListener("click", function(e){
     e.preventDefault();
   
     const title = bookname.value;
@@ -102,3 +127,7 @@ import { getDatabase, ref, push, set, get, update, remove } from "https://www.gs
     alert("added book");
     console.log("forum", forum);
   });
+
+
+      
+
