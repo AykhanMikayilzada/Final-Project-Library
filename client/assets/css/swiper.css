@@ -14,8 +14,8 @@ body {
 }
 
 .swiper {
-  width: 1500px;
-  height: 400px;
+  width: 1450px;
+  height: 510px;
   /* width: 184.315px; */
   flex-shrink: 0;
   display: flex;
@@ -27,11 +27,11 @@ body {
 }
 
 .swiper-slide {
-  text-align: center;
+  /* text-align: center;
   font-size: 18px;
-  background: #fff;
+  */
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
 
 }

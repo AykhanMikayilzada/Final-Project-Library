@@ -5,6 +5,11 @@ header {
     justify-content: space-between;
     align-items: center;
   }
+
+  .catalogcard a{
+    color: black;
+  }
+
   header .logoBox {
     display: flex;
     margin-top: 31px;

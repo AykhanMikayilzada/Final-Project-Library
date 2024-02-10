@@ -167,7 +167,7 @@ body .overlayresponsive{
 
 .slidermom{
   display: flex;
-  gap: 70px;
+  gap: 35px;
 }
 
 
@@ -214,6 +214,7 @@ line-height: 196.187%;
 .slider-card4,
 .slider-card5 {
   width: 170px;
+  height: 450px;
   flex-shrink: 0;
   background: #fff;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
@@ -221,52 +222,53 @@ line-height: 196.187%;
   flex-direction: column;
   justify-content: center;
   padding-bottom: 17px;
+  margin-left: 10px;
 }
 
 .slider-card1 img {
-  width: 134.229px;
-  height: 190px;
+  width: 165px;
+  height: 240px;
   flex-shrink: 0;
-  margin-left: 17px;
+  margin-left: 25px;
   margin-right: 24.73px;
-  margin-top: 20px;
+  margin-top: 35px;
 }
 
 .slider-card2 img {
-  width: 134.229px;
-  height: 190px;
+  width: 165px;
+  height: 240px;
   flex-shrink: 0;
   margin-left: 17px;
   margin-right: 24.73px;
-  margin-top: 20px;
+  margin-top: 35px;
 }
 
 
 .slider-card3 img {
-  width: 134.229px;
-  height: 190px;
+  width: 165px;
+  height: 240px;
   flex-shrink: 0;
   margin-left: 17px;
   margin-right: 24.73px;
-  margin-top: 20px;
+  margin-top: 35px;
 }
 
 .slider-card4 img {
-  width: 134.229px;
-  height: 190px;
+  width: 165px;
+  height: 240px;
   flex-shrink: 0;
   margin-left: 17px;
   margin-right: 24.73px;
-  margin-top: 20px;
+  margin-top: 35px;
 }
 
 .slider-card5 img {
-  width: 134.229px;
-  height: 190px;
+  width: 165px;
+  height: 240px;
   flex-shrink: 0;
   margin-left: 17px;
   margin-right: 24.73px;
-  margin-top: 20px;
+  margin-top: 35px;
 }
 
 .slider-card1,
@@ -274,7 +276,7 @@ line-height: 196.187%;
 .slider-card3,
 .slider-card4,
 .slider-card5 {
-  width: 160px;
+  width: 210px;
 }
 
 .book_title {
@@ -290,7 +292,7 @@ line-height: 196.187%;
 .book_subtitle {
   color: #241400;
   font-family: Montserrat;
-  font-size: 12px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 196.187%; /* 23.542px */

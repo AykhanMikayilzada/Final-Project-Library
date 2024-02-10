@@ -135,7 +135,8 @@ import { getDatabase, ref, push, set, get, update, remove } from "https://www.gs
 
 
   function renderBooks(list) {
-    slidermomapi.innerHTML += list.map(book =>(
+
+    slidermomapi.innerHTML = list.map(book =>(
       `
       <div class="slider-card1">
                 <img class="book-img" src="${book.imageUrl}"
@@ -150,4 +151,9 @@ import { getDatabase, ref, push, set, get, update, remove } from "https://www.gs
   };
 
       
+
+
+
+
+
 
