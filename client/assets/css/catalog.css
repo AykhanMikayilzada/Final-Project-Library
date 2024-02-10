@@ -171,6 +171,11 @@ body .overlayresponsive{
 }
 
 
+.new-books-container{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
 
 
 

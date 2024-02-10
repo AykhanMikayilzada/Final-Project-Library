@@ -58,11 +58,35 @@ import { getDatabase, ref, push, set, get, update, remove } from "https://www.gs
   // const analytics = getAnalytics(app);
   const app = initializeApp(firebaseConfig);
   const database = getDatabase(app);
+
   
-  const createData = (path, data) => {
+  
+  // const createData = (path, data) => {
+  //   const newRef = push(ref(database, path), data);
+  //   return newRef.key;
+  // };
+
+//   function createData(path, data) {
+//     // Yeni bir zaman damgası oluştur
+//     const timestamp = new Date().getTime();
+//     // Veriye zaman damgasını ekle
+//     data.timestamp = timestamp;
+//     const newRef = push(ref(database, path), data);
+//     return newRef.key;
+// }
+
+
+
+let addedBooks = [];
+
+function createData(path, data) {
+    // Yeni bir zaman damgası oluştur
+    const timestamp = new Date().getTime();
+    // Veriye zaman damgasını ekle
+    data.timestamp = timestamp;
     const newRef = push(ref(database, path), data);
     return newRef.key;
-  };
+}
 
   function convertData(d){
     const newData = Object.entries(d);
@@ -107,6 +131,7 @@ import { getDatabase, ref, push, set, get, update, remove } from "https://www.gs
     .then((data) =>{
       const books = convertData(data)
       renderBooks(books)
+      renderBooksa(books)
     }
     )
     .catch((error) => console.log("Error reading data", error))
@@ -136,6 +161,8 @@ import { getDatabase, ref, push, set, get, update, remove } from "https://www.gs
 
   function renderBooks(list) {
 
+    let slidernewrelease = document.getElementById("slidernewrelease");
+
     slidermomapi.innerHTML = list.map(book =>(
       `
       <div class="slider-card1">
@@ -150,6 +177,104 @@ import { getDatabase, ref, push, set, get, update, remove } from "https://www.gs
     ))
   };
 
+
+
+  function renderBooksa(list) {
+    const newBooksContainer = document.createElement('div');
+    newBooksContainer.classList.add('new-books-container');
+
+    const currentTime = new Date().getTime();
+    const tenSecondsAgo = currentTime - 432000000; 
+
+    // Sadece son 10 saniye içinde eklenen kitapları göster
+    const newBooks = list.filter(book => book.timestamp >= tenSecondsAgo);
+
+    newBooks.forEach(book => {
+        const bookCard = document.createElement('div');
+        bookCard.classList.add('slider-card1');
+        bookCard.innerHTML = `
+            <img class="book-img" src="${book.imageUrl}" 
+            alt="${book.title}" />
+            <p class="book_title">${book.title}</p>
+            <p class="book_subtitle">${book.author}</p>
+            <button>Read more</button>
+        `;
+        
+        newBooksContainer.appendChild(bookCard);
+    });
+
+    const slidernewrelease = document.getElementById('slidernewrelease');
+    slidernewrelease.innerHTML = '';
+    slidernewrelease.appendChild(newBooksContainer);
+}
+
+
+
+//   function renderBooksa(list) {
+//     const newBooksContainer = document.createElement('div');
+//     newBooksContainer.classList.add('new-books-container');
+
+//     const currentTime = new Date().getTime();
+//     const tenSecondsAgo = currentTime - 10000; // 10 saniye öncesi
+
+//     // Yeni eklenen kitapları bul
+//     const newBooks = list.filter(book => book.timestamp >= tenSecondsAgo);
+
+//     newBooks.forEach(book => {
+//         const bookCard = document.createElement('div');
+//         bookCard.classList.add('slider-card1');
+//         bookCard.innerHTML = `
+//             <img class="book-img" src="${book.imageUrl}" 
+//             alt="${book.title}" />
+//             <p class="book_title">${book.title}</p>
+//             <p class="book_subtitle">${book.author}</p>
+//             <button>Read more</button>
+//         `;
+        
+//         newBooksContainer.appendChild(bookCard);
+//     });
+
+//     const slidernewrelease = document.getElementById('slidernewrelease');
+//     slidernewrelease.innerHTML = '';
+//     slidernewrelease.appendChild(newBooksContainer);
+
+//     // Eklenen kitapları güncelle
+//     addedBooks = addedBooks.concat(newBooks);
+
+//     // 10 saniye sonra eklenen kitapları temizle
+//     setTimeout(() => {
+//         addedBooks = addedBooks.filter(book => book.timestamp >= tenSecondsAgo);
+//         renderBooksa(addedBooks);
+//     }, 432000000); // 10 saniye (10000 milisaniye)
+// }
+
+
+
+
+
+//   function renderBooksa(list) {
+//     const newBooksContainer = document.createElement('div');
+//     newBooksContainer.classList.add('new-books-container');
+
+//     list.forEach(book => {
+//         const bookCard = document.createElement('div');
+//         bookCard.classList.add('slider-card1');
+//         bookCard.innerHTML = `
+//             <img class="book-img" src="${book.imageUrl}" 
+//             alt="${book.title}" />
+//             <p class="book_title">${book.title}</p>
+//             <p class="book_subtitle">${book.author}</p>
+//             <button>Read more</button>
+//         `
+        
+//         newBooksContainer.appendChild(bookCard);
+//     });
+
+//     const slidernewrelease = document.getElementById('slidernewrelease');
+//     slidernewrelease.innerHTML = '';
+//     slidernewrelease.appendChild(newBooksContainer);
+// };
+
       
 
 
@@ -157,3 +282,9 @@ import { getDatabase, ref, push, set, get, update, remove } from "https://www.gs
 
 
 
+// {
+//   "rules": {
+//     ".read":  true,  // 2024-3-9
+//     ".write": true,  // 2024-3-9
+//   }
+// }
