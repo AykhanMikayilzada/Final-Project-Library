@@ -535,6 +535,38 @@ padding-left: 50px;
 
 
 @media screen and (max-width: 911px) {
+  
+  .swiper-wrapper{
+visibility: visible;
+  }
+  .swiper{
+    visibility: hidden;
+  }
+
+  .mySwiper{
+   visibility: hidden;
+  }
+  
+  .swiper-slide{
+    visibility: visible;
+  }
+  .slidermom {
+    visibility: visible;
+  }
+
+  .swiper-pagination{
+    visibility: visible;
+  }
+
+
+  /* .swiper{
+    display: none;
+  }
+
+  .mySwipe{
+    display: none;
+  } */
+
   header {
     display: flex;
     padding-left: 15px;
@@ -949,10 +981,12 @@ width: 330px;
 }
 
 
-
+/* 
 @media screen and (max-width: 911px) {
 
-
-
+.mySwiper{
+  display: none;
 }
+
+} */
 
