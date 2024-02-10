@@ -67,9 +67,9 @@ import { getDatabase, ref, push, set, get, update, remove } from "https://www.gs
   // };
 
 //   function createData(path, data) {
-//     // Yeni bir zaman damgası oluştur
+//    
 //     const timestamp = new Date().getTime();
-//     // Veriye zaman damgasını ekle
+//  
 //     data.timestamp = timestamp;
 //     const newRef = push(ref(database, path), data);
 //     return newRef.key;
@@ -80,9 +80,8 @@ import { getDatabase, ref, push, set, get, update, remove } from "https://www.gs
 let addedBooks = [];
 
 function createData(path, data) {
-    // Yeni bir zaman damgası oluştur
     const timestamp = new Date().getTime();
-    // Veriye zaman damgasını ekle
+   
     data.timestamp = timestamp;
     const newRef = push(ref(database, path), data);
     return newRef.key;
@@ -161,7 +160,6 @@ function createData(path, data) {
 
   function renderBooks(list) {
 
-    let slidernewrelease = document.getElementById("slidernewrelease");
 
     slidermomapi.innerHTML = list.map(book =>(
       `
@@ -186,7 +184,7 @@ function createData(path, data) {
     const currentTime = new Date().getTime();
     const tenSecondsAgo = currentTime - 432000000; 
 
-    // Sadece son 10 saniye içinde eklenen kitapları göster
+
     const newBooks = list.filter(book => book.timestamp >= tenSecondsAgo);
 
     newBooks.forEach(book => {
