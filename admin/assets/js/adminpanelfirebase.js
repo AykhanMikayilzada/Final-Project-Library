@@ -96,6 +96,7 @@ import { getDatabase, ref, push, set, get, update, remove } from "https://www.gs
   const bookurl = document.getElementById("bookurl");
   const forumlibBtn = document.getElementById("forumlibBtn");
   const bookdesc = document.getElementById("bookdesc");
+  const slidermomapi = document.getElementById("slidermomapi");
 
   const homePage = window.location.pathname.includes("catalog.html")
 
@@ -103,7 +104,11 @@ import { getDatabase, ref, push, set, get, update, remove } from "https://www.gs
 
   if(homePage){
     readData("/books")
-    .then((data) => console.log("Read data:", convertData(data)))
+    .then((data) =>{
+      const books = convertData(data)
+      renderBooks(books)
+    }
+    )
     .catch((error) => console.log("Error reading data", error))
   }
 
@@ -128,6 +133,21 @@ import { getDatabase, ref, push, set, get, update, remove } from "https://www.gs
     console.log("forum", forum);
   });
 
+
+  function renderBooks(list) {
+    slidermomapi.innerHTML += list.map(book =>(
+      `
+      <div class="slider-card1">
+                <img class="book-img" src="${book.imageUrl}"
+                alt="${book.title}"
+                />
+                <p class="book_title">${book.title}</p>
+                <p class="book_subtitle">${book.author}</p>
+                <button>Read more</button>
+              </div>
+      `
+    ))
+  };
 
       
 
