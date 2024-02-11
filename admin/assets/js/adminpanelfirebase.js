@@ -169,7 +169,7 @@ function createData(path, data) {
                 />
                 <p class="book_title">${book.title}</p>
                 <p class="book_subtitle">${book.author}</p>
-                <button>Read more</button>
+                <button><a class = "readMoreText" href="./bookPage.html">Read more</a></button>
               </div>
       `
     ))

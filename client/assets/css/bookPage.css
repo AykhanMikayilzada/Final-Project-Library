@@ -71,7 +71,12 @@ header .joinUs span {
 header .hamburger {
   display: none;
 }
-
+.backBtnText {
+  color: #f2f2f2;
+}
+.clearCommentsButton {
+  margin-left: 5px;
+}
 /* responsive overlay and menu page */
 
 .respons img {

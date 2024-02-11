@@ -83,7 +83,9 @@ header .joinUs span {
   line-height: normal;
   margin-right: 65px;
 }
-
+.readMoreText {
+  color: #F2F2F2;
+}
 .joinUs {
   display: flex;
   justify-content: center;

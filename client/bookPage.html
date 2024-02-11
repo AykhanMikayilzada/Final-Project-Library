@@ -52,7 +52,7 @@
     <section id="sectionOne">
       <div class="left-side">
         
-        <button class="back">BACK</button>
+        <button class="back"><a href="./catalog.html" class="backBtnText">BACK</a></button>
         <img class="book_responsive" src="./assets/img/yellowBook.svg" />
         <div class="year">2017</div>
         <h2 class="title">Order in Chaos</h2>
@@ -76,11 +76,12 @@
     </section>
     <section id="sectionTwo">
       <div class="input">
-        <input type="text" placeholder="your anonim comment..." />
-        <button><img src="./assets/img/sendIcon.svg" /></button>
+        <input class="anonimComment" type="text" placeholder="your anonim comment..." />
+        <button class="sendBtn"><img src="./assets/img/sendIcon.svg" /></button>
+        <button class="clearCommentsButton" id="clearCommentsButton"><img src="./assets/img/delete.svg"></button>
       </div>
       <div class="comments">
-        <div class="commentArea">
+        <!-- <div class="commentArea">
           <div class="nameAndDate">
             <span>anonim</span>
             <span>18:32 today</span>
@@ -91,8 +92,8 @@
               React? Thanks!
             </p>
           </div>
-        </div>
-        <div class="commentArea">
+        </div> -->
+        <!-- <div class="commentArea">
           <div class="nameAndDate">
             <span>anonim</span>
             <span>18:32 today</span>
@@ -103,7 +104,7 @@
               React? Thanks!
             </p>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
     <section id="sectionThree">
@@ -191,9 +192,9 @@
     </div>
 
 
+    <script src="./assets/js/bookPage.js"></script>
     <script src="./assets/js/index.js"></script>
     <script src="./assets/js/responsive.js"></script>
-
     
 
   </body>
