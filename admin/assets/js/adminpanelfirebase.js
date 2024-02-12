@@ -191,6 +191,7 @@ function createData(path, data) {
         const bookCard = document.createElement('div');
         bookCard.classList.add('slider-card1');
         bookCard.innerHTML = `
+            <div class="newTag">NEW</div>
             <img class="book-img" src="${book.imageUrl}" 
             alt="${book.title}" />
             <p class="book_title">${book.title}</p>

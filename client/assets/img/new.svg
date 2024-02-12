@@ -1,0 +1,21 @@
+<svg width="63.000000" height="29.577759" viewBox="0 0 63 29.5778" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<filter id="filter_7650_3370_dd" x="0.000000" y="0.000000" width="63.000000" height="29.577759" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+			<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+			<feOffset dx="0" dy="3"/>
+			<feGaussianBlur stdDeviation="2.66667"/>
+			<feComposite in2="hardAlpha" operator="out" k2="-1" k3="1"/>
+			<feColorMatrix type="matrix" values="0 0 0 0 0.88235 0 0 0 0 0.41569 0 0 0 0 0 0 0 0 0.19 0"/>
+			<feBlend mode="normal" in2="BackgroundImageFix" result="effect_dropShadow_1"/>
+			<feBlend mode="normal" in="SourceGraphic" in2="effect_dropShadow_1" result="shape"/>
+		</filter>
+	</defs>
+	<g filter="url(#filter_7650_3370_dd)">
+		<path id="Rectangle 29" d="M11 5L52 5C53.6567 5 55 6.34314 55 8L55 15.5778C55 17.2346 53.6567 18.5778 52 18.5778L11 18.5778C9.34326 18.5778 8 17.2346 8 15.5778L8 8C8 6.34314 9.34326 5 11 5Z" fill="#EB5757" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+	<path id="New" d="M27.2568 9.01155L27.2568 15.3111L25.51 15.3111L23.1172 12.4481L23.1172 15.3111L21.0452 15.3111L21.0452 9.01155L22.792 9.01155L25.187 11.8724L25.187 9.01155L27.2568 9.01155ZM33.5194 13.7093L33.5194 15.3111L28.2812 15.3111L28.2812 9.01155L33.403 9.01155L33.403 10.6134L30.3708 10.6134L30.3708 11.3516L33.0339 11.3516L33.0339 12.8809L30.3708 12.8809L30.3708 13.7093L33.5194 13.7093ZM44.5006 9.01155L42.4835 15.3111L40.2071 15.3111L39.1898 11.9449L38.1197 15.3111L35.8412 15.3111L33.8263 9.01155L36.0126 9.01155L37.1112 12.5931L38.2714 9.01155L40.2247 9.01155L41.3234 12.637L42.4835 9.01155L44.5006 9.01155Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"/>
+</svg>
