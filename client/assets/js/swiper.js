@@ -1,4 +1,5 @@
 var swiper = new Swiper(".mySwiper", {
+  loop: true, // Sonsuz döngü
     pagination: {
       el: ".swiper-pagination",
       type: "fraction",
@@ -8,3 +9,4 @@ var swiper = new Swiper(".mySwiper", {
       prevEl: ".swiper-button-prev",
     },
   });
+ 
