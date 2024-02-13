@@ -10,8 +10,8 @@ async function GET() {
     const response = await fetch(
       "https://blog-api-t6u0.onrender.com/posts",
       options
-    ); //Bu sekilde API linkimizi tuturuq
-    const data = await response.json(); // Bu sekilde de API dan gelen melumati jason edirik
+    ); 
+    const data = await response.json(); 
     return data;
   } catch (err) {
     console.log("ERROR:", err);
@@ -30,8 +30,8 @@ async function GETbyID(id) {
     const response = await fetch(
       `https://blog-api-t6u0.onrender.com/posts/${id}`,
       options
-    ); //Bu sekilde API linkimizi tuturuq
-    const data = await response.json(); // Bu sekilde de API dan gelen melumati jason edirik
+    ); 
+    const data = await response.json(); 
     return data;
   } catch (err) {
     console.log("ERROR:", err);
@@ -51,8 +51,8 @@ async function POST(form) {
     const response = await fetch(
       `https://blog-api-t6u0.onrender.com/posts`,
       options
-    ); //Bu sekilde API linkimizi tuturuq
-    const data = await response.json(); // Bu sekilde de API dan gelen melumati jason edirik
+    ); 
+    const data = await response.json(); 
     return data;
   } catch (err) {
     console.log("ERROR:", err);
@@ -72,8 +72,8 @@ async function PUT(id, form) {
     const response = await fetch(
       `https://blog-api-t6u0.onrender.com/posts/${id}`,
       options
-    ); //Bu sekilde API linkimizi tuturuq
-    const data = await response.json(); // Bu sekilde de API dan gelen melumati jason edirik
+    ); 
+    const data = await response.json(); 
     return data;
   } catch (err) {
     console.log("ERROR:", err);
@@ -92,8 +92,8 @@ async function DELETE(id) {
     const response = await fetch(
       `https://blog-api-t6u0.onrender.com/posts/${id}`,
       options
-    ); //Bu sekilde API linkimizi tuturuq
-    const data = await response.json(); // Bu sekilde de API dan gelen melumati jason edirik
+    ); 
+    const data = await response.json(); 
     return data;
   } catch (err) {
     console.log("ERROR:", err);
@@ -194,8 +194,8 @@ async function addComment() {
   }
 }
 function clearComments() {
-  comments.innerHTML = ""; // Tüm yorumları temizle
-  localStorage.removeItem("comments"); // Yerel depodan da yorumları kaldır
+  comments.innerHTML = ""; 
+  localStorage.removeItem("comments"); 
 }
 
 const clearCommentsButton = document.querySelector("#clearCommentsButton");

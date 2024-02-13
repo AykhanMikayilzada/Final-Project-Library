@@ -30,7 +30,7 @@ async function searchBooksAndUpdateInputs(bookTitle) {
         books.forEach((book) => {
             const resultDiv = document.createElement("div");
             resultDiv.classList.add("results");
-            resultDiv.classList.add("clickable"); // Tıklanabilir bir stil ekleyin
+            resultDiv.classList.add("clickable"); 
 
             const resultImg = document.createElement("img");
             resultImg.classList.add("resultImg");
@@ -42,7 +42,6 @@ async function searchBooksAndUpdateInputs(bookTitle) {
             const resultAuthors = document.createElement("p");
             resultAuthors.textContent = book.volumeInfo.authors ? book.volumeInfo.authors.join(", ") : "Unknown Author";
 
-            // Her bir sonuç elemanına tıklama olayı ekle
             resultDiv.addEventListener("click", () => {
                 const bookNameInput = document.getElementById("bookname");
                 const authorNameInput = document.getElementById("authorname");

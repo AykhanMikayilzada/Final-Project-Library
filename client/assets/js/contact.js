@@ -43,7 +43,7 @@ contactSendBtn.addEventListener("click", function () {
     contactPhone: contactPhone.value,
     contactTextarea: contactTextarea.value,
   };
-  // push firebase
+
 
   contactSuccessMessage.style.display = "block";
 

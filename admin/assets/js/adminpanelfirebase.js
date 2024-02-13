@@ -1,50 +1,6 @@
-
-//   // Import the functions you need from the SDKs you need
-//   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-//   import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
-//   // TODO: Add SDKs for Firebase products that you want to use
-//   // https://firebase.google.com/docs/web/setup#available-libraries
-
-//   // Your web app's Firebase configuration
-//   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-//   const firebaseConfig = {
-//     apiKey: "AIzaSyBBDUmstwc_hZjzqQG7yDn4pIU-w-b9FDU",
-//     authDomain: "libraryprojectapp-df468.firebaseapp.com",
-//     projectId: "libraryprojectapp-df468",
-//     storageBucket: "libraryprojectapp-df468.appspot.com",
-//     messagingSenderId: "176480815398",
-//     appId: "1:176480815398:web:47ee903956a99357d299e7",
-//     measurementId: "G-2H2B66PT8G"
-//   };
-
-//   // Initialize Firebase
-//   const app = initializeApp(firebaseConfig);
-//   const analytics = getAnalytics(app);
-
-
-//   import { initializeApp } from 'firebase/app';
-
-// // TODO: Replace the following with your app's Firebase project configuration
-// const firebaseConfig = {
-//   //...
-// };
-
-
-
-// const app = initializeApp(firebaseConfig);
-
-  // console.log("app:", app, analytics);
-
-
-
-
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import { getDatabase, ref, push, set, get, update, remove } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
-  // import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+ 
   const firebaseConfig = {
     apiKey: "AIzaSyBBDUmstwc_hZjzqQG7yDn4pIU-w-b9FDU",
     authDomain: "libraryprojectapp-df468.firebaseapp.com",
@@ -55,90 +11,9 @@ import { getDatabase, ref, push, set, get, update, remove } from "https://www.gs
     appId: "1:176480815398:web:47ee903956a99357d299e7",
     measurementId: "G-2H2B66PT8G"
   };
-  // const analytics = getAnalytics(app);
   const app = initializeApp(firebaseConfig);
   const database = getDatabase(app);
-  // const createData = (path, data) => {
-  //   const newRef = push(ref(database, path), data);
-  //   return newRef.key;
-  // };
 
-//   function createData(path, data) {
-//    
-//     const timestamp = new Date().getTime();
-//  
-//     data.timestamp = timestamp;
-//     const newRef = push(ref(database, path), data);
-//     return newRef.key;
-// }
-
-
-
-// const swiper = new Swiper('.swiper.mySwiper', {
-//   slidesPerView: 5,
-//   direction: 'horizontal',
-//   loop: true,
-//   navigation: {
-//       nextEl: '.swiper-button-next',
-//       prevEl: '.swiper-button-prev',
-//   },
-//   breakpoints: {
-//       // when window width is >= 320px
-//       320: {
-//           slidesPerView: 1.5,
-//           spaceBetween: 20
-//       },
-  
-//       480: {
-//           slidesPerView: 2,
-//           spaceBetween: 20
-//       },
-//       767: {
-//           slidesPerView: 3,
-//           spaceBetween: 20
-//       },
-//       1200: {
-//           slidesPerView: 5,
-//           spaceBetween: 20
-//       }
-//   }
-// });
-
-
-
-
-// const swiper2 = new Swiper('.swiper.mySwiper2', {
-//   // Optional parameters
-//   slidesPerView: 5,
-//   direction: 'horizontal',
-//   loop: true,
-//   // Navigation arrows
-//   navigation: {
-//       nextEl: '.swiper-button-next',
-//       prevEl: '.swiper-button-prev',
-//   },
-//   breakpoints: {
-//       // when window width is >= 320px
-//       320: {
-//           slidesPerView: 1.5,
-//           spaceBetween: 20
-//       },
-//       // when window width is >= 480px
-//       480: {
-//           slidesPerView: 2,
-//           spaceBetween: 20
-//       },
-//       // when window width is >= 640px
-//       767: {
-//           slidesPerView: 3,
-//           spaceBetween: 20
-//       },
-//       1200: {
-//           slidesPerView: 5,
-//           spaceBetween: 20
-//       }
-//   }
-// });
 
 let addedBooks = [];
 
@@ -253,13 +128,6 @@ function createData(path, data) {
   let slidernewrelease = document.getElementById('swiper_all');
 
   function renderBooksa(list) {
-    // const newBooksContainer = document.createElement('div');
-    // newBooksContainer.classList.add('new-books-container');
-
-
-    // const currentTime = new Date().getTime();
-    // let tenSecondsAgo = currentTime - 432000000;
-
   
   let fliter_books = list.filter((book)=>{
     let x = new Date(book.bookcreatetime)
@@ -273,27 +141,6 @@ function createData(path, data) {
 
   console.log("filter",fliter_books);
   
-
-    // const newBooks = list.filter(book => book.timestamp >= tenSecondsAgo);
-
-    // newBooks.forEach(book => {
-    //     const bookCard = document.createElement('div');
-    //     bookCard.classList.add('swiper-slide'); 
-       
-    //     bookCard.innerHTML = `
-    //     <div class="slider-card1">
-    //         <div class="newTag">NEW</div>
-    //         <img class="book-img" src="${book.imageUrl}"
-    //         alt="${book.title}"/>
-    //         <p class="book_title">${book.title}</p>
-    //         <p class="book_subtitle">${book.author}</p>
-    //         <button>Read more</button>
-    //     </div>
-    //     `;
-        
-    //     newBooksContainer.appendChild(bookCard);
-    // });
-
 
     console.log(list);
 
@@ -313,8 +160,7 @@ function createData(path, data) {
       `
     })
     swiper2.update();
-    // slidernewrelease.innerHTML = '';
-    // slidernewrelease.appendChild(newBooksContainer);
+    
 }
 
 
@@ -386,81 +232,3 @@ const swiper2 = new Swiper('.swiper.mySwiper2', {
 });
 
 
-//   function renderBooksa(list) {
-//     const newBooksContainer = document.createElement('div');
-//     newBooksContainer.classList.add('new-books-container');
-
-//     const currentTime = new Date().getTime();
-//     const tenSecondsAgo = currentTime - 10000; // 10 saniye öncesi
-
-//     // Yeni eklenen kitapları bul
-//     const newBooks = list.filter(book => book.timestamp >= tenSecondsAgo);
-
-//     newBooks.forEach(book => {
-//         const bookCard = document.createElement('div');
-//         bookCard.classList.add('slider-card1');
-//         bookCard.innerHTML = `
-//             <img class="book-img" src="${book.imageUrl}" 
-//             alt="${book.title}" />
-//             <p class="book_title">${book.title}</p>
-//             <p class="book_subtitle">${book.author}</p>
-//             <button>Read more</button>
-//         `;
-        
-//         newBooksContainer.appendChild(bookCard);
-//     });
-
-//     const slidernewrelease = document.getElementById('slidernewrelease');
-//     slidernewrelease.innerHTML = '';
-//     slidernewrelease.appendChild(newBooksContainer);
-
-//     // Eklenen kitapları güncelle
-//     addedBooks = addedBooks.concat(newBooks);
-
-//     // 10 saniye sonra eklenen kitapları temizle
-//     setTimeout(() => {
-//         addedBooks = addedBooks.filter(book => book.timestamp >= tenSecondsAgo);
-//         renderBooksa(addedBooks);
-//     }, 432000000); // 10 saniye (10000 milisaniye)
-// }
-
-
-
-
-
-//   function renderBooksa(list) {
-//     const newBooksContainer = document.createElement('div');
-//     newBooksContainer.classList.add('new-books-container');
-
-//     list.forEach(book => {
-//         const bookCard = document.createElement('div');
-//         bookCard.classList.add('slider-card1');
-//         bookCard.innerHTML = `
-//             <img class="book-img" src="${book.imageUrl}" 
-//             alt="${book.title}" />
-//             <p class="book_title">${book.title}</p>
-//             <p class="book_subtitle">${book.author}</p>
-//             <button>Read more</button>
-//         `
-        
-//         newBooksContainer.appendChild(bookCard);
-//     });
-
-//     const slidernewrelease = document.getElementById('slidernewrelease');
-//     slidernewrelease.innerHTML = '';
-//     slidernewrelease.appendChild(newBooksContainer);
-// };
-
-      
-
-
-
-
-
-
-// {
-//   "rules": {
-//     ".read":  true,  // 2024-3-9
-//     ".write": true,  // 2024-3-9
-//   }
-// }

@@ -45,10 +45,6 @@ xbtn.onclick = function(){
 console.log(hamburgerbtn);
 
 
-
-// ---------- join us responsive
-
-
 joinclickres.onclick = function(){
     overlayrespons.style.display = "block";
     overlayrespons.style.opacity = "1";
@@ -79,9 +75,6 @@ xbtnres.onclick = function(){
     joinustextres.style.display = "none";
     }, 300)
 };
-
-// -----------
-
 
 
 document.getElementById("joinbtnres").onclick = function() {

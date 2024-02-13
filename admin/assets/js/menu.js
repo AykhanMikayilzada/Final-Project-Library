@@ -11,9 +11,4 @@ function closeMenu() {
   setTimeout(function () {
     menuBar.style.display = "none";
   }, 200);
-//   .fade-out {
-//     animation: fadeOut 2s;
-//       opacity: 0;
-//   }
-
 }

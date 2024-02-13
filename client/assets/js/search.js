@@ -6,20 +6,20 @@ const bookDescription = document.querySelector("#bookDescription");
 const bookImg = document.querySelector("#bookImg")
 
 async function searchBooks(bookTitle) {
-  const apiKey = "AIzaSyB6ZzZJY3wOlJ0bi6Qymj8RREY8eKZNjhI"; // Replace "YOUR_API_KEY" with your actual API key
+  const apiKey = "AIzaSyB6ZzZJY3wOlJ0bi6Qymj8RREY8eKZNjhI"; 
   const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${bookTitle}&printType=books&key=${apiKey}`;
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();
 
-    return data.items || []; // If there's no data, return an empty array
+    return data.items || []; 
   } catch (error) {
     console.error("Error:", error);
     return [];
   }
 }
 
-// Function to create a book card
+
 function createBookCard(book) {
   const bookCard = document.createElement("div");
   bookCard.classList.add("swiper-slide");
@@ -41,22 +41,20 @@ function createBookCard(book) {
   return bookCard;
 }
 
-// Function to render book cards
+
 function renderBooks(books) {
-  swiperWrapper.innerHTML = ""; // Clear previous search results
+  swiperWrapper.innerHTML = ""; 
   books.forEach(book => {
     const bookCard = createBookCard(book.volumeInfo);
     swiperWrapper.appendChild(bookCard);
   });
 }
 
-// Event listener for the search button click
 searchBtn.addEventListener("click", async () => {
   const bookTitle = searchInput.value.trim();
 
   if (bookTitle !== "") {
     try {
-      // Search for books
       const books = await searchBooks(bookTitle);
 
       if (books.length > 0) {
