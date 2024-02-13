@@ -58,9 +58,6 @@ import { getDatabase, ref, push, set, get, update, remove } from "https://www.gs
   // const analytics = getAnalytics(app);
   const app = initializeApp(firebaseConfig);
   const database = getDatabase(app);
-
-  
-  
   // const createData = (path, data) => {
   //   const newRef = push(ref(database, path), data);
   //   return newRef.key;
@@ -76,6 +73,72 @@ import { getDatabase, ref, push, set, get, update, remove } from "https://www.gs
 // }
 
 
+
+const swiper = new Swiper('.swiper.mySwiper', {
+  slidesPerView: 5,
+  direction: 'horizontal',
+  loop: true,
+  navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+      // when window width is >= 320px
+      320: {
+          slidesPerView: 1.5,
+          spaceBetween: 20
+      },
+  
+      480: {
+          slidesPerView: 2,
+          spaceBetween: 20
+      },
+      767: {
+          slidesPerView: 3,
+          spaceBetween: 20
+      },
+      1200: {
+          slidesPerView: 5,
+          spaceBetween: 20
+      }
+  }
+});
+
+
+
+
+const swiper2 = new Swiper('.swiper.mySwiper2', {
+  // Optional parameters
+  slidesPerView: 5,
+  direction: 'horizontal',
+  loop: true,
+  // Navigation arrows
+  navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+      // when window width is >= 320px
+      320: {
+          slidesPerView: 1.5,
+          spaceBetween: 20
+      },
+      // when window width is >= 480px
+      480: {
+          slidesPerView: 2,
+          spaceBetween: 20
+      },
+      // when window width is >= 640px
+      767: {
+          slidesPerView: 3,
+          spaceBetween: 20
+      },
+      1200: {
+          slidesPerView: 5,
+          spaceBetween: 20
+      }
+  }
+});
 
 let addedBooks = [];
 
@@ -138,9 +201,11 @@ function createData(path, data) {
 
   
   forumlibBtn?.addEventListener("click", function(e){
+
     e.preventDefault();
   
     const title = bookname.value;
+    const bookcreatetime = Date();
     const author = authorname.value;
     const imageUrl = bookurl.value;
     const descr = bookdesc.value;
@@ -150,6 +215,7 @@ function createData(path, data) {
       author,
       imageUrl,
       descr,
+      bookcreatetime
     };
   
     createData("books", forum);
@@ -159,52 +225,92 @@ function createData(path, data) {
 
 
   function renderBooks(list) {
+    console.log("list",list);
 
 
     slidermomapi.innerHTML = list.map(book =>(
       `
-      <div class="slider-card1">
+            <div class="swiper-slide">
+              <div class="slider-card1">
                 <img class="book-img" src="${book.imageUrl}"
-                alt="${book.title}"
-                />
+                alt="${book.title}"/>
                 <p class="book_title">${book.title}</p>
                 <p class="book_subtitle">${book.author}</p>
                 <button><a class = "readMoreText" href="./bookPage.html">Read more</a></button>
               </div>
+            </div>
       `
+      
     ))
+   
+    swiper.update();
   };
 
-
+  let slidernewrelease = document.getElementById('swiper_all');
 
   function renderBooksa(list) {
-    const newBooksContainer = document.createElement('div');
-    newBooksContainer.classList.add('new-books-container');
-
-    const currentTime = new Date().getTime();
-    const tenSecondsAgo = currentTime - 432000000; 
+    // const newBooksContainer = document.createElement('div');
+    // newBooksContainer.classList.add('new-books-container');
 
 
-    const newBooks = list.filter(book => book.timestamp >= tenSecondsAgo);
+    // const currentTime = new Date().getTime();
+    // let tenSecondsAgo = currentTime - 432000000;
 
-    newBooks.forEach(book => {
-        const bookCard = document.createElement('div');
-        bookCard.classList.add('slider-card1');
-        bookCard.innerHTML = `
-            <div class="newTag">NEW</div>
-            <img class="book-img" src="${book.imageUrl}" 
-            alt="${book.title}" />
-            <p class="book_title">${book.title}</p>
-            <p class="book_subtitle">${book.author}</p>
-            <button>Read more</button>
-        `;
+  
+  let fliter_books = list.filter((book)=>{
+    let x = new Date(book.bookcreatetime)
+    let currentime = new Date().getTime()
+    let isnew = currentime - x 
+    if(isnew < 432000000 ){
+      return book;
+    }
+    
+  })
+
+  console.log("filter",fliter_books);
+  
+
+    // const newBooks = list.filter(book => book.timestamp >= tenSecondsAgo);
+
+    // newBooks.forEach(book => {
+    //     const bookCard = document.createElement('div');
+    //     bookCard.classList.add('swiper-slide'); 
+       
+    //     bookCard.innerHTML = `
+    //     <div class="slider-card1">
+    //         <div class="newTag">NEW</div>
+    //         <img class="book-img" src="${book.imageUrl}"
+    //         alt="${book.title}"/>
+    //         <p class="book_title">${book.title}</p>
+    //         <p class="book_subtitle">${book.author}</p>
+    //         <button>Read more</button>
+    //     </div>
+    //     `;
         
-        newBooksContainer.appendChild(bookCard);
-    });
+    //     newBooksContainer.appendChild(bookCard);
+    // });
 
-    const slidernewrelease = document.getElementById('slidernewrelease');
-    slidernewrelease.innerHTML = '';
-    slidernewrelease.appendChild(newBooksContainer);
+
+    console.log(list);
+
+
+    slidernewrelease.innerHTML = fliter_books.map((book)=>{
+      return `
+      <div class="swiper-slide">
+              <div class="slider-card1">
+              <div class="newTag">NEW</div>
+                <img class="book-img" src="${book.imageUrl}"
+                alt="${book.title}"/>
+                <p class="book_title">${book.title}</p>
+                <p class="book_subtitle">${book.author}</p>
+                <button><a class = "readMoreText" href="./bookPage.html">Read more</a></button>
+              </div>
+            </div>
+      `
+    })
+    swiper2.update();
+    // slidernewrelease.innerHTML = '';
+    // slidernewrelease.appendChild(newBooksContainer);
 }
 
 
