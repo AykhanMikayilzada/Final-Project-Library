@@ -74,71 +74,71 @@ import { getDatabase, ref, push, set, get, update, remove } from "https://www.gs
 
 
 
-const swiper = new Swiper('.swiper.mySwiper', {
-  slidesPerView: 5,
-  direction: 'horizontal',
-  loop: true,
-  navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-  },
-  breakpoints: {
-      // when window width is >= 320px
-      320: {
-          slidesPerView: 1.5,
-          spaceBetween: 20
-      },
+// const swiper = new Swiper('.swiper.mySwiper', {
+//   slidesPerView: 5,
+//   direction: 'horizontal',
+//   loop: true,
+//   navigation: {
+//       nextEl: '.swiper-button-next',
+//       prevEl: '.swiper-button-prev',
+//   },
+//   breakpoints: {
+//       // when window width is >= 320px
+//       320: {
+//           slidesPerView: 1.5,
+//           spaceBetween: 20
+//       },
   
-      480: {
-          slidesPerView: 2,
-          spaceBetween: 20
-      },
-      767: {
-          slidesPerView: 3,
-          spaceBetween: 20
-      },
-      1200: {
-          slidesPerView: 5,
-          spaceBetween: 20
-      }
-  }
-});
+//       480: {
+//           slidesPerView: 2,
+//           spaceBetween: 20
+//       },
+//       767: {
+//           slidesPerView: 3,
+//           spaceBetween: 20
+//       },
+//       1200: {
+//           slidesPerView: 5,
+//           spaceBetween: 20
+//       }
+//   }
+// });
 
 
 
 
-const swiper2 = new Swiper('.swiper.mySwiper2', {
-  // Optional parameters
-  slidesPerView: 5,
-  direction: 'horizontal',
-  loop: true,
-  // Navigation arrows
-  navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-  },
-  breakpoints: {
-      // when window width is >= 320px
-      320: {
-          slidesPerView: 1.5,
-          spaceBetween: 20
-      },
-      // when window width is >= 480px
-      480: {
-          slidesPerView: 2,
-          spaceBetween: 20
-      },
-      // when window width is >= 640px
-      767: {
-          slidesPerView: 3,
-          spaceBetween: 20
-      },
-      1200: {
-          slidesPerView: 5,
-          spaceBetween: 20
-      }
-  }
-});
+// const swiper2 = new Swiper('.swiper.mySwiper2', {
+//   // Optional parameters
+//   slidesPerView: 5,
+//   direction: 'horizontal',
+//   loop: true,
+//   // Navigation arrows
+//   navigation: {
+//       nextEl: '.swiper-button-next',
+//       prevEl: '.swiper-button-prev',
+//   },
+//   breakpoints: {
+//       // when window width is >= 320px
+//       320: {
+//           slidesPerView: 1.5,
+//           spaceBetween: 20
+//       },
+//       // when window width is >= 480px
+//       480: {
+//           slidesPerView: 2,
+//           spaceBetween: 20
+//       },
+//       // when window width is >= 640px
+//       767: {
+//           slidesPerView: 3,
+//           spaceBetween: 20
+//       },
+//       1200: {
+//           slidesPerView: 5,
+//           spaceBetween: 20
+//       }
+//   }
+// });
 
 let addedBooks = [];
 
@@ -188,6 +188,8 @@ function createData(path, data) {
 
   console.log(homePage);
 
+  console.log("forumlibBtn", forumlibBtn);
+
   if(homePage){
     readData("/books")
     .then((data) =>{
@@ -222,6 +224,8 @@ function createData(path, data) {
     alert("added book");
     console.log("forum", forum);
   });
+
+ 
 
 
   function renderBooks(list) {
@@ -313,6 +317,73 @@ function createData(path, data) {
     // slidernewrelease.appendChild(newBooksContainer);
 }
 
+
+
+const swiper = new Swiper('.swiper.mySwiper', {
+  slidesPerView: 5,
+  direction: 'horizontal',
+  loop: true,
+  navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+      // when window width is >= 320px
+      320: {
+          slidesPerView: 1.5,
+          spaceBetween: 20
+      },
+  
+      480: {
+          slidesPerView: 2,
+          spaceBetween: 20
+      },
+      767: {
+          slidesPerView: 3,
+          spaceBetween: 20
+      },
+      1200: {
+          slidesPerView: 5,
+          spaceBetween: 20
+      }
+  }
+});
+
+
+
+
+const swiper2 = new Swiper('.swiper.mySwiper2', {
+  // Optional parameters
+  slidesPerView: 5,
+  direction: 'horizontal',
+  loop: true,
+  // Navigation arrows
+  navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+      // when window width is >= 320px
+      320: {
+          slidesPerView: 1.5,
+          spaceBetween: 20
+      },
+      // when window width is >= 480px
+      480: {
+          slidesPerView: 2,
+          spaceBetween: 20
+      },
+      // when window width is >= 640px
+      767: {
+          slidesPerView: 3,
+          spaceBetween: 20
+      },
+      1200: {
+          slidesPerView: 5,
+          spaceBetween: 20
+      }
+  }
+});
 
 
 //   function renderBooksa(list) {
