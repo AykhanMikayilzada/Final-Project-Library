@@ -202,3 +202,9 @@ const clearCommentsButton = document.querySelector("#clearCommentsButton");
 clearCommentsButton.addEventListener("click", clearComments);
 
 sendBtn.addEventListener("click", addComment);
+
+
+const getItemm = localStorage.getItem("bookId")
+
+console.log(getItemm);
+
