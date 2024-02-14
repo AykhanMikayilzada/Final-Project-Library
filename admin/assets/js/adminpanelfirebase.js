@@ -208,18 +208,22 @@ async function getBookByIdFromFirebase(elementId) {
       console.log("Firebase'den alınan kitap verisi:", bookData);
       
       const bookHtml = `
+      <div id="leftSide" class="left-side">
       <button class="back"><a href="./catalog.html" class="backBtnText">BACK</a></button>
-        <img class="book_responsive" src="./assets/img/yellowBook.svg" />
+        <img class="book_responsive" src="${bookData.imageUrl}" />
         <div class="year">2017</div>
         <h2 class="title">${bookData.title}</h2>
         <h3 class="subtitle">2 days ago added</h3>
         <h3 class="subtitle2">${bookData.author}</h3>
         <p class="paragraph">${bookData.descr}</p>
       </div>
+
       <div class="right-side">
-        <img src="${bookData.imageUrl}" />
-        <div class="new">NEW</div>`;
-      document.getElementById("leftSide").innerHTML = bookHtml;
+        <img width = "400px" src="${bookData.imageUrl}" />
+        <div class="new">NEW</div>
+        </div>
+        `;
+      document.getElementById("sectionOne").innerHTML = bookHtml;
 
 
     } else {
