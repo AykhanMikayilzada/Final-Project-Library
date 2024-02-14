@@ -183,7 +183,7 @@ function createData(path, data) {
                 alt="${book.title}"/>
                 <p class="book_title">${book.title}</p>
                 <p class="book_subtitle">${book.author}</p>
-                <button><a class = "readMoreText" href="./bookPage.html">Read more</a></button>
+                <button onclick = "readmorebtn()"><a  class = "readMoreText" href="./bookPage.html">Read more</a></button>
               </div>
             </div>
       `
@@ -191,6 +191,10 @@ function createData(path, data) {
     swiper2.update();
     
 }
+
+
+fun
+
 
 // let swiper_bestseller = document.getElementById("swiper_bestseller");
 

@@ -69,6 +69,41 @@
       </div>
     </div>
 
+    <!-- -------- -->
+
+
+
+     <!-- join us Modal -->
+
+     <div class="overlay" id="overlaymodal"></div>
+
+     <div class="joincontent" id="joinustext">
+         <div>
+             <h1 class="jointitle">Zəhmət olmasa istediyiniz kategoriyani secin</h1>
+         </div>
+ 
+         <br>
+         <br>
+         <br>
+ 
+     <div class="joinboxing">
+      <select class="form-select form-select-lg mb-3" aria-label="Large select example">
+        <option selected>Catigoriya seçin</option>
+        <option value="1">Bestseller</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+
+      <br>
+      <br>
+      <br>
+      
+      <button type="button" class="btn btn-danger">Select</button>
+     </div>
+     </div>
+
+
+
     <!-- Menu Ended -->
     <main>
       <div id="left">
@@ -151,11 +186,12 @@
             id="bookdesc"
               class="description"
               type="text"
-              placeholder=""
+              placeholder=""    
             ></textarea>
           </div>
           <div class="settings">
-            <h3>Book Type <img src="./assets/img/plus.svg" width="20px" /></h3>
+            <h3>Book Type</h3>
+            <img id="modalbtnimg" src="./assets/img/plus.svg" width="20px" />
             <select class="form-select" aria-label="Default select example">
               <option selected>Fantastic</option>
               <option value="1">Horror</option>
@@ -353,5 +389,6 @@
     
     <script src="./assets/js/menu.js"></script>
     <script src="./assets/js/adminpanel.js"></script>
+    <script src="./assets/js/adminModal.js"></script>
   </body>
 </html>
