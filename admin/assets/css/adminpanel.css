@@ -15,6 +15,9 @@ header {
   cursor: pointer;
 }
 
+.alert{
+  display: none;
+}
 
 .menuBar {
   display: none;

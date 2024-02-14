@@ -58,6 +58,9 @@ function createData(path, data) {
   const forumlibBtn = document.getElementById("forumlibBtn");
   const bookdesc = document.getElementById("bookdesc");
   const slidermomapi = document.getElementById("slidermomapi");
+  const alertAdminMessage = document.getElementById("alertAdminMessage");
+  const succesMessage = document.getElementById("succesMessage");
+
 
   const homePage = window.location.pathname.includes("catalog.html")
 
@@ -86,18 +89,30 @@ function createData(path, data) {
     const author = authorname.value;
     const imageUrl = bookurl.value;
     const descr = bookdesc.value;
+    
+    if (title !== "" && author !== "" && imageUrl !== "" && descr !== "") {
+      const forum = {
+          title,
+          author,
+          imageUrl,
+          descr,
+          bookcreatetime
+      };
   
-    const forum = {
-      title,
-      author,
-      imageUrl,
-      descr,
-      bookcreatetime
-    };
-  
-    createData("books", forum);
-    alert("added book");
-    console.log("forum", forum);
+      succesMessage.style.display = "block";
+      createData("books", forum);
+      console.log("forum", forum);
+      alertAdminMessage.style.display = "none";
+
+
+
+  } else {
+      console.log("Bazı alanlar boş, işlem yapılmadı.");
+      alertAdminMessage.style.display = "block";
+      succesMessage.style.display = "none";
+  }
+
+
   });
 
  
