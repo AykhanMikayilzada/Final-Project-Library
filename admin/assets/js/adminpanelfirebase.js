@@ -89,6 +89,8 @@ function createData(path, data) {
     const author = authorname.value;
     const imageUrl = bookurl.value;
     const descr = bookdesc.value;
+
+
     
     if (title !== "" && author !== "" && imageUrl !== "" && descr !== "") {
       const forum = {
@@ -102,15 +104,27 @@ function createData(path, data) {
       succesMessage.style.display = "block";
       createData("books", forum);
       console.log("forum", forum);
-      alertAdminMessage.style.display = "none";
 
+      setTimeout(function(){
+        succesMessage.style.display = "none";
+    },5000);
 
 
   } else {
       console.log("Bazı alanlar boş, işlem yapılmadı.");
       alertAdminMessage.style.display = "block";
-      succesMessage.style.display = "none";
+      
+    setTimeout(function(){
+      alertAdminMessage.style.display = "none";
+  },5000);
+      
   }
+
+  bookname.value = "" 
+  authorname.value = ""  
+  bookurl.value = "" 
+  bookdesc.value = ""
+
 
 
   });
