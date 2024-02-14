@@ -454,6 +454,13 @@ select option {
   line-height: normal;
 }
 @media screen and (max-width: 858px) {
+
+  .alert{
+    margin-left: 5px;
+    width: 90%;
+    text-align: center;
+  }
+
   .menuBar {
     position: absolute;
     top: 0;
@@ -464,6 +471,7 @@ select option {
     display: flex;
     flex-direction: column;
     display: none;
+    z-index: 2;
   }
   .menuBar .logoWriting {
     margin-top: 23.01px;

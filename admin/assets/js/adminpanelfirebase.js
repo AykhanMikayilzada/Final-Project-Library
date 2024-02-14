@@ -178,6 +178,34 @@ function createData(path, data) {
     
 }
 
+// let swiper_bestseller = document.getElementById("swiper_bestseller");
+
+// onValue(ref(db, "books"), renderBestSellerBooks);
+// function renderBestSellerBooks() {
+//     let mainQuery = query(ref(db, 'books'), orderByChild('isBestSellerCheck'),equalTo(true))
+//     get(mainQuery).then((snapshot)=>{
+//         if (snapshot.exists()) {
+//             const data = convertData(snapshot.val());
+//             let data_list = data.map((book, index) => {
+//                 return `
+//                 <div class="swiper-slide">
+//                 <div class="slider-card1">
+//                 <div class="newTag">NEW</div>
+//                   <img class="book-img" src="${book.imageUrl}"
+//                   alt="${book.title}"/>
+//                   <p class="book_title">${book.title}</p>
+//                   <p class="book_subtitle">${book.author}</p>
+//                   <button><a class = "readMoreText" href="./bookPage.html">Read more</a></button>
+//                 </div>
+//               </div>
+//         `
+//             }).join("")
+//             swiper_bestseller.innerHTML = data_list;
+//             swiper_bestseller.update()
+//             return data
+//         }
+//     })
+// }
 
 
 const swiper = new Swiper('.swiper.mySwiper', {
