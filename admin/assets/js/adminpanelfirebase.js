@@ -139,7 +139,6 @@ function renderBooks(list) {
       (book) => `
       <div class="swiper-slide">
         <div class="slider-card1">
-          <div class="newTag">NEW</div>
           <img class="book-img" src="${book.imageUrl}" alt="${book.title}"/>
           <p class="book_title">${book.title}</p>
           <p class="book_subtitle">${book.author}</p>
