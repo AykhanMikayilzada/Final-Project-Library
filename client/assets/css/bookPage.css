@@ -205,6 +205,8 @@ line-height: 196.187%;
 #sectionOne .left-side {
   margin-left: 212px;
   margin-top: 173px;
+  max-width: 686px;
+  width: 100%;
 }
 #sectionOne .left-side .back {
   width: 100px;
@@ -244,6 +246,8 @@ line-height: 196.187%;
   font-style: normal;
   font-weight: 700;
   line-height: 196.187%;
+  max-width: 686px;
+  width: 100%;
 }
 #sectionOne .left-side .subtitle {
   color: #241400;
@@ -290,7 +294,7 @@ line-height: 196.187%;
   box-shadow: 0px 3px 8px rgba(225, 106, 0, 0.19);
   position: absolute;
   top: 0;
-  right: 20px;
+  right: 0px;
   color: #fff;
   font-family: "Montserrat", sans-serif;
   font-size: 12px;

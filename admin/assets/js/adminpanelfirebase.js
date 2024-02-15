@@ -234,7 +234,7 @@ async function getBookByIdFromFirebase(elementId) {
       </div>
 
       <div class="right-side">
-        <img width = "400px" src="${bookData.imageUrl}" />
+        <img width = "379px" height = "529px" src="${bookData.imageUrl}" />
         <div class="new">NEW</div>
         </div>
         `;
