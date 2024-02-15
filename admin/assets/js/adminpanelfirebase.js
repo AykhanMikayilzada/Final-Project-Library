@@ -81,8 +81,10 @@ if (homePage) {
       const books = convertData(data);
       renderBooks(books);
       renderBooksa(books);
+      spinnerbtn2.style.display = "none";
     })
     .catch((error) => console.log("Error reading data", error));
+    
 }
 
 forumlibBtn?.addEventListener("click", function (e) {
@@ -123,6 +125,12 @@ forumlibBtn?.addEventListener("click", function (e) {
   authorname.value = "";
   bookurl.value = "";
   bookdesc.value = "";
+});
+
+let spinnerbtn2 = document.getElementById("spinnerbtn2");
+
+window.addEventListener("load", () => {
+  spinnerbtn2.style.display = "block";
 });
 
 function renderBooks(list) {
@@ -172,6 +180,7 @@ function renderBooksa(list) {
   swiper2.update();
 }
 
+let spinnerbtn = document.getElementById("spinnerbtn");
 
 
 document.addEventListener("click", function (e) {
@@ -181,6 +190,8 @@ document.addEventListener("click", function (e) {
     window.location.href = "./bookPage.html";
   }
 });
+
+
 
 const elementId = localStorage.getItem("bookId")
 console.log("budur", elementId);
@@ -202,6 +213,8 @@ async function GETbyID(id) {
 
 async function getBookByIdFromFirebase(elementId) {
   try {
+    spinnerbtn.style.display = "block";
+
     const bookData = await GETbyID(elementId);
     console.log("goster", bookData);
     if (bookData) {
@@ -210,6 +223,9 @@ async function getBookByIdFromFirebase(elementId) {
       const bookHtml = `
       <div id="leftSide" class="left-side">
       <button class="back"><a href="./catalog.html" class="backBtnText">BACK</a></button>
+
+    
+      
         <img class="book_responsive" src="${bookData.imageUrl}" />
         <div class="year">2017</div>
         <h2 class="title">${bookData.title}</h2>
@@ -226,6 +242,7 @@ async function getBookByIdFromFirebase(elementId) {
       document.getElementById("sectionOne").innerHTML = bookHtml;
 
 
+      spinnerbtn.style.display = "none";
     } else {
       console.log("Firebase'den kitap verisi bulunamadı.");
     }
