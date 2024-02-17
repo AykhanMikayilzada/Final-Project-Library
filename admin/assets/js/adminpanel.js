@@ -56,6 +56,11 @@ async function searchBooksAndUpdateInputs(bookTitle) {
                 authorNameInput.value = book.volumeInfo.authors ? book.volumeInfo.authors.join(", ") : "Unknown Author";
                 bookUrlInput.value = book.volumeInfo.imageLinks?.thumbnail || "";
                 bookDescInput.value = book.volumeInfo.description || "";
+
+                // About store bölümündeki inputları doldur
+                document.querySelector("#aboutStoreName").value = book.volumeInfo.title || "";
+                document.querySelector("#aboutStoreImg").value = book.volumeInfo.imageLinks?.thumbnail || "";
+                document.querySelector("#aboutStoreDescr").value = book.volumeInfo.description || "";
             });
 
             resultDiv.appendChild(resultImg);

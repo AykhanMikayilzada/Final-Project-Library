@@ -351,10 +351,6 @@ if (getItemm) {
 }
 
 
-
-
-
-
 const swiper = new Swiper(".swiper.mySwiper", {
   slidesPerView: 5,
   direction: "horizontal",
