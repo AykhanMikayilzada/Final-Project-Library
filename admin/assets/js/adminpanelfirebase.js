@@ -84,7 +84,6 @@ if (homePage) {
       spinnerbtn2.style.display = "none";
     })
     .catch((error) => console.log("Error reading data", error));
-    
 }
 
 forumlibBtn?.addEventListener("click", function (e) {
@@ -126,6 +125,9 @@ forumlibBtn?.addEventListener("click", function (e) {
   bookurl.value = "";
   bookdesc.value = "";
 });
+
+
+
 
 let spinnerbtn2 = document.getElementById("spinnerbtn2");
 
@@ -179,8 +181,10 @@ function renderBooksa(list) {
   swiper2.update();
 }
 
-let spinnerbtn = document.getElementById("spinnerbtn");
 
+
+
+let spinnerbtn = document.getElementById("spinnerbtn");
 
 document.addEventListener("click", function (e) {
   if (e.target.classList.contains("readMoreText")) {
@@ -190,22 +194,66 @@ document.addEventListener("click", function (e) {
   }
 });
 
-
-
-const elementId = localStorage.getItem("bookId")
+const elementId = localStorage.getItem("bookId");
 console.log("budur", elementId);
+
+
+
+
 
 async function GETbyID(id) {
   try {
     const response = await get(ref(database, `/books/${id}`));
     return response.val(); // Alınan veriyi döndür
   } catch (error) {
-    console.error("Firebase'den kitap verisi alınırken bir hata oluştu:", error);
+    console.error(
+      "Firebase'den kitap verisi alınırken bir hata oluştu:",
+      error
+    );
     throw error;
   }
 }
 
 
+
+
+
+let clickCounter = 0;
+
+function addToCart() {
+  clickCounter++;
+
+  if (clickCounter > 5) {
+    const getItemm = localStorage.getItem("bookId");
+
+    if (getItemm) {
+      GETbyID(getItemm)
+      .then((bookData) => {
+          const bookHtml = `
+            <div class="swiper-slide">
+              <div class="slider-card1">
+                <img class="book-img" src="${bookData.imageUrl}" alt="${bookData.title}"/>
+                <p class="book_title">${bookData.title}</p>
+                <p class="book_subtitle">${bookData.author}</p>
+                <button class="readMoreText" data-book-id="${bookData.id}">Read more</button>
+              </div>
+            </div>
+          `;
+
+          console.log("bu nedir",getItemm);
+          
+          swiper_bestseller.innerHTML += bookHtml;
+        })
+        .catch((error) => {
+          console.error("Firebase'den kitap verisi alınırken bir hata oluştu:", error);
+        });
+    } else {
+      console.log("localStorage'dan kitap kimliği alınamadı.");
+    }
+  } else {
+    console.log("Add to cart işlemi gerçekleştirilemedi, 5 defadan fazla tıklanmış.");
+  }
+}
 
 
 
@@ -216,9 +264,10 @@ async function getBookByIdFromFirebase(elementId) {
 
     const bookData = await GETbyID(elementId);
     console.log("goster", bookData);
+
     if (bookData) {
       console.log("Firebase'den alınan kitap verisi:", bookData);
-      
+
       const bookHtml = `
       <div id="leftSide" class="left-side">
       <button class="back"><a href="./catalog.html" class="backBtnText">BACK</a></button>
@@ -231,6 +280,16 @@ async function getBookByIdFromFirebase(elementId) {
         <h3 class="subtitle">2 days ago added</h3>
         <h3 class="subtitle2">${bookData.author}</h3>
         <p class="paragraph">${bookData.descr}</p>
+
+      <button class="addtocart">
+        <div class="pretext">
+          <i class="fas fa-cart-plus"></i> ADD TO CART
+        </div>
+        <div class="pretext done">
+          <div class="posttext"><i class="fas fa-check"></i> ADDED</div>
+        </div>
+      </button>
+
       </div>
 
       <div class="right-side">
@@ -240,17 +299,48 @@ async function getBookByIdFromFirebase(elementId) {
         `;
       document.getElementById("sectionOne").innerHTML = bookHtml;
 
-
       spinnerbtn.style.display = "none";
+
+
+
+       
+
+      // --------btn js
+
+      const button = document.querySelector(".addtocart");
+      const done = document.querySelector(".done");
+      console.log(button);
+      let added = false;
+      button.addEventListener("click", () => {
+
+        addToCart();
+        if (added) {
+          done.style.transform = "translate(-110%) skew(-40deg)";
+          added = false;
+        } else {
+          done.style.transform = "translate(0px)";
+          added = true;
+        }
+      });
+      // ---------
     } else {
       console.log("Firebase'den kitap verisi bulunamadı.");
     }
   } catch (error) {
-    console.error("Firebase'den kitap verisi alınırken bir hata oluştu:", error);
+    console.error(
+      "Firebase'den kitap verisi alınırken bir hata oluştu:",
+      error
+    );
   }
 }
 
-const getItemm = localStorage.getItem("bookId")
+
+
+
+
+
+
+const getItemm = localStorage.getItem("bookId");
 
 console.log(getItemm);
 
@@ -259,6 +349,9 @@ if (getItemm) {
 } else {
   console.log("localStorage'dan kitap kimliği alınamadı.");
 }
+
+
+
 
 
 
@@ -291,6 +384,36 @@ const swiper = new Swiper(".swiper.mySwiper", {
 });
 
 const swiper2 = new Swiper(".swiper.mySwiper2", {
+  slidesPerView: 5,
+  direction: "horizontal",
+  loop: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1.5,
+      spaceBetween: 20,
+    },
+    480: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    767: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    1200: {
+      slidesPerView: 5,
+      spaceBetween: 20,
+    },
+  },
+});
+
+
+
+const swiper3 = new Swiper(".swiper.mySwiper3", {
   slidesPerView: 5,
   direction: "horizontal",
   loop: true,
