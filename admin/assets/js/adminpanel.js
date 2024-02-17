@@ -6,6 +6,7 @@ let searchinput = document.getElementById("searchinput");
 async function searchBooks(bookTitle) {
     const apiKey = "AIzaSyB6ZzZJY3wOlJ0bi6Qymj8RREY8eKZNjhI";
     const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${bookTitle}&printType=books&key=${apiKey}`;
+    
     try {
         const response = await fetch(apiUrl);
         const data = await response.json();
@@ -41,21 +42,27 @@ async function searchBooksAndUpdateInputs(bookTitle) {
 
             const resultAuthors = document.createElement("p");
             resultAuthors.textContent = book.volumeInfo.authors ? book.volumeInfo.authors.join(", ") : "Unknown Author";
+            
+            const resultDesc = document.createElement("p");
+            resultDesc.textContent = book.volumeInfo.description;
 
             resultDiv.addEventListener("click", () => {
                 const bookNameInput = document.getElementById("bookname");
                 const authorNameInput = document.getElementById("authorname");
                 const bookUrlInput = document.getElementById("bookurl");
+                const bookDescInput = document.getElementById("bookdesc");
 
                 bookNameInput.value = book.volumeInfo.title || "";
                 authorNameInput.value = book.volumeInfo.authors ? book.volumeInfo.authors.join(", ") : "Unknown Author";
                 bookUrlInput.value = book.volumeInfo.imageLinks?.thumbnail || "";
+                bookDescInput.value = book.volumeInfo.description || "";
             });
 
             resultDiv.appendChild(resultImg);
             resultDiv.appendChild(resultTitle);
             resultDiv.appendChild(resultAuthors);
             resultContainer.appendChild(resultDiv);
+
         });
     } catch (error) {
         console.error("Hata oluştu:", error);
