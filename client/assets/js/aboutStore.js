@@ -1,57 +1,74 @@
-const aboutStoreName = localStorage.getItem("aboutStoreName");
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import {
+  getDatabase,
+  ref,
+  push,
+  set,
+  get,
+  update,
+  remove,
+} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
-if (aboutStoreName) {
-    console.log("aboutStoreName:", aboutStoreName);
-} else {
-    console.log("aboutStoreName bulunamadı.");
+const firebaseConfig = {
+  apiKey: "AIzaSyBBDUmstwc_hZjzqQG7yDn4pIU-w-b9FDU",
+  authDomain: "libraryprojectapp-df468.firebaseapp.com",
+  databaseURL:
+    "https://libraryprojectapp-df468-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "libraryprojectapp-df468",
+  storageBucket: "libraryprojectapp-df468.appspot.com",
+  messagingSenderId: "176480815398",
+  appId: "1:176480815398:web:47ee903956a99357d299e7",
+  measurementId: "G-2H2B66PT8G",
+};
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+
+async function getLastAddedBook() {
+  try {
+    const dataRef = ref(database, "books");
+    const snapshot = await get(dataRef);
+    const books = snapshot.val();
+
+    if (!books) {
+      console.log("No books found in the database.");
+      return null;
+    }
+
+    // Veritabanından gelen kitapları diziye çevirin
+    const bookArray = Object.values(books);
+
+    // En son eklenen kitabı alın
+    const lastAddedBook = bookArray[bookArray.length - 1];
+
+    // En son eklenen kitabı döndür
+    return lastAddedBook;
+  } catch (error) {
+    console.error("Error fetching last added book from Firebase:", error);
+    throw error;
+  }
 }
 
-async function searchBooks(bookTitle) {
-    const apiKey = "AIzaSyB6ZzZJY3wOlJ0bi6Qymj8RREY8eKZNjhI";
-    const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${bookTitle}&printType=books&key=${apiKey}`;
-  
-    try {
-      const response = await fetch(apiUrl);
-      const data = await response.json();
-  
-      return data.items;
-    } catch (error) {
-      console.error("error", error);
-      return [];
+document.addEventListener("DOMContentLoaded", async function () {
+  try {
+    const lastAddedBook = await getLastAddedBook();
+    if (lastAddedBook) {
+      // En son eklenen kitabın bilgileri
+      const { title, author, imageUrl } = lastAddedBook;
+
+      // İlgili div'e içeriği ekleyin
+      const aboutLeftSide = document.getElementById("aboutLeftSide");
+      const aboutRightSide = document.getElementById("aboutRightSide");
+      aboutLeftSide.innerHTML = `
+              <h2 id="aboutTitle">${title}</h2>
+              <p id="aboutDescription">Author: ${author}</p>
+          `;
+      aboutRightSide.innerHTML = `
+      <img src="${imageUrl}" class="aboutImg" />
+      `;
+    } else {
+      console.log("No last added book found.");
     }
+  } catch (error) {
+    console.error("Error getting last added book:", error);
   }
-  
-  // Bu kısımda API'den gelen verileri kullanarak aboutTitle, aboutDescription ve aboutImage içeriğini doldurun
-  async function updateAboutPageWithBookInfo(bookTitle) {
-    try {
-      const books = await searchBooks(bookTitle);
-      if (books.length === 0) {
-        console.log("No books found with the given title.");
-        return;
-      }
-  
-      // İlk kitabı seçiyoruz (diğer kitapları da kullanabilirsiniz)
-      const book = books[0];
-      const aboutTitle = document.getElementById("aboutTitle");
-      const aboutDescription = document.getElementById("aboutDescription");
-      const aboutImage = document.getElementById("aboutImage");
-  
-      // aboutTitle içeriğini güncelle
-      aboutTitle.textContent = book.volumeInfo.title || "No title available";
-  
-      // aboutDescription içeriğini güncelle
-      aboutDescription.textContent = book.volumeInfo.description || "No description available";
-  
-      // aboutImage içeriğini güncelle
-      aboutImage.src = book.volumeInfo.imageLinks?.thumbnail || "./assets/img/default_thumbnail.jpg";
-      aboutImage.alt = book.volumeInfo.title || "No title available";
-  
-    } catch (error) {
-      console.error("An error occurred while updating about page:", error);
-    }
-  }
-  
-  // Bu kısımda sayfa yüklendiğinde veya bir olay gerçekleştiğinde updateAboutPageWithBookInfo fonksiyonunu çağırın
-  document.addEventListener("DOMContentLoaded", function() {
-    updateAboutPageWithBookInfo(aboutStoreName);
-  });
+});

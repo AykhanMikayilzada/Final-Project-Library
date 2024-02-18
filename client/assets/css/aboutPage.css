@@ -168,6 +168,8 @@ line-height: 196.187%;
   justify-content: flex-start;
   gap: 11px;
   margin-top: 111px;
+  max-width: 686px;
+  width: 100%;
 }
 #sectionFirst .rightSide {
   margin-top: 200px;

@@ -126,9 +126,6 @@ forumlibBtn?.addEventListener("click", function (e) {
   bookdesc.value = "";
 });
 
-
-
-
 let spinnerbtn2 = document.getElementById("spinnerbtn2");
 
 window.addEventListener("load", () => {
@@ -181,11 +178,6 @@ function renderBooksa(list) {
   swiper2.update();
 }
 
-
-
-
-let spinnerbtn = document.getElementById("spinnerbtn");
-
 document.addEventListener("click", function (e) {
   if (e.target.classList.contains("readMoreText")) {
     const bookId = e.target.getAttribute("data-book-id");
@@ -196,10 +188,6 @@ document.addEventListener("click", function (e) {
 
 const elementId = localStorage.getItem("bookId");
 console.log("budur", elementId);
-
-
-
-
 
 async function GETbyID(id) {
   try {
@@ -213,10 +201,6 @@ async function GETbyID(id) {
     throw error;
   }
 }
-
-
-
-
 
 let clickCounter = 0;
 
@@ -255,9 +239,6 @@ function addToCart() {
   }
 }
 
-
-
-
 async function getBookByIdFromFirebase(elementId) {
   try {
     spinnerbtn.style.display = "block";
@@ -272,8 +253,6 @@ async function getBookByIdFromFirebase(elementId) {
       <div id="leftSide" class="left-side">
       <button class="back"><a href="./catalog.html" class="backBtnText">BACK</a></button>
 
-    
-      
         <img class="book_responsive" src="${bookData.imageUrl}" />
         <div class="year">2017</div>
         <h2 class="title">${bookData.title}</h2>
@@ -301,18 +280,12 @@ async function getBookByIdFromFirebase(elementId) {
 
       spinnerbtn.style.display = "none";
 
-
-
-       
-
       // --------btn js
-
       const button = document.querySelector(".addtocart");
       const done = document.querySelector(".done");
       console.log(button);
       let added = false;
       button.addEventListener("click", () => {
-
         addToCart();
         if (added) {
           done.style.transform = "translate(-110%) skew(-40deg)";
@@ -334,12 +307,6 @@ async function getBookByIdFromFirebase(elementId) {
   }
 }
 
-
-
-
-
-
-
 const getItemm = localStorage.getItem("bookId");
 
 console.log(getItemm);
@@ -349,7 +316,6 @@ if (getItemm) {
 } else {
   console.log("localStorage'dan kitap kimliği alınamadı.");
 }
-
 
 const swiper = new Swiper(".swiper.mySwiper", {
   slidesPerView: 5,
@@ -407,8 +373,6 @@ const swiper2 = new Swiper(".swiper.mySwiper2", {
   },
 });
 
-
-
 const swiper3 = new Swiper(".swiper.mySwiper3", {
   slidesPerView: 5,
   direction: "horizontal",
@@ -436,3 +400,4 @@ const swiper3 = new Swiper(".swiper.mySwiper3", {
     },
   },
 });
+
