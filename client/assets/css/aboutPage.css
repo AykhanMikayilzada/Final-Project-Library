@@ -80,7 +80,10 @@ header .joinUs span {
   line-height: normal;
   margin-right: 65px;
 }
-
+.aboutImg {
+  width: 379px;
+  height: 529px;
+}
 
 .joinfamilymom{
   display: none;
@@ -157,7 +160,7 @@ line-height: 196.187%;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 72px;
+  gap: 200px;
 }
 #sectionFirst .leftSide {
   display: flex;
@@ -185,7 +188,6 @@ line-height: 196.187%;
   font-weight: 400;
   line-height: 196.187%; /* 35.314px */
   max-width: 686px;
-  height: 253px;
 }
 #sectionSecond {
   display: flex;
