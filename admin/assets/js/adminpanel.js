@@ -6,7 +6,7 @@ let searchinput = document.getElementById("searchinput");
 async function searchBooks(bookTitle) {
   const apiKey = "AIzaSyB6ZzZJY3wOlJ0bi6Qymj8RREY8eKZNjhI";
   const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${bookTitle}&printType=books&key=${apiKey}`;
-
+  
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();

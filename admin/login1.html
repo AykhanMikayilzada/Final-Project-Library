@@ -27,12 +27,10 @@
     </header>
     <main>
 
-
-    <form id="Mainform" action="">
-
+      <form id="Mainform" action="">
       <div class="container">
 
-        
+  
 
         <div class="login-box">
           <div class="welcome-text">
@@ -40,24 +38,13 @@
           </div>
           <div class="inputs">
             <div class="alerts">
-              <!-- <div class="alert alert-danger" role="alert">
-                Password or Username is incorrect!
-              </div>
-              <div class="alert alert-warning" role="alert">
-                You didn't fill in all the boxes!
-              </div> -->
+             
             </div>
-            
+
             <input id="emailInp" class="userInpt" type="email" placeholder="name@example.com" />
-            <input id="Fnameinp" class="userInpt" type="text" placeholder="username"/>
-            <input id="lnameInp" class="userInpt" type="text" placeholder="lastname" />
             <div class="password">
-              <input
-              id="passwordInp"
-                class="passwordInpt"
-                type="password"
-                placeholder="Password"
-              />
+              <input id="passwordInp" class="passwordInpt" type="password" placeholder="Password" />
+
               <img
                 id="show"
                 class="show"
@@ -71,18 +58,30 @@
                 width="25px"
               />
             </div>
+
           </div>
-          <button type="submit" class="joinBtn">Join</button>
+
+          <!-- <input class="submitBtn" type="submit" value="submit" id="submit"> -->
+
+          <button type="submit" id="joinBBtn" class="joinBtn">Join</button>
+          <button class="joinBtn" type="button" ><a href="./login.html">registration</a></button>
+          
+
+       
         </div>
-
       
-
       </div>
-
     </form>
 
     </main>
-    <script type="module" src="./assets/js/joinUspage.js"></script>
-    <script type="module" src="./assets/js/login.js"></script>
+
+
+
+    <script type="module" src="./assets/js/loginUspage.js"></script>
+
+    <script src="./assets/js/login.js"></script>
+
+
+
   </body>
 </html>
