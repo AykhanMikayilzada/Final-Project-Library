@@ -182,11 +182,12 @@ main .container .login-box .password .hide {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 87px;
+    margin-top: 95px;
   }
 
   main .container .login-box{
-    height: 568px;
+    height: 610px;
+    border-radius: 7px;
    
   }
  
