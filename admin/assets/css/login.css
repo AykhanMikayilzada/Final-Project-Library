@@ -161,9 +161,6 @@ main .container .login-box .password .hide {
 }
 @media screen and (max-width: 755px) {
 
- body{
-overflow-y: hidden;
- }
 
 
   main .container .login-box{
@@ -240,7 +237,7 @@ overflow-y: hidden;
     line-height: 196.187%; /* 25.504px */
   }
   main .container {
-   
+    position: fixed;
 
   }
   main .container .login-box .password img {
