@@ -98,7 +98,16 @@ line-height: normal;
 
 }
 
-
+.logoutbtn{
+  background-color: transparent;
+  color: #FFFFFF;
+  border: none;
+  font-family: 'Crimson Text', serif;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 196.187%;
+}
 
 .btn{
   width: 110px;

@@ -1,47 +1,46 @@
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+
 
 const firebaseConfig = {
-    apiKey: "AIzaSyC8wxVUufHaPzXHaMIIgybcyKcpWvH_k_o",
-    authDomain: "contactuslibraryapp-c9339.firebaseapp.com",
-    databaseURL: "https://contactuslibraryapp-c9339-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "contactuslibraryapp-c9339",
-    storageBucket: "contactuslibraryapp-c9339.appspot.com",
-    messagingSenderId: "300093896508",
-    appId: "1:300093896508:web:9f963d59f04bc4f7371039"
+  apiKey: "AIzaSyBilJ9Sx0kgyFkyDr6iRgJLI3WKBD3cO8M",
+  authDomain: "joinusappdb.firebaseapp.com",
+  databaseURL: "https://joinusappdb-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "joinusappdb",
+  storageBucket: "joinusappdb.appspot.com",
+  messagingSenderId: "599092674811",
+  appId: "1:599092674811:web:844fd7463593dd824b705e"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase();
+const auth = getAuth(app);
 
-const contactName = document.getElementById("contactName");
-const contactEmail = document.getElementById("contactEmail");
-const contactAddress = document.getElementById("contactAddress");
-const contactPhone = document.getElementById("contactPhone");
-const contactTextarea = document.getElementById("contactTextarea");
-const contactSendBtn = document.getElementById("contactSendBtn");
+let EmailInp = document.getElementById("emailInp");
+let PassInp = document.getElementById("passwordInp");
+let FnameInp = document.getElementById("Fnameinp");
+let LnameInp = document.getElementById("lnameInp");
+let MainForm = document.getElementById("Mainform");
 
-contactSendBtn.addEventListener("click", function () {
-  const contactInfo = {
-    contactName: contactName.value,
-    contactEmail: contactEmail.value,
-    contactAddress: contactAddress.value,
-    contactPhone: contactPhone.value,
-    contactTextarea: contactTextarea.value
-  };
+let RegisterUser = evt => {
+    evt.preventDefault();
 
-  const contactsRef = ref(db, "contacts");
-  push(contactsRef).set(contactInfo)
-    .then(() => {
-      alert("İletişim bilgileriniz başarıyla gönderildi!");
-      contactName.value = "";
-      contactEmail.value = "";
-      contactAddress.value = "";
-      contactPhone.value = "";
-      contactTextarea.value = "";
+    createUserWithEmailAndPassword(auth, EmailInp.value, PassInp.value)
+    .then((credentials) => {
+        set(ref(db, 'UsersAuthList/' + credentials.user.uid),{
+            firstname: FnameInp.value,
+            lastname: LnameInp.value
+        })
     })
-    .catch(error => {
-      console.error("Hata oluştu: ", error);
-      alert("Bir hata oluştu, lütfen tekrar deneyin!");
-    });
-});
+    .catch((error)=>{
+        alert(error.message);
+        console.log(error.code);
+        console.log(error.message);
+    })
+}
+
+MainForm.addEventListener('submit', RegisterUser);
