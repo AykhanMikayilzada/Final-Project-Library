@@ -54,6 +54,12 @@ main .container {
   margin-top: 7.5625rem;
 }
 
+
+.alert{
+  display: none;
+  margin-top: 10px;
+}
+
 /* .submitBtn{
   margin-top: 10px;
   width: 550px;
@@ -153,6 +159,43 @@ main .container .login-box .password .hide {
   display: none;
 }
 @media screen and (max-width: 755px) {
+/* 
+  main .container .login-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4.3125rem;
+    padding-bottom: 2.1481rem;
+    background: #fff;
+
+    width: 500px;
+  margin-top:20px;
+   
+  } */
+ 
+   .userInpt{
+    width: 300px;
+   
+  }
+
+ .login-box{
+    margin-bottom: 30px;
+  }
+ 
+.passwordInpt{
+    width: 300px;
+  }
+
+  header .logo-box {
+    position: fixed;
+    display: flex;
+    gap: 0.4988rem;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
   header {
     display: flex;
     justify-content: flex-start;
@@ -198,12 +241,12 @@ main .container .login-box .password .hide {
     font-weight: 400;
     line-height: 196.187%; /* 25.504px */
   }
-  main .container {
-    width: 322px;
+  /* main .container {
+    width: 430px;
     display: flex;
-    margin: auto;
-    margin-top: 95px;
-  }
+    margin-top: 70px;
+
+  } */
   main .container .login-box .password img {
     cursor: pointer;
     position: absolute;

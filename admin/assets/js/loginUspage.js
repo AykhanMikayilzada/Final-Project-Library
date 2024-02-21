@@ -25,6 +25,8 @@ const dbref = ref(db);
 let EmailInp = document.getElementById("emailInp");
 let PassInp = document.getElementById("passwordInp");
 let MainForm = document.getElementById("Mainform");
+let alertloginerror = document.getElementById("alertloginerror");
+
 
 let SignInUser = evt => {
     evt.preventDefault();
@@ -43,9 +45,7 @@ let SignInUser = evt => {
         })
     })
     .catch((error)=>{
-        alert(error.message);
-        console.log(error.code);
-        console.log(error.message);
+        alertloginerror.style.display = "block"
     })
 }
 
