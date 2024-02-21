@@ -2,6 +2,7 @@ body {
   background: #720418;
   font-family: "Montserrat", sans-serif;
   height: 100vh;
+  
 }
 header {
   width: 100%;
@@ -159,28 +160,24 @@ main .container .login-box .password .hide {
   display: none;
 }
 @media screen and (max-width: 755px) {
-/* 
-  main .container .login-box{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 4.3125rem;
-    padding-bottom: 2.1481rem;
-    background: #fff;
 
-    width: 500px;
-  margin-top:20px;
+ body{
+overflow-y: hidden;
+ }
+
+
+  main .container .login-box{
+    height: 600px;
    
-  } */
+  }
  
    .userInpt{
-    width: 300px;
    
   }
 
- .login-box{
-    margin-bottom: 30px;
+
+ .Login-box{
+    margin-bottom: 60px;
   }
  
 .passwordInpt{
@@ -188,12 +185,13 @@ main .container .login-box .password .hide {
   }
 
   header .logo-box {
-    position: fixed;
     display: flex;
     gap: 0.4988rem;
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 20px;
+    position: fixed;
+   
   }
 
   header {
@@ -241,12 +239,10 @@ main .container .login-box .password .hide {
     font-weight: 400;
     line-height: 196.187%; /* 25.504px */
   }
-  /* main .container {
-    width: 430px;
-    display: flex;
-    margin-top: 70px;
+  main .container {
+   
 
-  } */
+  }
   main .container .login-box .password img {
     cursor: pointer;
     position: absolute;
