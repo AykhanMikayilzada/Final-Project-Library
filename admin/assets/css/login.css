@@ -178,6 +178,7 @@ body{
 
  .Login-box{
     margin-bottom: 60px;
+    position: fixed;
   }
  
 .passwordInpt{
