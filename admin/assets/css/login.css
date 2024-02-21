@@ -52,7 +52,7 @@ main .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 7.5625rem;
+  
 }
 
 
@@ -161,10 +161,13 @@ main .container .login-box .password .hide {
 }
 @media screen and (max-width: 755px) {
 
-
+body{
+  overflow: hidden;
+}
 
   main .container .login-box{
     height: 600px;
+    margin-top: 99px;
    
   }
  
@@ -237,7 +240,7 @@ main .container .login-box .password .hide {
     line-height: 196.187%; /* 25.504px */
   }
   main .container {
-    position: fixed;
+   
 
   }
   main .container .login-box .password img {
