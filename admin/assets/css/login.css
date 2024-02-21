@@ -4,6 +4,13 @@ body {
   height: 100vh;
   
 }
+
+
+body{
+  overflow: hidden;
+}
+
+
 header {
   width: 100%;
   position: fixed;
@@ -52,7 +59,7 @@ main .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  margin-top: 7.5625rem;
 }
 
 
@@ -161,13 +168,25 @@ main .container .login-box .password .hide {
 }
 @media screen and (max-width: 755px) {
 
-body{
-  overflow: hidden;
-}
+  .joinBtn{
+    height: 10px;
+  }
+
+
+  body{
+    overflow: hidden;
+  }
+
+
+  main .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 90px;
+  }
 
   main .container .login-box{
-    height: 600px;
-    margin-top: 99px;
+    height: 568px;
    
   }
  
@@ -177,8 +196,7 @@ body{
 
 
  .Login-box{
-    margin-bottom: 60px;
-    position: fixed;
+    margin-bottom: 90px;
   }
  
 .passwordInpt{
