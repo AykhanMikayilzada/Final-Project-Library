@@ -1,14 +1,21 @@
+import {
+  getDatabase,
+  ref,
+  push,
+  set,
+} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyC8wxVUufHaPzXHaMIIgybcyKcpWvH_k_o",
-    authDomain: "contactuslibraryapp-c9339.firebaseapp.com",
-    databaseURL: "https://contactuslibraryapp-c9339-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "contactuslibraryapp-c9339",
-    storageBucket: "contactuslibraryapp-c9339.appspot.com",
-    messagingSenderId: "300093896508",
-    appId: "1:300093896508:web:9f963d59f04bc4f7371039"
+  apiKey: "AIzaSyC8wxVUufHaPzXHaMIIgybcyKcpWvH_k_o",
+  authDomain: "contactuslibraryapp-c9339.firebaseapp.com",
+  databaseURL:
+    "https://contactuslibraryapp-c9339-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "contactuslibraryapp-c9339",
+  storageBucket: "contactuslibraryapp-c9339.appspot.com",
+  messagingSenderId: "300093896508",
+  appId: "1:300093896508:web:9f963d59f04bc4f7371039",
 };
 
 const app = initializeApp(firebaseConfig);
@@ -27,11 +34,12 @@ contactSendBtn.addEventListener("click", function () {
     contactEmail: contactEmail.value,
     contactAddress: contactAddress.value,
     contactPhone: contactPhone.value,
-    contactTextarea: contactTextarea.value
+    contactTextarea: contactTextarea.value,
   };
 
-  const contactsRef = ref(db, "contacts");
-  push(contactsRef).set(contactInfo)
+  const newContactRef = push(ref(db, "contacts/"));
+
+  set(newContactRef, contactInfo)
     .then(() => {
       alert("İletişim bilgileriniz başarıyla gönderildi!");
       contactName.value = "";
@@ -40,7 +48,7 @@ contactSendBtn.addEventListener("click", function () {
       contactPhone.value = "";
       contactTextarea.value = "";
     })
-    .catch(error => {
+    .catch((error) => {
       console.error("Hata oluştu: ", error);
       alert("Bir hata oluştu, lütfen tekrar deneyin!");
     });
