@@ -173,9 +173,7 @@ main .container .login-box .password .hide {
   }
 
 
-  body{
-    overflow: hidden;
-  }
+
 
 
   main .container {
@@ -188,6 +186,7 @@ main .container .login-box .password .hide {
   main .container .login-box{
     height: 610px;
     border-radius: 7px;
+    position: sticky;
    
   }
  
