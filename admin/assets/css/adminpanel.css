@@ -108,6 +108,15 @@ line-height: normal;
   line-height: 196.187%;
 }
 
+
+.tddatabaselogin{
+  border-bottom: none; /* Sadece alt çizgiyi kaldırır */
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+}
+
 .btn{
   width: 110px;
   height: 45px;
@@ -796,8 +805,9 @@ select option {
   }
   #right .first-table {
     margin-left: 0;
-    margin: auto;
     overflow-x: auto;
+  
+    max-width: 26.6rem;
   }
   #right .second-table {
     display: none;
