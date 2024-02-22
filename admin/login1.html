@@ -34,7 +34,11 @@
 
         <div class="login-box">
           <div class="welcome-text">
-            <h1>Welcome Admin</h1>
+            <h1 id="welcomeadm">Welcome Admin</h1>
+            
+          </div>
+          <div id="alertpassreset" class="alert alert-primary" role="alert">
+            Şifrənizin sıfırlanması üçün <a href="#" class="alert-link">Email adresinizə</a> link göndərildi!
           </div>
           <div class="inputs">
             <div class="alerts">
@@ -64,6 +68,7 @@
           <!-- <input class="submitBtn" type="submit" value="submit" id="submit"> -->
 
           <button type="submit" id="joinBBtn" class="joinBtn">Join</button>
+          <label id="forgotpasslabel" style="cursor: pointer; margin-top: 8px;" >Sifreni unutdun mu?</label>
 
           <div id="alertloginerror" class="alert alert-danger" role="alert">
             Yalnış melumatı daxil etmisiniz xahiş olunur düzgün melumatı daxil edin.

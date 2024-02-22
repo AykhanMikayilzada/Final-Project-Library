@@ -1,7 +1,7 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import { getDatabase, get, ref, child } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
 
 
@@ -25,7 +25,10 @@ const dbref = ref(db);
 let EmailInp = document.getElementById("emailInp");
 let PassInp = document.getElementById("passwordInp");
 let MainForm = document.getElementById("Mainform");
+let ForgotPassLabel = document.getElementById("forgotpasslabel");
 let alertloginerror = document.getElementById("alertloginerror");
+let alertpassreset = document.getElementById("alertpassreset");
+let welcomeadm = document.getElementById("welcomeadm");
 
 
 let SignInUser = evt => {
@@ -46,9 +49,23 @@ let SignInUser = evt => {
     })
     .catch((error)=>{
         alertloginerror.style.display = "block"
+        alertpassreset.style.display = "none"
+        welcomeadm.style.display = "block"
     })
 }
 
-
+let ForgotPassowrd = ()=>{
+    sendPasswordResetEmail(auth, EmailInp.value)
+    .then(()=>{
+        alertpassreset.style.display = "block"
+        welcomeadm.style.display = "none"
+        alertloginerror.style.display = "none"
+    })
+    .catch((error)=>{
+        console.log(error.code);
+        console.log(error.message);
+    })
+}
 
 MainForm.addEventListener('submit', SignInUser);
+ForgotPassLabel.addEventListener('click', ForgotPassowrd);

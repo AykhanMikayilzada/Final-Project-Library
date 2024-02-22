@@ -59,7 +59,7 @@ main .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 7.5625rem;
+  margin-top: 5.5625rem;
 }
 
 
@@ -184,7 +184,7 @@ main .container .login-box .password .hide {
   }
 
   main .container .login-box{
-    height: 610px;
+    height: 640px;
     border-radius: 7px;
     position: sticky;
    
