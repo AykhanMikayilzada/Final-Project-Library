@@ -508,7 +508,7 @@ span:first-child {
   font-family: "Montserrat", sans-serif;
   background-color: #720418;
   color: #fff;
-  height: 4.5rem;
+  height: 4rem;
 }
 #right table td {
   color: #05111a;
@@ -565,10 +565,6 @@ select option {
   line-height: normal;
 }
 @media screen and (max-width: 858px) {
-
-  .tddatabaselogin{
-    height:4.5rem
-  }
 
   .alert{
     margin-left: 5px;
