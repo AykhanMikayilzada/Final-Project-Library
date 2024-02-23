@@ -73,9 +73,9 @@ const sliderCard1 = document.querySelector(".slider-card1")
 
 const homePage = window.location.pathname.includes("catalog.html");
 
-console.log(homePage);
+// console.log(homePage);
 
-console.log("forumlibBtn", forumlibBtn);
+// console.log("forumlibBtn", forumlibBtn);
 
 if (homePage) {
   readData("/books")
@@ -112,8 +112,8 @@ forumlibBtn?.addEventListener("click", function (e) {
     };
 
     succesMessage.style.display = "block";
-    createData("books", forum);
-    console.log("forum", forum);
+    // createData("books", forum);
+    // console.log("forum", forum);
 
     setTimeout(function () {
       succesMessage.style.display = "none";
@@ -195,7 +195,7 @@ document.addEventListener("click", function (e) {
 });
 
 const elementId = localStorage.getItem("bookId");
-console.log("budur", elementId);
+// console.log("budur", elementId);
 
 async function GETbyID(id) {
   try {
@@ -232,7 +232,7 @@ function addToCart() {
             </div>
           `;
 
-          console.log("bu nedir", getItemm);
+          // console.log("bu nedir", getItemm);
 
           swiper_bestseller.innerHTML += bookHtml;
         })
@@ -257,10 +257,10 @@ async function getBookByIdFromFirebase(elementId) {
     spinnerbtn.style.display = "block";
 
     const bookData = await GETbyID(elementId);
-    console.log("goster", bookData);
+    // console.log("goster", bookData);
 
     if (bookData) {
-      console.log("Firebase'den alınan kitap verisi:", bookData);
+      // console.log("Firebase'den alınan kitap verisi:", bookData);
 
       const bookHtml = `
       <div id="leftSide" class="left-side">
@@ -296,7 +296,7 @@ async function getBookByIdFromFirebase(elementId) {
       // --------btn js
       const button = document.querySelector(".addtocart");
       const done = document.querySelector(".done");
-      console.log(button);
+      // console.log(button);
       let added = false;
       button.addEventListener("click", () => {
         addToCart();
@@ -322,7 +322,7 @@ async function getBookByIdFromFirebase(elementId) {
 
 const getItemm = localStorage.getItem("bookId");
 
-console.log(getItemm);
+// console.log(getItemm);
 
 if (getItemm) {
   getBookByIdFromFirebase(getItemm);
