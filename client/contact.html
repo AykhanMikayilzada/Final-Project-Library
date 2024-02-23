@@ -57,6 +57,10 @@
     </div>
     <img id="hamburgerbtn" src="./assets/img/hamburger.svg" class="hamburger">
   </header>
+
+  <!-- <h2 id="tryshowdata"></h2> -->
+
+
   <!--Main-->
   <main class="contact_main">
     <section class="main_section">
@@ -73,13 +77,13 @@
           <div class="form-area2">
             <input id="contactAddress" type="text" placeholder="Address" />
             <input id="contactPhone" type="number" placeholder="phone" />
+            <span>Phone Number</span>
           </div>
           <div>
             <div class="form-area3">
               <textarea
               id="contactTextarea"
               placeholder="Note"
-              oninput="letterCounter()"
             ></textarea>
             <p class="textlength"><span id="textLength">0</span>/100</p>
           <p  id="contactErrorMessage">Fill in the fields correctly!</p>
@@ -177,9 +181,10 @@
   </div>
 
 
+
+  <script type="module" src="./assets/js/contactfirebasepanel.js"></script>
   <script src="./assets/js/index.js"></script>
   <script src="./assets/js/responsive.js"></script>
-  <script src="./assets/js/contact.js"></script>
 </body>
 
 </html>

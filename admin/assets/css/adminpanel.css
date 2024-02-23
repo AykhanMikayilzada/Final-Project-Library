@@ -564,6 +564,17 @@ select option {
   font-weight: 400;
   line-height: normal;
 }
+
+th {
+  box-sizing: border-box;
+  padding-top: 15px;
+  text-align: center;
+}
+td {
+  box-sizing: border-box;
+  padding-top: 10px;
+  text-align: center;
+}
 @media screen and (max-width: 858px) {
 
   .alert{

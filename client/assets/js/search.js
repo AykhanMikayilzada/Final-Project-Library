@@ -1,113 +1,72 @@
 const searchInput = document.querySelector("#searchInput");
 const searchBtn = document.querySelector("#searchBtn");
-const swiperWrapper = document.querySelector(".swiper-wrapper");
+const bookName = document.querySelector("#bookName");
+const bookAutor = document.querySelector("#bookAutor");
+const bookDescription = document.querySelector("#bookDescription");
+const bookImg = document.querySelector("#bookImg")
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import {
-  getDatabase,
-  ref,
-  get,
-} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyBBDUmstwc_hZjzqQG7yDn4pIU-w-b9FDU",
-  authDomain: "libraryprojectapp-df468.firebaseapp.com",
-  databaseURL: "https://libraryprojectapp-df468-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "libraryprojectapp-df468",
-  storageBucket: "libraryprojectapp-df468.appspot.com",
-  messagingSenderId: "176480815398",
-  appId: "1:176480815398:web:47ee903956a99357d299e7",
-  measurementId: "G-2H2B66PT8G",
-};
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
-
-async function getBooks() {
+async function searchBooks(bookTitle) {
+  const apiKey = "AIzaSyB6ZzZJY3wOlJ0bi6Qymj8RREY8eKZNjhI"; 
+  const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${bookTitle}&printType=books&key=${apiKey}`;
   try {
-    const booksRef = ref(database, 'books');
-    const snapshot = await get(booksRef);
-    
-    if (snapshot.exists()) {
-      const books = [];
-      snapshot.forEach((childSnapshot) => {
-        const book = childSnapshot.val();
-        books.push(book);
-      });
-      return books;
-    } else {
-      console.log("No data available");
-      return [];
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+
+    return data.items || []; 
+  } catch (error) {
+    console.error("Error:", error);
+    return [];
+  }
+}
+
+
+function createBookCard(book) {
+  const bookCard = document.createElement("div");
+  bookCard.classList.add("swiper-slide");
+
+  const bookContent = `
+    <div class="swiper_book">
+      <div class="book_card">
+        <img class="bookImg" src="${book.imageLinks?.thumbnail || '../client/assets/img/book1.svg'}" />
+        <div class="about_book">
+          <span class="book_name">${book.title || 'No Title Available'}</span>
+          <span class="book_autor">${book.authors ? book.authors.join(", ") : 'Unknown Author'}</span>
+          <p class="bookDescription">${book.description || 'No description available.'}</p>
+        </div>
+      </div>
+    </div>
+  `;
+  bookCard.innerHTML = bookContent;
+
+  return bookCard;
+}
+
+
+function renderBooks(books) {
+  swiperWrapper.innerHTML = ""; 
+  books.forEach(book => {
+    const bookCard = createBookCard(book.volumeInfo);
+    swiperWrapper.appendChild(bookCard);
+  });
+}
+
+searchBtn.addEventListener("click", async () => {
+  const bookTitle = searchInput.value.trim();
+
+  if (bookTitle !== "") {
+    try {
+      const books = await searchBooks(bookTitle);
+
+      if (books.length > 0) {
+        renderBooks(books);
+        console.log("Search Results:", books);
+      } else {
+        console.log("No results found.");
+        swiperWrapper.innerHTML = "<p>No results found</p>";
+      }
+    } catch (error) {
+      console.error("Error:", error);
     }
-  } catch (error) {
-    console.error("Error getting books:", error);
-    throw error;
-  }
-}
-
-async function showAllBooks() {
-  try {
-    const books = await getBooks();
-    swiperWrapper.innerHTML = '';
-
-    books.forEach(item => {
-      swiperWrapper.innerHTML += `
-        <div class="swiper-slide">
-          <div class="swiper_book">
-            <div class="book_card">
-              <img class="bookImg" src="${item.imageUrl || '../client/assets/img/book1.svg'}" />
-              <div class="about_book">
-                <span class="book_name">${item.title || 'No Title Available'}</span>
-                <span class="book_autor">${item.author || 'Unknown Author'}</span>
-                <p class="bookDescription">${item.descr || 'No description available.'}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
-    });
-  } catch (error) {
-    console.error("Error showing all books:", error);
-  }
-}
-
-async function searchBooks() {
-  const searchTerm = searchInput.value.trim().toLowerCase();
-
-  try {
-    const books = await getBooks();
-
-    const matchingBooks = books.filter(book => {
-      return book.title.toLowerCase().includes(searchTerm);
-    });
-
-    swiperWrapper.innerHTML = '';
-
-    matchingBooks.forEach(item => {
-      swiperWrapper.innerHTML += `
-        <div class="swiper-slide">
-          <div class="swiper_book">
-            <div class="book_card">
-              <img class="bookImg" src="${item.imageUrl || '../client/assets/img/book1.svg'}" />
-              <div class="about_book">
-                <span class="book_name">${item.title || 'No Title Available'}</span>
-                <span class="book_autor">${item.author || 'Unknown Author'}</span>
-                <p class="bookDescription">${item.descr || 'No description available.'}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
-    });
-  } catch (error) {
-    console.error("Error searching books:", error);
-  }
-}
-
-searchBtn.addEventListener('click', searchBooks);
-searchInput.addEventListener('keypress', function (e) {
-  if (e.key === 'Enter') {
-    searchBooks();
   }
 });
 
-document.addEventListener('DOMContentLoaded', showAllBooks);

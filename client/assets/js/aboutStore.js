@@ -2,20 +2,24 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebas
 import {
   getDatabase,
   ref,
+  push,
+  set,
   get,
+  update,
+  remove,
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBBDUmstwc_hZjzqQG7yDn4pIU-w-b9FDU",
   authDomain: "libraryprojectapp-df468.firebaseapp.com",
-  databaseURL: "https://libraryprojectapp-df468-default-rtdb.europe-west1.firebasedatabase.app",
+  databaseURL:
+    "https://libraryprojectapp-df468-default-rtdb.europe-west1.firebasedatabase.app",
   projectId: "libraryprojectapp-df468",
   storageBucket: "libraryprojectapp-df468.appspot.com",
   messagingSenderId: "176480815398",
   appId: "1:176480815398:web:47ee903956a99357d299e7",
   measurementId: "G-2H2B66PT8G",
 };
-
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
@@ -49,18 +53,17 @@ document.addEventListener("DOMContentLoaded", async function () {
     const lastAddedBook = await getLastAddedBook();
     if (lastAddedBook) {
       // En son eklenen kitabın bilgileri
-      const { title, author, imageUrl, descr } = lastAddedBook;
+      const { title, author, imageUrl } = lastAddedBook;
 
       // İlgili div'e içeriği ekleyin
       const aboutLeftSide = document.getElementById("aboutLeftSide");
       const aboutRightSide = document.getElementById("aboutRightSide");
       aboutLeftSide.innerHTML = `
-        <h2 id="aboutTitle">${title}</h2>
-        <p id="aboutDescription">Author: ${author}</p>
-        <p id="bookDescription">${descr}</p> <!-- Açıklama bilgisi buraya eklendi -->
-      `;
+              <h2 id="aboutTitle">${title}</h2>
+              <p id="aboutDescription">Author: ${author}</p>
+          `;
       aboutRightSide.innerHTML = `
-        <img src="${imageUrl}" class="aboutImg" />
+      <img src="${imageUrl}" class="aboutImg" />
       `;
     } else {
       console.log("No last added book found.");
