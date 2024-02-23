@@ -70,8 +70,44 @@ const slidermomapi = document.getElementById("slidermomapi");
 const alertAdminMessage = document.getElementById("alertAdminMessage");
 const succesMessage = document.getElementById("succesMessage");
 const sliderCard1 = document.querySelector(".slider-card1")
+const swiper_bestseller = document.querySelector("#swiper_bestseller")
 
 const homePage = window.location.pathname.includes("catalog.html");
+
+async function getBestsellerBooks() {
+  try {
+    const booksData = await readData("/books"); // Firebase'den tüm kitap verilerini al
+    const books = convertData(booksData); // Kitap verilerini uygun formata dönüştür
+
+    // Sayaçları 3 veya daha fazla olan kitapları filtrele
+    const bestsellerBooks = books.filter((book) => book.counter >= 3);
+
+    // En çok satan kitapları swiper_bestseller içine ekle
+    const bestsellerHTML = bestsellerBooks.map(
+      (book) => `
+      <div class="swiper-slide">
+        <div class="slider-card1">
+          ${book.bookcreatetime ? '<div class="newTag">NEW</div>' : ''}
+          <img class="book-img" src="${book.imageUrl}" alt="${book.title}"/>
+          <p class="book_title">${book.title}</p>
+          <p class="book_subtitle">${book.author}</p>
+          <button class="readMoreText" data-book-id="${book.id}">Read more</button>
+        </div>
+      </div>`
+    ).join("");
+
+    // Swiper içine en çok satan kitapları ekle
+    swiper_bestseller.innerHTML = bestsellerHTML;
+
+    // Swiper'ı güncelle
+    swiper_bestseller.update();
+  } catch (error) {
+    console.error("Firebase'den kitap verileri alınırken bir hata oluştu:", error);
+  }
+}
+
+// Kodunuzun içinde uygun bir yere getBestsellerBooks fonksiyonunu çağırın
+await getBestsellerBooks();
 
 // console.log(homePage);
 
@@ -234,7 +270,7 @@ function addToCart() {
 
           // console.log("bu nedir", getItemm);
 
-          swiper_bestseller.innerHTML += bookHtml;
+      
         })
         .catch((error) => {
           console.error(

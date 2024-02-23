@@ -27,14 +27,23 @@ const anonimComment = document.querySelector(".anonimComment");
 const sendBtn = document.querySelector(".sendBtn");
 const clearCommentsButton = document.querySelector(".clearCommentsButton");
 const comments = document.querySelector(".comments");
-const bookId = localStorage.getItem("bookId");
+let bookId = localStorage.getItem("bookId");
 
-if (bookId) {
+function increaseCounter() {
+  // Sayfa yüklendiğinde counter'ı artır ve Firebase'e kaydet
   get(ref(database, `books/${bookId}`))
     .then((snapshot) => {
       const bookData = snapshot.val();
       if (bookData) {
-        console.log("Kitap Bilgileri:", bookData);
+        let visitCounter = bookData.counter || 0;
+        visitCounter++;
+        update(ref(database, `books/${bookId}`), { counter: visitCounter })
+          .then(() => {
+            console.log("Counter başarıyla güncellendi:", visitCounter);
+          })
+          .catch((error) => {
+            console.error("Counter güncellenirken hata oluştu:", error);
+          });
       } else {
         console.log("Belirtilen kimlikte kitap bulunamadı.");
       }
@@ -45,8 +54,6 @@ if (bookId) {
         error
       );
     });
-} else {
-  console.log("localStorage'dan kitap kimliği alınamadı.");
 }
 
 sendBtn.addEventListener("click", () => {
@@ -62,40 +69,6 @@ sendBtn.addEventListener("click", () => {
       .then((newCommentRef) => {
         console.log("Yeni yorum başarıyla eklendi.");
         anonimComment.value = ""; // Input alanını temizle
-
-        // Yorumun eklendiği zamanı al
-        const currentDate = new Date();
-        const currentHour = currentDate.getHours();
-        const currentMinute = currentDate.getMinutes();
-        const currentDay = currentDate.toLocaleDateString("en-US", {
-          weekday: "long",
-        });
-
-        // Eklenen yorumun veritabanından alınması
-        get(newCommentRef)
-          .then((snapshot) => {
-            const newCommentData = snapshot.val();
-
-            // Yorumun eklendiği HTML içeriğini oluştur
-            const newCommentHTML = `
-            <div class="commentArea">
-              <div class="nameAndDate">
-                <span>anonim</span>
-                <span>${currentHour}:${currentMinute} ${currentDay}</span>
-                <p class="comment">${newCommentData}</p>
-              </div>
-            </div>`;
-
-            // Yorum bölgesine HTML içeriğini ekle
-            const commentsContainer = document.querySelector(".comments");
-            commentsContainer.innerHTML += newCommentHTML;
-          })
-          .catch((error) => {
-            console.error(
-              "Yeni yorum veritabanından alınırken bir hata oluştu:",
-              error
-            );
-          });
       })
       .catch((error) => {
         console.error("Yorum eklenirken bir hata oluştu:", error);
@@ -140,4 +113,7 @@ function loadComments() {
     });
 }
 
-window.addEventListener("load", loadComments);
+window.addEventListener("load", () => {
+  loadComments();
+  increaseCounter();
+});
