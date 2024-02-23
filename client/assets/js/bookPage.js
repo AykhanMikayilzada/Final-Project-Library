@@ -1,143 +1,214 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import {
-  getDatabase,
-  ref,
-  push,
-  set,
-  get,
-  update,
-  remove,
-} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+async function GET() {
+  try {
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBBDUmstwc_hZjzqQG7yDn4pIU-w-b9FDU",
-  authDomain: "libraryprojectapp-df468.firebaseapp.com",
-  databaseURL:
-    "https://libraryprojectapp-df468-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "libraryprojectapp-df468",
-  storageBucket: "libraryprojectapp-df468.appspot.com",
-  messagingSenderId: "176480815398",
-  appId: "1:176480815398:web:47ee903956a99357d299e7",
-  measurementId: "G-2H2B66PT8G",
-};
-
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
-const anonimComment = document.querySelector(".anonimComment");
-const sendBtn = document.querySelector(".sendBtn");
-const clearCommentsButton = document.querySelector(".clearCommentsButton");
-const comments = document.querySelector(".comments");
-const bookId = localStorage.getItem("bookId");
-
-if (bookId) {
-  get(ref(database, `books/${bookId}`))
-    .then((snapshot) => {
-      const bookData = snapshot.val();
-      if (bookData) {
-        console.log("Kitap Bilgileri:", bookData);
-      } else {
-        console.log("Belirtilen kimlikte kitap bulunamadı.");
-      }
-    })
-    .catch((error) => {
-      console.error(
-        "Firebase'den kitap bilgisi alınırken bir hata oluştu:",
-        error
-      );
-    });
-} else {
-  console.log("localStorage'dan kitap kimliği alınamadı.");
+    const response = await fetch(
+      "https://blog-api-t6u0.onrender.com/posts",
+      options
+    ); 
+    const data = await response.json(); 
+    return data;
+  } catch (err) {
+    console.log("ERROR:", err);
+  }
 }
 
-sendBtn.addEventListener("click", () => {
-  if (anonimComment.value == "") {
-    alert("Input duzgun dolmayib")
-    return;
-  } else {
-    const commentRef = ref(database, `books/${bookId}/comments`);
-    const newCommentValue = anonimComment.value;
+async function GETbyID(id) {
+  try {
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
 
-    // Yeni yorumu Firebase veritabanına eklemek için push yöntemini kullanın
-    push(commentRef, newCommentValue)
-      .then((newCommentRef) => {
-        console.log("Yeni yorum başarıyla eklendi.");
-        anonimComment.value = ""; // Input alanını temizle
+    const response = await fetch(
+      `https://blog-api-t6u0.onrender.com/posts/${id}`,
+      options
+    ); 
+    const data = await response.json(); 
+    return data;
+  } catch (err) {
+    console.log("ERROR:", err);
+  }
+}
 
-        // Yorumun eklendiği zamanı al
-        const currentDate = new Date();
-        const currentHour = currentDate.getHours();
-        const currentMinute = currentDate.getMinutes();
-        const currentDay = currentDate.toLocaleDateString("en-US", {
-          weekday: "long",
-        });
+async function POST(form) {
+  try {
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    };
 
-        // Eklenen yorumun veritabanından alınması
-        get(newCommentRef)
-          .then((snapshot) => {
-            const newCommentData = snapshot.val();
+    const response = await fetch(
+      `https://blog-api-t6u0.onrender.com/posts`,
+      options
+    ); 
+    const data = await response.json(); 
+    return data;
+  } catch (err) {
+    console.log("ERROR:", err);
+  }
+}
 
-            // Yorumun eklendiği HTML içeriğini oluştur
-            const newCommentHTML = `
-            <div class="commentArea">
-              <div class="nameAndDate">
-                <span>anonim</span>
-                <span>${currentHour}:${currentMinute} ${currentDay}</span>
-                <p class="comment">${newCommentData}</p>
-              </div>
-            </div>`;
+async function PUT(id, form) {
+  try {
+    const options = {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    };
 
-            // Yorum bölgesine HTML içeriğini ekle
-            const commentsContainer = document.querySelector(".comments");
-            commentsContainer.innerHTML += newCommentHTML;
-          })
-          .catch((error) => {
-            console.error(
-              "Yeni yorum veritabanından alınırken bir hata oluştu:",
-              error
-            );
-          });
-      })
-      .catch((error) => {
-        console.error("Yorum eklenirken bir hata oluştu:", error);
-      });
+    const response = await fetch(
+      `https://blog-api-t6u0.onrender.com/posts/${id}`,
+      options
+    ); 
+    const data = await response.json(); 
+    return data;
+  } catch (err) {
+    console.log("ERROR:", err);
+  }
+}
+
+async function DELETE(id) {
+  try {
+    const options = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    const response = await fetch(
+      `https://blog-api-t6u0.onrender.com/posts/${id}`,
+      options
+    ); 
+    const data = await response.json(); 
+    return data;
+  } catch (err) {
+    console.log("ERROR:", err);
+  }
+}
+const anonimComment = document.querySelector(".anonimComment");
+const sendBtn = document.querySelector(".sendBtn");
+const comments = document.querySelector(".comments");
+
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    const storedComments = JSON.parse(localStorage.getItem("comments")) || [];
+    comments.innerHTML = storedComments.join("");
+  } catch (error) {
+    console.log("Error:", error);
   }
 });
 
-function loadComments() {
-  const commentRef = ref(database, `books/${bookId}/comments`);
+sendBtn.addEventListener("click", async () => {
+  if (anonimComment.value == "") {
+    return;
+  } else {
+    try {
+      const postData = { title: anonimComment.value, body: "Impsum" };
+      const response = await POST(postData);
+      const newComment = response.title;
 
-  get(commentRef)
-    .then((snapshot) => {
-      const comments = snapshot.val();
+      const currentDate = new Date();
+      const currentHour = currentDate.getHours();
+      const currentMinute = currentDate.getMinutes();
+      const currentDay = currentDate.toLocaleDateString("en-US", {
+        weekday: "long",
+      });
 
-      if (comments) {
-        const commentsContainer = document.querySelector(".comments");
-        commentsContainer.innerHTML = ""; // Önceki yorumları temizle
+      const newCommentHtml = `
+          <div class="commentArea">
+            <div class="nameAndDate">
+              <span>anonim</span>
+              <span>${currentHour}:${currentMinute} ${currentDay}</span>
+              <p class="comment">${newComment}</p>
+            </div>
+          </div>`;
 
-        Object.values(comments).forEach((comment) => {
-          const currentDate = new Date();
-          const currentHour = currentDate.getHours();
-          const currentMinute = currentDate.getMinutes();
-          const currentDay = currentDate.toLocaleDateString("en-US", {
-            weekday: "long",
-          });
+      comments.innerHTML += newCommentHtml;
 
-          const commentHTML = `
-            <div class="commentArea">
-              <div class="nameAndDate">
-                <span>anonim</span>
-                <span>${currentHour}:${currentMinute} ${currentDay}</span>
-                <p class="comment">${comment}</p>
-              </div>
-            </div>`;
+      const storedComments = JSON.parse(localStorage.getItem("comments")) || [];
+      storedComments.push(newCommentHtml);
+      localStorage.setItem("comments", JSON.stringify(storedComments));
 
-          commentsContainer.innerHTML += commentHTML;
-        });
-      }
-    })
-    .catch((error) => {
-      console.error("Yorumlar alınırken bir hata oluştu:", error);
-    });
+      anonimComment.value = "";
+    } catch (error) {
+      console.log("Error:", error);
+    }
+  }
+});
+
+anonimComment.addEventListener("keypress", async (e) => {
+  if (e.key === "Enter") {
+    await addComment();
+  }
+});
+
+async function addComment() {
+  if (anonimComment.value == "") {
+    return;
+  } else {
+    try {
+      const postData = { title: anonimComment.value, body: "Impsum" };
+      const response = await POST(postData);
+      const newComment = response.title; //
+
+      const currentDate = new Date();
+      const currentHour = currentDate.getHours();
+      const currentMinute = currentDate.getMinutes();
+      const currentDay = currentDate.toLocaleDateString("en-US", {
+        weekday: "long",
+      });
+
+      const newCommentHtml = `
+          <div class="commentArea">
+            <div class="nameAndDate">
+              <span>anonim</span>
+              <span>${currentHour}:${currentMinute} ${currentDay}</span>
+              <p class="comment">${newComment}</p>
+            </div>
+          </div>`;
+
+      comments.innerHTML += newCommentHtml;
+
+      const storedComments = JSON.parse(localStorage.getItem("comments")) || [];
+      storedComments.push(newCommentHtml);
+      localStorage.setItem("comments", JSON.stringify(storedComments));
+
+      anonimComment.value = "";
+    } catch (error) {
+      console.log("Error:", error);
+    }
+  }
+}
+function clearComments() {
+  comments.innerHTML = ""; 
+  localStorage.removeItem("comments"); 
 }
 
-window.addEventListener("load", loadComments);
+const clearCommentsButton = document.querySelector("#clearCommentsButton");
+clearCommentsButton.addEventListener("click", clearComments);
+
+sendBtn.addEventListener("click", addComment);
+
+
+const getItemm = localStorage.getItem("bookId")
+
+console.log(getItemm);
+
+
+
+
+
