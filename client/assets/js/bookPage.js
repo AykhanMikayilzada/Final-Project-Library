@@ -23,12 +23,11 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
-const anonimComment = document.querySelector(".anonimComment")
-const sendBtn = document.querySelector(".sendBtn")
-const clearCommentsButton = document.querySelector(".clearCommentsButton")
-const comments = document.querySelector(".comments")
+const anonimComment = document.querySelector(".anonimComment");
+const sendBtn = document.querySelector(".sendBtn");
+const clearCommentsButton = document.querySelector(".clearCommentsButton");
+const comments = document.querySelector(".comments");
 const bookId = localStorage.getItem("bookId");
-
 
 if (bookId) {
   get(ref(database, `books/${bookId}`))
@@ -41,35 +40,44 @@ if (bookId) {
       }
     })
     .catch((error) => {
-      console.error("Firebase'den kitap bilgisi alınırken bir hata oluştu:", error);
+      console.error(
+        "Firebase'den kitap bilgisi alınırken bir hata oluştu:",
+        error
+      );
     });
 } else {
   console.log("localStorage'dan kitap kimliği alınamadı.");
 }
 
 sendBtn.addEventListener("click", () => {
-  const commentRef = ref(database, `books/${bookId}/comments`);
-  const newCommentValue = anonimComment.value;
+  if (anonimComment.value == "") {
+    alert("Input duzgun dolmayib")
+    return;
+  } else {
+    const commentRef = ref(database, `books/${bookId}/comments`);
+    const newCommentValue = anonimComment.value;
 
-  // Yeni yorumu Firebase veritabanına eklemek için push yöntemini kullanın
-  push(commentRef, newCommentValue)
-    .then((newCommentRef) => {
-      console.log("Yeni yorum başarıyla eklendi.");
-      anonimComment.value = ""; // Input alanını temizle
-      
-      // Yorumun eklendiği zamanı al
-      const currentDate = new Date();
-      const currentHour = currentDate.getHours();
-      const currentMinute = currentDate.getMinutes();
-      const currentDay = currentDate.toLocaleDateString("en-US", { weekday: 'long' });
+    // Yeni yorumu Firebase veritabanına eklemek için push yöntemini kullanın
+    push(commentRef, newCommentValue)
+      .then((newCommentRef) => {
+        console.log("Yeni yorum başarıyla eklendi.");
+        anonimComment.value = ""; // Input alanını temizle
 
-      // Eklenen yorumun veritabanından alınması
-      get(newCommentRef)
-        .then((snapshot) => {
-          const newCommentData = snapshot.val();
+        // Yorumun eklendiği zamanı al
+        const currentDate = new Date();
+        const currentHour = currentDate.getHours();
+        const currentMinute = currentDate.getMinutes();
+        const currentDay = currentDate.toLocaleDateString("en-US", {
+          weekday: "long",
+        });
 
-          // Yorumun eklendiği HTML içeriğini oluştur
-          const newCommentHTML = `
+        // Eklenen yorumun veritabanından alınması
+        get(newCommentRef)
+          .then((snapshot) => {
+            const newCommentData = snapshot.val();
+
+            // Yorumun eklendiği HTML içeriğini oluştur
+            const newCommentHTML = `
             <div class="commentArea">
               <div class="nameAndDate">
                 <span>anonim</span>
@@ -78,41 +86,42 @@ sendBtn.addEventListener("click", () => {
               </div>
             </div>`;
 
-          // Yorum bölgesine HTML içeriğini ekle
-          const commentsContainer = document.querySelector(".comments");
-          commentsContainer.innerHTML += newCommentHTML;
-        })
-        .catch((error) => {
-          console.error("Yeni yorum veritabanından alınırken bir hata oluştu:", error);
-        });
-    })
-    .catch((error) => {
-      console.error("Yorum eklenirken bir hata oluştu:", error);
-    });
+            // Yorum bölgesine HTML içeriğini ekle
+            const commentsContainer = document.querySelector(".comments");
+            commentsContainer.innerHTML += newCommentHTML;
+          })
+          .catch((error) => {
+            console.error(
+              "Yeni yorum veritabanından alınırken bir hata oluştu:",
+              error
+            );
+          });
+      })
+      .catch((error) => {
+        console.error("Yorum eklenirken bir hata oluştu:", error);
+      });
+  }
 });
-
 
 function loadComments() {
   const commentRef = ref(database, `books/${bookId}/comments`);
 
-  // Yorumları al
   get(commentRef)
     .then((snapshot) => {
       const comments = snapshot.val();
 
-      // Yorumlar varsa HTML içeriğini oluştur ve yorum bölgesine ekle
       if (comments) {
         const commentsContainer = document.querySelector(".comments");
         commentsContainer.innerHTML = ""; // Önceki yorumları temizle
 
         Object.values(comments).forEach((comment) => {
-          // Yorumun eklendiği zamanı al
           const currentDate = new Date();
           const currentHour = currentDate.getHours();
           const currentMinute = currentDate.getMinutes();
-          const currentDay = currentDate.toLocaleDateString("en-US", { weekday: 'long' });
+          const currentDay = currentDate.toLocaleDateString("en-US", {
+            weekday: "long",
+          });
 
-          // Yorumun HTML içeriğini oluştur
           const commentHTML = `
             <div class="commentArea">
               <div class="nameAndDate">
@@ -122,7 +131,6 @@ function loadComments() {
               </div>
             </div>`;
 
-          // Yorum bölgesine HTML içeriğini ekle
           commentsContainer.innerHTML += commentHTML;
         });
       }
@@ -132,5 +140,4 @@ function loadComments() {
     });
 }
 
-// Sayfa yüklendiğinde yorumları yükle
 window.addEventListener("load", loadComments);
