@@ -44,7 +44,6 @@ async function getBooks() {
   }
 }
 
-// Tüm kitapları göstermek için kartları oluştur
 async function showAllBooks() {
   try {
     const books = await getBooks();
@@ -71,22 +70,18 @@ async function showAllBooks() {
   }
 }
 
-// Arama işlevini tanımla
 async function searchBooks() {
   const searchTerm = searchInput.value.trim().toLowerCase();
 
   try {
     const books = await getBooks();
 
-    // Eşleşen başlıkları saklamak için bir dizi oluştur
     const matchingBooks = books.filter(book => {
       return book.title.toLowerCase().includes(searchTerm);
     });
 
-    // SwiperWrapper'ı temizle
     swiperWrapper.innerHTML = '';
 
-    // Eşleşen kitapları ekle
     matchingBooks.forEach(item => {
       swiperWrapper.innerHTML += `
         <div class="swiper-slide">
@@ -108,7 +103,6 @@ async function searchBooks() {
   }
 }
 
-// Arama düğmesine basıldığında veya Enter tuşuna basıldığında arama işlevini çağır
 searchBtn.addEventListener('click', searchBooks);
 searchInput.addEventListener('keypress', function (e) {
   if (e.key === 'Enter') {
@@ -116,5 +110,4 @@ searchInput.addEventListener('keypress', function (e) {
   }
 });
 
-// Sayfa yüklendiğinde tüm kitapları göster
 document.addEventListener('DOMContentLoaded', showAllBooks);

@@ -20,6 +20,7 @@ const firebaseConfig = {
   appId: "1:176480815398:web:47ee903956a99357d299e7",
   measurementId: "G-2H2B66PT8G",
 };
+
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
@@ -68,6 +69,7 @@ const bookdesc = document.getElementById("bookdesc");
 const slidermomapi = document.getElementById("slidermomapi");
 const alertAdminMessage = document.getElementById("alertAdminMessage");
 const succesMessage = document.getElementById("succesMessage");
+const sliderCard1 = document.querySelector(".slider-card1")
 
 const homePage = window.location.pathname.includes("catalog.html");
 
@@ -79,6 +81,11 @@ if (homePage) {
   readData("/books")
     .then((data) => {
       const books = convertData(data);
+      books.forEach((book) => {
+        if (book.bookcreatetime) {
+          book.bookcreatetime = new Date(book.bookcreatetime).getTime();
+        }
+      });
       renderBooks(books);
       renderBooksa(books);
       spinnerbtn2.style.display = "none";
@@ -138,6 +145,7 @@ function renderBooks(list) {
       (book) => `
       <div class="swiper-slide">
         <div class="slider-card1">
+          ${book.bookcreatetime ? '<div class="newTag">NEW</div>' : ''}
           <img class="book-img" src="${book.imageUrl}" alt="${book.title}"/>
           <p class="book_title">${book.title}</p>
           <p class="book_subtitle">${book.author}</p>
@@ -192,7 +200,7 @@ console.log("budur", elementId);
 async function GETbyID(id) {
   try {
     const response = await get(ref(database, `/books/${id}`));
-    return response.val(); // Alınan veriyi döndür
+    return response.val(); 
   } catch (error) {
     console.error(
       "Firebase'den kitap verisi alınırken bir hata oluştu:",
@@ -212,7 +220,7 @@ function addToCart() {
 
     if (getItemm) {
       GETbyID(getItemm)
-      .then((bookData) => {
+        .then((bookData) => {
           const bookHtml = `
             <div class="swiper-slide">
               <div class="slider-card1">
@@ -224,18 +232,23 @@ function addToCart() {
             </div>
           `;
 
-          console.log("bu nedir",getItemm);
-          
+          console.log("bu nedir", getItemm);
+
           swiper_bestseller.innerHTML += bookHtml;
         })
         .catch((error) => {
-          console.error("Firebase'den kitap verisi alınırken bir hata oluştu:", error);
+          console.error(
+            "Firebase'den kitap verisi alınırken bir hata oluştu:",
+            error
+          );
         });
     } else {
       console.log("localStorage'dan kitap kimliği alınamadı.");
     }
   } else {
-    console.log("Add to cart işlemi gerçekleştirilemedi, 5 defadan fazla tıklanmış.");
+    console.log(
+      "Add to cart işlemi gerçekleştirilemedi, 5 defadan fazla tıklanmış."
+    );
   }
 }
 
