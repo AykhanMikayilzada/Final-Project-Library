@@ -1,10 +1,5 @@
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
-
-
-
-
 const firebaseConfig2 = {
   apiKey: "AIzaSyBilJ9Sx0kgyFkyDr6iRgJLI3WKBD3cO8M",
   authDomain: "joinusappdb.firebaseapp.com",
@@ -14,21 +9,14 @@ const firebaseConfig2 = {
   messagingSenderId: "599092674811",
   appId: "1:599092674811:web:844fd7463593dd824b705e"
 };
-
-
 const app2 = initializeApp(firebaseConfig2);
-
 const db2 = getDatabase(app2);
-
-
 window.addEventListener('load', function() {
     const contactSendBtn = document.getElementById("contactSendBtn");
     if (contactSendBtn) {
         contactSendBtn.addEventListener('click', function(e) {
             e.preventDefault();
-        
             const currentTime = new Date().getTime(); // Şu anki zamanı al
-            
             set(ref(db2, 'userinfo/' + document.getElementById("contactName").value), {
                 createTime: currentTime,
                 contactName: document.getElementById("contactName").value,
@@ -38,7 +26,6 @@ window.addEventListener('load', function() {
                 contactTextarea: document.getElementById("contactTextarea").value
             }).then(() => {
                 alert("Bilgiler başarıyla eklendi!");
-               
             }).catch((error) => {
                 console.error("Veri eklenirken hata oluştu: ", error);
                 alert("Bilgiler eklenirken bir hata oluştu!");
@@ -47,10 +34,8 @@ window.addEventListener('load', function() {
     } else {
         console.error("Contact button not found!");
     }
-    
     getUsersFromFirebase2();
 });
-
 function sortByCreatedAtDesc(users) {
     return users.sort((a, b) => {
         const dateA = new Date(a.createdAt);
@@ -58,8 +43,6 @@ function sortByCreatedAtDesc(users) {
         return dateB - dateA;
     });
 }
-
-
 function getUsersFromFirebase2() {
     let users2 = [];
     get(child(ref(db2), 'userinfo/')).then((snapshot) => {
@@ -67,20 +50,15 @@ function getUsersFromFirebase2() {
             let userData2 = childSnapshot.val();
             users2.push({ id: childSnapshot.key, ...userData2 });
         });
-        
         users2.sort((a, b) => b.createTime - a.createTime);
         displayUsers2(users2);
     }).catch((error) => {
         console.error("user and error ", error);
     });
 }
-
-
-
 function displayUsers2(users2) {
     // Verileri zamanlarına göre sırala
     const sortedUsers = sortByCreatedAtDesc(users2);
-
     let userListHTML = '<ul>';
     sortedUsers.forEach(function(user, index) {
         userListHTML += `<td>${index + 1}. ${user.contactName}</td> <td>${user.contactAddress}</td> <td>${user.contactEmail}</td> <td>${user.contactTextarea}</td> <td>${user.PhoneNumber}</td><tr>`;
@@ -88,5 +66,3 @@ function displayUsers2(users2) {
     userListHTML += '</ul>';
     document.getElementById('contactUs').innerHTML = userListHTML;
 }
-
-

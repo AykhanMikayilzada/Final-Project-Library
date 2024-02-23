@@ -74,7 +74,7 @@ function getUsersFromFirebase() {
 function displayUsers(users) {
     let userListHTML = '<ul>';
     users.forEach(function(user) {
-        userListHTML += `${user.firstname} ${user.lastname}, <br></li>`;
+        userListHTML += `<li>${user.firstname} ${user.lastname}, <br></li>`;
     });
     userListHTML += '</ul>';
     document.getElementById('firedatalog').innerHTML = userListHTML;
@@ -82,7 +82,3 @@ function displayUsers(users) {
 
 
 window.addEventListener('load', getUsersFromFirebase);
-
-
-
-
