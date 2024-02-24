@@ -74,44 +74,10 @@ const swiper_bestseller = document.querySelector("#swiper_bestseller")
 
 const homePage = window.location.pathname.includes("catalog.html");
 
-async function getBestsellerBooks() {
-  try {
-    const booksData = await readData("/books"); // Firebase'den tüm kitap verilerini al
-    const books = convertData(booksData); // Kitap verilerini uygun formata dönüştür
 
-    // Sayaçları 3 veya daha fazla olan kitapları filtrele
-    const bestsellerBooks = books.filter((book) => book.counter >= 3);
-
-    // En çok satan kitapları swiper_bestseller içine ekle
-    const bestsellerHTML = bestsellerBooks.map(
-      (book) => `
-      <div class="swiper-slide">
-        <div class="slider-card1">
-          ${book.bookcreatetime ? '<div class="newTag">NEW</div>' : ''}
-          <img class="book-img" src="${book.imageUrl}" alt="${book.title}"/>
-          <p class="book_title">${book.title}</p>
-          <p class="book_subtitle">${book.author}</p>
-          <button class="readMoreText" data-book-id="${book.id}">Read more</button>
-        </div>
-      </div>`
-    ).join("");
-
-    // Swiper içine en çok satan kitapları ekle
-    swiper_bestseller.innerHTML = bestsellerHTML;
-
-    // Swiper'ı güncelle
-    swiper_bestseller.update();
-  } catch (error) {
-    console.error("Firebase'den kitap verileri alınırken bir hata oluştu:", error);
-  }
-}
 
 // Kodunuzun içinde uygun bir yere getBestsellerBooks fonksiyonunu çağırın
-await getBestsellerBooks();
 
-// console.log(homePage);
-
-// console.log("forumlibBtn", forumlibBtn);
 
 if (homePage) {
   readData("/books")
@@ -124,6 +90,7 @@ if (homePage) {
       });
       renderBooks(books);
       renderBooksa(books);
+      getBestsellerBooks(books);
       spinnerbtn2.style.display = "none";
     })
     .catch((error) => console.log("Error reading data", error));
@@ -148,6 +115,7 @@ forumlibBtn?.addEventListener("click", function (e) {
     };
 
     succesMessage.style.display = "block";
+    createData("books", forum);
     // createData("books", forum);
     // console.log("forum", forum);
 
@@ -222,6 +190,43 @@ function renderBooksa(list) {
   swiper2.update();
 }
 
+async function getBestsellerBooks() {
+  try {
+    const booksData = await readData("/books"); // Firebase'den tüm kitap verilerini al
+    const books = convertData(booksData); // Kitap verilerini uygun formata dönüştür
+
+    // Sayaçları 3 veya daha fazla olan kitapları filtrele
+    const bestsellerBooks = books.filter((book) => book.counter >= 3);
+
+    // En çok satan kitapları swiper_bestseller içine ekle
+    const bestsellerHTML = bestsellerBooks.map(
+      (book) => `
+      <div class="swiper-slide">
+        <div class="slider-card1">
+          ${book.bookcreatetime ? '<div class="newTag">NEW</div>' : ''}
+          <img class="book-img" src="${book.imageUrl}" alt="${book.title}"/>
+          <p class="book_title">${book.title}</p>
+          <p class="book_subtitle">${book.author}</p>
+          <button class="readMoreText" data-book-id="${book.id}">Read more</button>
+        </div>
+      </div>`
+    ).join("");
+ 
+
+    // Swiper içine en çok satan kitapları ekle
+    swiper_bestseller.innerHTML = bestsellerHTML;
+
+    swiper3.update()
+
+    // Swiper'ı güncelle
+   
+  } catch (error) {
+    console.error("Firebase'den kitap verileri alınırken bir hata oluştu:", error);
+  }
+}
+
+
+
 document.addEventListener("click", function (e) {
   if (e.target.classList.contains("readMoreText")) {
     const bookId = e.target.getAttribute("data-book-id");
@@ -231,7 +236,7 @@ document.addEventListener("click", function (e) {
 });
 
 const elementId = localStorage.getItem("bookId");
-// console.log("budur", elementId);
+
 
 async function GETbyID(id) {
   try {
@@ -293,7 +298,7 @@ async function getBookByIdFromFirebase(elementId) {
     spinnerbtn.style.display = "block";
 
     const bookData = await GETbyID(elementId);
-    // console.log("goster", bookData);
+    console.log("goster", bookData);
 
     if (bookData) {
       // console.log("Firebase'den alınan kitap verisi:", bookData);

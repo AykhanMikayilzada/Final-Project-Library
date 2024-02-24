@@ -494,6 +494,18 @@ body .overlay{
 }
 
 
+body .overlayregister{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.50);
+  z-index: 1;
+  display: none;
+  /* transition: opacity 0.3s ease; */
+}
+
 
 .overlay:hover, .overlay:focus{
   color: black;
@@ -507,7 +519,7 @@ body .overlay{
 
 .joincontent{
   position: absolute;
-  top: 95%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #FFFFFF;
@@ -519,6 +531,34 @@ body .overlay{
   padding: 20px;
   box-sizing: border-box;
   display: none;
+}
+
+
+.joincontentregister{
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FFFFFF;
+  width: 630px;
+  height: 500px;
+  flex-shrink: 0;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  display: none;
+}
+
+.joinUsBtnhome{
+  border: none;
+  background-color: transparent;
+  
+}
+
+.joinUsBtnhome a{
+  color: #E16A00;
+ font-size: large;
 }
 
 .jointitle{
@@ -534,6 +574,8 @@ body .overlay{
   font-weight: 700;
   line-height: normal;
 }
+
+
 
 .joininputname{
   border: 1px solid #CECECE;

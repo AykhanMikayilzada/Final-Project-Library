@@ -5,7 +5,7 @@ import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "htt
 
 
 
-const firebaseConfig = {
+const firebaseConfig4 = {
   apiKey: "AIzaSyBilJ9Sx0kgyFkyDr6iRgJLI3WKBD3cO8M",
   authDomain: "joinusappdb.firebaseapp.com",
   databaseURL: "https://joinusappdb-default-rtdb.europe-west1.firebasedatabase.app",
@@ -16,10 +16,10 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getDatabase();
-const auth = getAuth(app);
-const dbref = ref(db);
+const app4 = initializeApp(firebaseConfig4);
+const db4 = getDatabase();
+const auth = getAuth(app4);
+const dbref4 = ref(db4);
 
 
 let EmailInp = document.getElementById("emailInp");
@@ -36,7 +36,7 @@ let SignInUser = evt => {
 
     signInWithEmailAndPassword(auth, EmailInp.value, PassInp.value)
     .then((credentials) => {
-        get(child(dbref, 'UsersAuthList/' + credentials.user.uid)).then((snapshot)=>{
+        get(child(dbref4, 'UsersAuthList/' + credentials.user.uid)).then((snapshot)=>{
             if(snapshot.exists){
                 sessionStorage.setItem("user-info", JSON.stringify({
                     firstname: snapshot.val().firstname,

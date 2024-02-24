@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
-const firebaseConfig2 = {
+const firebaseConfig4 = {
   apiKey: "AIzaSyBilJ9Sx0kgyFkyDr6iRgJLI3WKBD3cO8M",
   authDomain: "joinusappdb.firebaseapp.com",
   databaseURL: "https://joinusappdb-default-rtdb.europe-west1.firebasedatabase.app",
@@ -9,15 +9,15 @@ const firebaseConfig2 = {
   messagingSenderId: "599092674811",
   appId: "1:599092674811:web:844fd7463593dd824b705e"
 };
-const app2 = initializeApp(firebaseConfig2);
-const db2 = getDatabase(app2);
+const app4 = initializeApp(firebaseConfig4);
+const db4 = getDatabase(app4);
 window.addEventListener('load', function() {
     const contactSendBtn = document.getElementById("contactSendBtn");
     if (contactSendBtn) {
         contactSendBtn.addEventListener('click', function(e) {
             e.preventDefault();
             const currentTime = new Date().getTime(); // Şu anki zamanı al
-            set(ref(db2, 'userinfo/' + document.getElementById("contactName").value), {
+            set(ref(db4, 'userinfo/' + document.getElementById("contactName").value), {
                 createTime: currentTime,
                 contactName: document.getElementById("contactName").value,
                 contactEmail: document.getElementById("contactEmail").value,
@@ -45,7 +45,7 @@ function sortByCreatedAtDesc(users) {
 }
 function getUsersFromFirebase2() {
     let users2 = [];
-    get(child(ref(db2), 'userinfo/')).then((snapshot) => {
+    get(child(ref(db4), 'userinfo/')).then((snapshot) => {
         snapshot.forEach((childSnapshot) => {
             let userData2 = childSnapshot.val();
             users2.push({ id: childSnapshot.key, ...userData2 });

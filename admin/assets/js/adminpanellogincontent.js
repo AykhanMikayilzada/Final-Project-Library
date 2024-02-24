@@ -1,5 +1,5 @@
-// Ana dosya
-const firebaseConfig = {
+
+const firebaseConfig4 = {
     apiKey: "AIzaSyBilJ9Sx0kgyFkyDr6iRgJLI3WKBD3cO8M",
     authDomain: "joinusappdb.firebaseapp.com",
     databaseURL: "https://joinusappdb-default-rtdb.europe-west1.firebasedatabase.app",
@@ -16,9 +16,9 @@ import { getDatabase, get, ref, child } from "https://www.gstatic.com/firebasejs
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
 // Firebase'i başlatın
-const app = initializeApp(firebaseConfig);
-const db = getDatabase();
-const auth = getAuth(app);
+const app4 = initializeApp(firebaseConfig4);
+const db4 = getDatabase();
+const auth4 = getAuth(app4);
 
 
 
@@ -57,7 +57,7 @@ signoutbuttonres.addEventListener('click', Signout)
 let users = [];
 
 function getUsersFromFirebase() {
-    get(child(ref(db), 'UsersAuthList/')).then((snapshot) => {
+    get(child(ref(db4), 'UsersAuthList/')).then((snapshot) => {
         snapshot.forEach((childSnapshot) => {
             let userData = childSnapshot.val();
             users.push(userData);

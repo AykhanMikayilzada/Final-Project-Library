@@ -58,6 +58,17 @@ header .menu a {
   font-weight: 400;
   line-height: 196.187%;
 }
+
+
+.swiper-button-prev{
+  margin-top: 220px;
+}
+
+
+.swiper-button-next{
+  margin-bottom: 10px;
+}
+
 header .menu .orange {
   color: #e16a00;
   font-family: "Montserrat", sans-serif;

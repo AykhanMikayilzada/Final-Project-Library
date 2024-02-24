@@ -4,7 +4,7 @@ import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com
 
 
 
-const firebaseConfig = {
+const firebaseConfig4 = {
   apiKey: "AIzaSyBilJ9Sx0kgyFkyDr6iRgJLI3WKBD3cO8M",
   authDomain: "joinusappdb.firebaseapp.com",
   databaseURL: "https://joinusappdb-default-rtdb.europe-west1.firebasedatabase.app",
@@ -15,9 +15,9 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getDatabase();
-const auth = getAuth(app);
+const app4 = initializeApp(firebaseConfig4);
+const db4 = getDatabase();
+const auth4 = getAuth(app4);
 
 let EmailInp = document.getElementById("emailInp");
 let PassInp = document.getElementById("passwordInp");
@@ -28,9 +28,9 @@ let MainForm = document.getElementById("Mainform");
 let RegisterUser = evt => {
     evt.preventDefault();
 
-    createUserWithEmailAndPassword(auth, EmailInp.value, PassInp.value)
+    createUserWithEmailAndPassword(auth4, EmailInp.value, PassInp.value)
     .then((credentials) => {
-        set(ref(db, 'UsersAuthList/' + credentials.user.uid),{
+        set(ref(db4, 'UsersAuthList/' + credentials.user.uid),{
             firstname: FnameInp.value,
             lastname: LnameInp.value
         })
