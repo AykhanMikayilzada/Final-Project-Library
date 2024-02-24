@@ -25,12 +25,10 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const anonimComment = document.querySelector(".anonimComment");
 const sendBtn = document.querySelector(".sendBtn");
-const clearCommentsButton = document.querySelector(".clearCommentsButton");
 const comments = document.querySelector(".comments");
 let bookId = localStorage.getItem("bookId");
 
 function increaseCounter() {
-  // Sayfa yüklendiğinde counter'ı artır ve Firebase'e kaydet
   get(ref(database, `books/${bookId}`))
     .then((snapshot) => {
       const bookData = snapshot.val();
@@ -56,54 +54,84 @@ function increaseCounter() {
     });
 }
 
-sendBtn.addEventListener("click", () => {
-  if (anonimComment.value == "") {
-    alert("Input duzgun dolmayib")
-    return;
-  } else {
-    const commentRef = ref(database, `books/${bookId}/comments`);
-    const newCommentValue = anonimComment.value;
+function addCommentToFirebaseAndHTML(newComment) {
+  const commentRef = ref(database, `books/${bookId}/comments`);
+  const currentDate = new Date();
+  const currentHour = currentDate.getHours();
+  const currentMinute = currentDate.getMinutes();
+  const currentDay = currentDate.toLocaleDateString("en-US", {
+    weekday: "long",
+  });
+  const timestamp = currentDate.getTime(); // Zaman damgası olarak kullanılacak
 
-    // Yeni yorumu Firebase veritabanına eklemek için push yöntemini kullanın
-    push(commentRef, newCommentValue)
-      .then((newCommentRef) => {
-        console.log("Yeni yorum başarıyla eklendi.");
-        anonimComment.value = ""; // Input alanını temizle
-      })
-      .catch((error) => {
-        console.error("Yorum eklenirken bir hata oluştu:", error);
-      });
+  const commentData = {
+    text: newComment,
+    hour: currentHour,
+    minute: currentMinute,
+    day: currentDay,
+    timestamp: timestamp,
+  };
+
+  push(commentRef, commentData)
+    .then((newCommentRef) => {
+      console.log("Yeni yorum başarıyla eklendi.");
+
+      // HTML içeriğine yorumu ekle
+      const commentHTML = `
+        <div class="commentArea">
+          <div class="nameAndDate">
+            <span>anonim</span>
+            <span>${currentHour}:${currentMinute} ${currentDay}</span>
+            <p class="comment">${newComment}</p>
+          </div>
+        </div>`;
+      comments.innerHTML += commentHTML;
+    })
+    .catch((error) => {
+      console.error("Yorum eklenirken bir hata oluştu:", error);
+    });
+}
+
+anonimComment.addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault(); // Sayfanın yeniden yüklenmesini engelle
+    sendComment();
   }
 });
+
+sendBtn.addEventListener("click", sendComment);
+
+function sendComment() {
+  if (anonimComment.value == "") {
+    alert("Input düzgün dolmayıb");
+    return;
+  }
+
+  const newCommentValue = anonimComment.value;
+  addCommentToFirebaseAndHTML(newCommentValue);
+  anonimComment.value = ""; // Input alanını temizle
+}
 
 function loadComments() {
   const commentRef = ref(database, `books/${bookId}/comments`);
 
   get(commentRef)
     .then((snapshot) => {
-      const comments = snapshot.val();
+      const commentsData = snapshot.val();
 
-      if (comments) {
+      if (commentsData) {
         const commentsContainer = document.querySelector(".comments");
         commentsContainer.innerHTML = ""; // Önceki yorumları temizle
 
-        Object.values(comments).forEach((comment) => {
-          const currentDate = new Date();
-          const currentHour = currentDate.getHours();
-          const currentMinute = currentDate.getMinutes();
-          const currentDay = currentDate.toLocaleDateString("en-US", {
-            weekday: "long",
-          });
-
+        Object.values(commentsData).forEach((comment) => {
           const commentHTML = `
             <div class="commentArea">
               <div class="nameAndDate">
                 <span>anonim</span>
-                <span>${currentHour}:${currentMinute} ${currentDay}</span>
-                <p class="comment">${comment}</p>
+                <span>${comment.hour}:${comment.minute} ${comment.day}</span>
+                <p class="comment">${comment.text}</p>
               </div>
             </div>`;
-
           commentsContainer.innerHTML += commentHTML;
         });
       }
@@ -113,7 +141,5 @@ function loadComments() {
     });
 }
 
-window.addEventListener("load", () => {
-  loadComments();
-  increaseCounter();
-});
+loadComments();
+increaseCounter();

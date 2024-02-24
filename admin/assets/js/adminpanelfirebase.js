@@ -314,15 +314,6 @@ async function getBookByIdFromFirebase(elementId) {
         <h3 class="subtitle2">${bookData.author}</h3>
         <p class="paragraph">${bookData.descr}</p>
 
-      <button class="addtocart">
-        <div class="pretext">
-          <i class="fas fa-cart-plus"></i> ADD TO CART
-        </div>
-        <div class="pretext done">
-          <div class="posttext"><i class="fas fa-check"></i> ADDED</div>
-        </div>
-      </button>
-
       </div>
 
       <div class="right-side">

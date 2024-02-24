@@ -3,15 +3,11 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-header .joinUs {
-  display: block;
+
+.catalogcard a{
+  color: black;
 }
-header .responsivejoinUs {
-  display: none;
-}
-header .hamburger {
-  display: none;
-}
+
 header .logoBox {
   display: flex;
   margin-top: 31px;
@@ -38,17 +34,19 @@ header .logoWriting .line {
 }
 header .logoWriting span:last-child {
   margin-left: 8px;
-  color: #241400;
-  /* Текст в параграфах */
-  font-family: Montserrat;
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 400;
+  color:  #241400;
+/* Текст в параграфах */
+font-family: Montserrat;
+font-size: 13px;
+font-style: normal;
+font-weight: 400;
+
 }
 header .menu {
   display: flex;
   gap: 21px;
-  margin-top: 42px;
+  margin-top: 23px;
+  margin-left: 100px;
 }
 header .menu a {
   color: #241400;
@@ -57,8 +55,36 @@ header .menu a {
   font-style: normal;
   font-weight: 400;
   line-height: 196.187%;
+  text-decoration: none;
 }
-
+header .menu .orange {
+  color: #e16a00;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 196.187%;
+  text-decoration-line: underline;
+}
+header .joinUs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 23px;
+}
+header .joinUs span {
+  color: #241400;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 65px;
+}
+#hamburgerbtn {
+  display: none;
+}
 
 .swiper-button-prev{
   margin-top: 220px;

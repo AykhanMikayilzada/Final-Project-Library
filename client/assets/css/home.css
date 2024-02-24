@@ -84,6 +84,9 @@ header {
     line-height: normal;
     margin-right: 65px;
   }
+  #hamburgerbtn {
+    display: none;
+  }
 .body{
     background-color: rgb(255,250,245);
 }

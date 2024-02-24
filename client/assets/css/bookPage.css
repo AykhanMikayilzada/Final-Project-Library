@@ -3,6 +3,11 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+
+.catalogcard a{
+  color: black;
+}
+
 header .logoBox {
   display: flex;
   margin-top: 31px;
@@ -12,7 +17,74 @@ header .logoWriting {
   display: flex;
   flex-direction: column;
 }
+header .logoWriting span:first-child {
+  color: #720418;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-left: 5px;
+}
+header .logoWriting .line {
+  width: 127px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.59);
+  margin-left: 6px;
+}
+header .logoWriting span:last-child {
+  margin-left: 8px;
+  color:  #241400;
+/* Текст в параграфах */
+font-family: Montserrat;
+font-size: 13px;
+font-style: normal;
+font-weight: 400;
 
+}
+header .menu {
+  display: flex;
+  gap: 21px;
+  margin-top: 23px;
+  margin-left: 100px;
+}
+header .menu a {
+  color: #241400;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 196.187%;
+  text-decoration: none;
+}
+header .menu .orange {
+  color: #e16a00;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 196.187%;
+  text-decoration-line: underline;
+}
+header .joinUs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 23px;
+}
+header .joinUs span {
+  color: #241400;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 65px;
+}
+#hamburgerbtn {
+  display: none;
+}
 
 /* ---- */
 
