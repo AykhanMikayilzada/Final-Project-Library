@@ -10,6 +10,12 @@ header {
     color: black;
   }
 
+
+
+  .loginavatar{
+    display: none;
+  }
+
   header .logoBox {
     display: flex;
     margin-top: 31px;
@@ -83,9 +89,6 @@ header {
     font-weight: 400;
     line-height: normal;
     margin-right: 65px;
-  }
-  #hamburgerbtn {
-    display: none;
   }
 .body{
     background-color: rgb(255,250,245);
@@ -497,7 +500,7 @@ body .overlay{
 }
 
 
-body .overlayregister{
+/* body .overlayregister{
   position: fixed;
   top: 0;
   left: 0;
@@ -505,9 +508,9 @@ body .overlayregister{
   height: 100vh;
   background: rgba(0, 0, 0, 0.50);
   z-index: 1;
-  display: none;
-  /* transition: opacity 0.3s ease; */
-}
+  display: block;
+
+} */
 
 
 .overlay:hover, .overlay:focus{
@@ -527,7 +530,7 @@ body .overlayregister{
   transform: translate(-50%, -50%);
   background-color: #FFFFFF;
   width: 630px;
-  height: 500px;
+  height: 100%;
   flex-shrink: 0;
   z-index: 2;
   text-align: center;
@@ -536,15 +539,18 @@ body .overlayregister{
   display: none;
 }
 
+.alert{
+  display: none;
+}
 
 .joincontentregister{
   position: absolute;
-  top: 55%;
+  top: 52%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #FFFFFF;
   width: 630px;
-  height: 500px;
+  height: 100%;
   flex-shrink: 0;
   z-index: 2;
   text-align: center;
@@ -556,8 +562,10 @@ body .overlayregister{
 .joinUsBtnhome{
   border: none;
   background-color: transparent;
+  color: #E16A00;
   
 }
+
 
 .joinUsBtnhome a{
   color: #E16A00;
@@ -1047,6 +1055,3 @@ max-width: 290px;
   display: none;
 }
 
-.alert{
-  display: none;
-}

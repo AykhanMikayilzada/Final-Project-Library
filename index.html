@@ -66,7 +66,8 @@
 
           
         <div class="joinUs">
-          <img src="./client/assets/img/joinUs.svg"/>
+          <img id="loginusavatar" class="loginavatar" width="40px" src="./client/assets/img/user.png" alt="">
+          <img id="logoutavatar" src="./client/assets/img/joinUs.svg"/>
           <a class="joinopenmodel" href="#" id="joinclick"><span>Join us</span></a>
         </div>
 
@@ -303,12 +304,63 @@
 <!-- ------ -->
 
     <!-- join us Modal -->
+    <form id="homeregisterMainForm" action="">
 
+
+    <!-- -------- register login -->
+
+    
+    <div class="joincontentregister" id="joinustextregister">
+      <div>
+          <h1 class="jointitle">Join Us</h1>
+      </div>
+
+      <br>
+      <br>
+      <br>
+
+  <div class="joinboxing">
+    <input id="HomeRegisterEmail" class="joininputname" type="email" placeholder="name@example.com" />
+      <input
+      id="HomeRegisterPassword"
+        class="joininputname"
+        type="password"
+        placeholder="Password"
+      />
+
+      <input id="HomeRegisterFirstname" class="joininputname" type="text" placeholder="username"/>
+      <input id="HomeRegisterLastname" class="joininputname" type="text" placeholder="lastname" />
+
+      
+      <button class="joinbtn">Join</button>
+   
+  </div>
+  </div>
+
+
+  <!-- --------- -->
+
+
+
+
+  </form>
+
+    
+    <!-- <div class="overlayregister" id="overlaymodalregister"></div> -->
+
+
+    <form id="HomeLoginMainForm" action="">
+
+
+      
     <div class="overlay" id="overlaymodal"></div>
 
     <div class="joincontent" id="joinustext">
         <div>
-            <h1 class="jointitle">Join Us</h1>
+            <h1 id="JoinUsTitleHome" class="jointitle">Join Us</h1>
+            <div id="alertpassresetHome" class="alert alert-primary" role="alert">
+              Şifrənizin sıfırlanması üçün <a href="#" class="alert-link">Email adresinizə</a> link göndərildi!
+            </div>
         </div>
 
         <br>
@@ -316,33 +368,34 @@
         <br>
 
     <div class="joinboxing">
-        <input class="joininputname" type="text" name="" id="" placeholder="Email">
-        <input class="joininputname" type="text" name="" id="" placeholder="Password">
+      <input id="HomeRegisterEmail" class="joininputname" type="email" placeholder="name@example.com" />
+      <input
+      id="HomeRegisterPassword"
+        class="joininputname"
+        type="password"
+        placeholder="Password"
+      />
         <button class="joinbtn">Join</button>
-        <button class="joinUsBtnhome" type="button" ><a href="./login.html">registration</a></button>
+        <label id="forgotpasslabelHome" style="cursor: pointer; margin-top: 8px;" >Sifreni unutdun mu?</label>
+        <button id="nextregisterpagebtn" class="joinUsBtnhome" type="button" ><a>registration</a></button>
+
+        <div id="alertloginerrorHome" class="alert alert-danger" role="alert">
+          Yalnış melumatı daxil etmisiniz xahiş olunur düzgün melumatı daxil edin.
+        </div>
+
     </div>
     </div>
 
 
+    </form>
+
+
+
+    <script type="module" src="./client/assets/js/HomeLoginPage.js"></script>
+
+
+    <script type="module" src="./client/assets/js/HomeRegisterpage.js"></script>
     
-    <div class="overlayregister" id="overlaymodalregister"></div>
-
-    <div class="joincontentregister" id="joinustextregister">
-        <div>
-            <h1 class="jointitle">Join Us</h1>
-        </div>
-
-        <br>
-        <br>
-        <br>
-
-    <div class="joinboxing">
-        <input class="joininputname" type="text" name="" id="" placeholder="Email">
-        <input class="joininputname" type="text" name="" id="" placeholder="Password">
-        <button class="joinbtn">Join</button>
-        <button class="joinUsBtnhome" type="button" ><a href="./login.html">registration</a></button>
-    </div>
-    </div>
 
     <script src="./client/assets/js/index.js"></script>
     <script src="./client/assets/js/responsive.js"></script>
