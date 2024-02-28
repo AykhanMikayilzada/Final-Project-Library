@@ -30,13 +30,11 @@ async function getLastAddedBook() {
       return null;
     }
 
-    // Veritabanından gelen kitapları diziye çevirin
+   
     const bookArray = Object.values(books);
 
-    // En son eklenen kitabı alın
     const lastAddedBook = bookArray[bookArray.length - 1];
 
-    // En son eklenen kitabı döndür
     return lastAddedBook;
   } catch (error) {
     console.error("Error fetching last added book from Firebase:", error);
@@ -48,10 +46,10 @@ document.addEventListener("DOMContentLoaded", async function () {
   try {
     const lastAddedBook = await getLastAddedBook();
     if (lastAddedBook) {
-      // En son eklenen kitabın bilgileri
+     
       const { title, author, imageUrl, descr } = lastAddedBook;
 
-      // İlgili div'e içeriği ekleyin
+ 
       const aboutLeftSide = document.getElementById("aboutLeftSide");
       const aboutRightSide = document.getElementById("aboutRightSide");
       aboutLeftSide.innerHTML = `

@@ -40,6 +40,7 @@ let alertpassresetHome = document.getElementById("alertpassresetHome");
 let JoinUsTitleHome = document.getElementById("JoinUsTitleHome");
 
 
+
 let SignInUser = evt => {
     evt.preventDefault();
 
@@ -70,11 +71,12 @@ let SignInUser = evt => {
 }
 
 let ForgotPassowrd = ()=>{
-    sendPasswordResetEmail(auth, EmailInp.value)
+    sendPasswordResetEmail(auth, HomeRegisterEmail.value)
     .then(()=>{
         alertpassresetHome.style.display = "block"
         JoinUsTitleHome.style.display = "none"
         alertloginerrorHome.style.display = "none"
+        
     })
     .catch((error)=>{
         console.log(error.code);

@@ -25,7 +25,7 @@ window.addEventListener('load', function() {
                 contactAddress: document.getElementById("contactAddress").value,
                 contactTextarea: document.getElementById("contactTextarea").value
             }).then(() => {
-                alert("Bilgiler başarıyla eklendi!");
+                alert("melumatlar elave olundu!");
             }).catch((error) => {
                 console.error("Veri eklenirken hata oluştu: ", error);
                 alert("Bilgiler eklenirken bir hata oluştu!");

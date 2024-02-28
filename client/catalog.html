@@ -61,10 +61,11 @@
       </div>
 
       
-    <div class="joinUs">
-      <img src="./assets/img/joinUs.svg"/>
-      <a class="joinopenmodel" href="#" id="joinclick"><span>Join us</span></a>
-    </div>
+      <div class="joinUs">
+        <img id="loginusavatar" class="loginavatar" width="40px" src="./assets/img/joinUs.svg" alt="">
+        
+        <a class="joinopenmodel" href="#" id="joinclick"><span>Join us</span></a>
+      </div>
 
     <img id="hamburgerbtn" src="./assets/img/hamburger.svg" class="hamburger">
 
@@ -206,34 +207,92 @@
   </footer>
 
   
-   <!-- -------respinsive join us modal -->
+   <!-- -------- register login -->
 
-   
+    
+   <div class="joincontentregister" id="joinustextregister">
+    <div>
+        <h1 class="jointitle">Join Us</h1>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+<div class="joinboxing">
+  <input id="HomeRegisterEmail" class="joininputname" type="email" placeholder="name@example.com" />
+    <input
+    id="HomeRegisterPassword"
+      class="joininputname"
+      type="password"
+      placeholder="Password"
+    />
+
+    <input id="HomeRegisterFirstname" class="joininputname" type="text" placeholder="username"/>
+    <input id="HomeRegisterLastname" class="joininputname" type="text" placeholder="lastname" />
+
+    
+    <button class="joinbtn">Join</button>
+ 
+</div>
+</div>
+
+
 <!-- --------- -->
 
 
 
- <!-- join us Modal -->
 
- <div class="overlay" id="overlaymodal"></div>
+</form>
 
- <div class="joincontent" id="joinustext">
-     <div>
-         <h1 class="jointitle">Join Us</h1>
-     </div>
+  
+  <!-- <div class="overlayregister" id="overlaymodalregister"></div> -->
 
-     <br>
-     <br>
-     <br>
 
- <div class="joinboxing">
-     <input class="joininputname" type="text" name="" id="" placeholder="Email">
-     <input class="joininputname" type="text" name="" id="" placeholder="Password">
-     <button class="joinbtn">Join</button>
- </div>
- </div>
+  <form id="HomeLoginMainForm" action="">
+
+
+    
+  <div class="overlay" id="overlaymodal"></div>
+
+  <div class="joincontent" id="joinustext">
+      <div>
+          <h1 id="JoinUsTitleHome" class="jointitle">Join Us</h1>
+          <div id="alertpassresetHome" class="alert alert-primary" role="alert">
+            Şifrənizin sıfırlanması üçün <a href="#" class="alert-link">Email adresinizə</a> link göndərildi!
+          </div>
+      </div>
+
+      <br>
+      <br>
+      <br>
+
+  <div class="joinboxing">
+    <input id="HomeRegisterEmail" class="joininputname" type="email" placeholder="name@example.com" />
+    <input
+    id="HomeRegisterPassword"
+      class="joininputname"
+      type="password"
+      placeholder="Password"
+    />
+      <button class="joinbtn">Join</button>
+      <label id="forgotpasslabelHome" style="cursor: pointer; margin-top: 8px;" >Sifreni unutdun mu?</label>
+      <button id="nextregisterpagebtn" class="joinUsBtnhome" type="button" ><a>registration</a></button>
+
+      <div id="alertloginerrorHome" class="alert alert-danger" role="alert">
+        Yalnış melumatı daxil etmisiniz xahiş olunur düzgün melumatı daxil edin.
+      </div>
+
+  </div>
+  </div>
+
+
+  </form>
+
+  
 
  <script type="module" src="../admin/assets/js/adminpanelfirebase.js"></script>
+ 
 
  <script src="./assets/js/index.js"></script>
  <script src="./assets/js/responsive.js"></script>
